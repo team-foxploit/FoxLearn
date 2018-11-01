@@ -1,0 +1,32 @@
+So, above issues of the traditional LMSs are considered to be very critical since,
+overcoming such problems is very hard for the student when it comes to learning.
+Traditional LMSs are more focused on giving the students reading materials and evaluating them
+after a given time, only once for a given topic and it is said to be ineffective.
+One reason for that is, reading will do good only for those who have a very good memory. What about
+those who haven't? The problem based learning comes into reality as a solution for that. In our
+platform, we are planning to implement a quiz based environment to give the students a very good learning
+experience. With the help of that, the students can learn and be a master in every desired subjects.
+And the other reason for that is, the learning speed of the students. The learning speed is deferred
+from one student to the other, and because of that evaluating students once for a given topic
+is unfair for a relatively weak student. For a successful learning environment, every student
+should be given the chance to work on their knowledge and skills to master the topic.
+
+In our point of view, no matter how advanced the content is, the learning should be easily
+accessed and reviewed for the good of the students. So, there should be a way in the improved
+LMS, to handle that real-time self evaluation for the student. And ofcourse, the learning
+method (in this case : Quizzes) should be easily accessed by the student whenever they prefer
+even if they are offline.
+
+Additionally, there should be motivation for the student on their way to mastering the
+desired course/subject. For that, we're trying to give every student "experience points" based
+on their performance, active participation and challenge atitude. Also, there should be a good
+community of the users of LMSs consists of teachers and students. When some student facing a
+hard time in some particular topic/subject, the community should be the first thing comes to his mind.
+As developers of the platform we encourage the users to use the community for a better experience.
+
+- Learn from questions (Quiz approach)
+- Real-time evaluation
+- Smart accessiiblity
+- Student Leaderboard
+- Motivational functions
+- Community

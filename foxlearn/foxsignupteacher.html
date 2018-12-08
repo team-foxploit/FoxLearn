@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	 <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+
+
+      <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+      
+
+
+      <style>
+      	body{
+    		background-color: #f3e5f5;
+    	}
+
+    	h2{
+    		color: #424242;
+    		text-align: center;
+    	}
+
+    	.row{
+    		margin-left: 25%;
+    	}
+    	
+    	.waves-effect{
+        	margin-left: 46%;
+      	}
+      	.icon-1{
+          margin-left: -220px;
+        }
+        .material-icons{
+          margin-top: 23px;
+        }
+
+     
+        
+
+
+  	  </style>
+  	 
+
+
+   
+</head>
+
+
+<body>
+	<h2>Sign up as a Teacher</h2>
+	<form>
+		<div class="row">
+        	<div class="input-field col s4">
+          		<input  id="first_name" type="text" class="validate">
+          		<label for="first_name">First Name</label>
+        	</div>
+        	<div class="input-field col s4">
+          		<input id="last_name" type="text" class="validate">
+          		<label for="last_name">Last Name</label>
+       	 	</div>
+     	</div>
+
+     	<div class="row">
+     		
+        	<div class="input-field col s6">
+          		<input  id="email" type="text" class="validate">
+          		<label for="email">Email address</label>
+
+        	</div>
+        	<i class="small material-icons icon-1">insert_email</i>
+        </div>
+     	
+        
+
+         <div class="row">
+        	<div class="input-field col s4">
+          		<input  id="password" type="password" class="validate">
+          		<label for="password">Password</label>
+        	</div>
+        	<div class="input-field col s4">
+
+          		<input id="con-password" type="password" class="validate">
+          		<label for="con-password">Confirm password</label>
+          		
+       	 	</div>
+       	 <i class="small material-icons icon-2">visibility_off</i>
+     	</div>
+
+     	<div class="row">
+     		
+        	<div class="input-field col s4">
+          		<input  id="age" type="text" class="validate">
+          		<label for="age">Age</label>
+        	</div>
+
+        	<div class="input-field col s4">
+          <select>
+            <option value="" disabled selected>Choose your subject</option>
+            <option value="1">Subject 1</option>
+            <option value="2">Subject 2</option>
+            <option value="3">Subject 3</option>
+            <option value="4">Subject 4</option>
+            <option value="5">Subject 5</option>
+            <option value="6">Subject 6</option>
+          </select>
+          <label>Subject</label>
+          
+          </div>
+          <i class="small material-icons icon-3">assignment</i>
+        </div>
+
+        <div class="row">
+        	
+           <div class="input-field col s4">
+          <select>
+            <option value="" disabled selected>Choose your country</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Thailand">Thailand</option>
+                
+                
+          </select>
+          <label>Country</label>
+          
+          </div>
+          <i class="small material-icons icon-4">edit_location</i>
+        </div>
+
+     	
+
+     </form>
+
+     	 <a  class="waves-effect waves-light btn-large  deep-purple darken-3">Sign Up</a>
+      
+ </body>
+	
+
+
+
+
+
+
+</html>
+
+	
+
+

@@ -1,0 +1,19 @@
+{
+  "name": "foxlearn",
+  "version": "1.0.0",
+  "description": "A Web Based Learning Environment created for students",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-foxploit/FoxLearn.git"
+  },
+  "author": "Foxploit Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/team-foxploit/FoxLearn/issues"
+  },
+  "homepage": "https://github.com/team-foxploit/FoxLearn#readme"
+}

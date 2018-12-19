@@ -8,9 +8,9 @@ npm-debug.log
 bower_component
 src/config/configSec.js
 .DS_STORE
-./REPORT
-./APPLICATION
-./PRESENTATION
+REPORT
+APPLICATION
+PRESENTATION
 
 node_modules
 

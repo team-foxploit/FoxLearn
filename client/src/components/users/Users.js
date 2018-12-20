@@ -21,7 +21,7 @@ class Users extends Component {
       <div>
         <ul>
           {this.state.users.map(user => 
-            <li key={user.id}>{user.fName} {user.lName}</li>
+            <li key={user.Student_ID}>{user.FName} {user.LName}</li>
           )}
         </ul>
       </div>

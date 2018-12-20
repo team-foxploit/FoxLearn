@@ -1,38 +1,46 @@
 const express = require('express');
 
+// Express app
 const app = express();
 
 // Connection from the database
 const connection = require('./client/src/database/config');
 
-// Select query
-let sql = `SELECT * FROM users.student`;
-
-let result = connection.query(sql, (error, results, fields) => {
-    if (error) {
-      return console.error(error.message);
-    }
-    console.log(results);
-    
-    return results;
-    console.log(fields);
-    
-  });
- 
-// console.log(result);
-
-
+// Route for getting all users
 app.get('/api/users', (req, res) => {
-    const users = [
-        {id: 1, fName:'Nikky', lName:'Bela'},
-        {id: 2, fName:'Sandler', lName:'Cathy'},
-        {id: 3, fName:'Boy', lName:'Chamin'}
-
-    ]
-    res.json(result);
+    let que = `SELECT * FROM student`;
+    let result = connection.query(que, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        res.send(results);
+    });
 } );
 
-connection.end();
+// Route for creating databases
+app.get('/api/createdb', (req, res)=> {
+    let que = `CREATE DATABASE testDB`;
+    connection.query(que, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        res.send(results);
+    });
+} );
+
+
+// Route for getting all users
+app.get('/api/users/:id', (req, res) => {
+    let que = `SELECT * FROM users.student WHERE Student_ID = ${req.params.id} `;
+    connection.query(que, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        res.send(results);
+    });
+} );
+
+// connection.end();
 
 const port = 5000;
 

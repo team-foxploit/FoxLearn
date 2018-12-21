@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 // Connection from the database
-const connection = require('./client/src/database/config');
+const connection = require('./client/src/database/Config');
 
 // Route for getting all users
 app.get('/api/users', (req, res) => {

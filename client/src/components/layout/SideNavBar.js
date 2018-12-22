@@ -19,11 +19,11 @@ const SideNavBar = () => {
                     </ul>
                 </li>
                 <li>
-                    <NavLink to="/myRankings">My Rankings</NavLink>
+                    <NavLink to="/myProgress">My Progress</NavLink>
                 </li>
                 <li>
                     <NavLink to="/recent">Recent</NavLink>
-                    <NavLink to="/leaderboard">Leader Board</NavLink>
+                    <NavLink to="/leaderboard">Overall Leaderboard</NavLink>
                 </li>
             </ul>
             <ul className="list-unstyled CTAs">

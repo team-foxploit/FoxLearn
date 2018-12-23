@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import QuizDetails from './QuizDetails';
 
 class QuizList extends Component{
     render(){
@@ -19,6 +20,7 @@ class QuizList extends Component{
                     <p>Posted by Someone</p>
                     <p className="blue-text">Subject</p>
                 </div>
+                <QuizDetails />
             </div>
         )
     }

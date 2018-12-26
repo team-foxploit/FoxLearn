@@ -11,10 +11,9 @@ const Navbar = () => {
                 <div className="container left hide-on-med-and-down">
                     <SignedInLinks />
                     <SignedOutLinks />
-            </div>        
-        </nav>
-    </div>
-
+                </div>    
+            </nav>
+        </div>
     );
 }
 

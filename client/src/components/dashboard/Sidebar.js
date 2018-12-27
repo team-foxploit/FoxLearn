@@ -1,25 +1,8 @@
 import React, { Component } from 'react'
-// import { Link, a} from 'react-router-dom';
 import './Sidebar.css'
 
 class Sidebar extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { isToggleOn: false };
-
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
-    }
-    // componentWillMount() {
-    //     // window.sidenavFunction();
-    // }
     render() {
         return (
             <div className="wrapper">
@@ -41,7 +24,6 @@ class Sidebar extends Component {
                     <li><a href="foxlearn@foxploit.com" className="subheader center">@FoxLearn</a></li>
                     <li><div className="waves-effect waves-light btn btn-medium"><i className="material-icons left">cloud</i>Logout</div></li>
                 </ul>
-                {/* <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a> */}
             </div>
         );
     };

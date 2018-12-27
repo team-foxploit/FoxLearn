@@ -8,9 +8,6 @@ import SignUp from './components/auth/SignUp';
 import Dashboard from './components/layout/Dashboard';
 
 class App extends Component {
-  // componentWillMount() {
-  //   window.test();
-  // }
   
   render() {
     return (

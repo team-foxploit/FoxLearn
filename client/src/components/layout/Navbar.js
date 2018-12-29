@@ -7,11 +7,11 @@ const Navbar = () => {
     return(
         <div className="wrapper">
             <nav className="nav-wrapper blue lighten-2 hoverable">
-                <Link to='/' className="brand-logo center">FoxLearn</Link>
-                <div className="container left hide-on-med-and-down">
-                    <SignedInLinks />
-                    <SignedOutLinks />
-                </div>    
+                <Link to='/' className="brand-logo">FoxLearn</Link>
+                <div className="hide-on-med-and-down">
+                    <SignedInLinks className="right" />
+                    <SignedOutLinks className="left" />
+                </div>
             </nav>
         </div>
     );

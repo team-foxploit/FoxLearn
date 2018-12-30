@@ -5,6 +5,7 @@ import image1 from '../images/learn-photo.jpeg';
 // import image2 from '../images/learn-photo-2.jpeg';
 
 class SignLanding extends Component {
+    
     state = {
         username: '',
         password: '',
@@ -17,6 +18,19 @@ class SignLanding extends Component {
             [e.target.id] : e.target.value
         });
     }
+
+    studentSelected = () => {
+        this.setState(state => ({
+            type: 'student'
+        }));
+    }
+
+    teacherSelected = () => {
+        this.setState(state => ({
+            type: 'teacher'
+        }));
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
@@ -24,21 +38,20 @@ class SignLanding extends Component {
             .then(res => {
                 const users = res.data;
                 users.forEach(element => {
-                    console.log(element);
+                    // console.log(element);
                     if( (this.state.username === element.FName) || (this.state.username === element.Email) ){
                         this.setState({auth:'ok'});
+                        console.log(this.state);
                         console.log('okayyyy');
                     }
                 });
-                //this.setState({ users });
-                //console.log(this.state);
             }
         );
 
     }
 
     render() {
-        if (this.state.auth === 'ok') return <Redirect to='/dashboard' />  
+        if (this.state.auth === 'ok') return <Redirect to='/dashboard' />
         return (
             <div>
                 <h3>Sign In to FoxLearn</h3><br/>
@@ -58,11 +71,11 @@ class SignLanding extends Component {
                                             <div className="input-field">
                                                 <p id="type">
                                                     <label>
-                                                        <input htmlFor="type" className="with-gap" name="type" type="radio" value="student" defaultChecked onChange={this.handleChange} />
+                                                        <input className="with-gap" name="type" type="radio" defaultChecked onClick = {this.studentSelected} />
                                                         <span>Student</span>
                                                     </label>
                                                     <label>
-                                                        <input htmlFor="type" className="with-gap s3 offset-s1" name="type" type="radio" value="teacher" onChange={this.handleChange} />
+                                                        <input className="with-gap s3 offset-s1" name="type" type="radio" onClick = {this.teacherSelected} />
                                                         <span>Teacher</span>
                                                     </label>
                                                 </p>

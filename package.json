@@ -8,7 +8,7 @@
     "start": "node Server.js",
     "server": "nodemon Server.js",
     "client": "cd client && npm start",
-    "dev" : "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/team-foxploit/FoxLearn#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "express": "^4.16.4"
   },

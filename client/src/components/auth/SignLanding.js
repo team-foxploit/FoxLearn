@@ -39,10 +39,19 @@ class SignLanding extends Component {
                 const users = res.data;
                 users.forEach(element => {
                     // console.log(element);
-                    if( (this.state.username === element.FName) || (this.state.username === element.Email) ){
-                        this.setState({auth:'ok'});
+                    if( (this.state.username === element.Username) || (this.state.username === element.Email) ){
+                        // this.setState({auth:'wrongpwd'});
                         console.log(this.state);
                         console.log('okayyyy');
+                        axios.post(`api/users/pwd`, { type : this.state.type, username: this.state.username } )
+                        .then( res => {
+                            console.log(res.data);
+                            console.log('if statement');
+                            this.setState({auth:'ok'});
+                        });
+                    }else{
+                        // TODO : show tooltip error msgs
+                        console.log('username invalid');
                     }
                 });
             }
@@ -51,7 +60,10 @@ class SignLanding extends Component {
     }
 
     render() {
-        if (this.state.auth === 'ok') return <Redirect to='/dashboard' />
+        if (this.state.auth === 'ok') 
+            return <Redirect to='/dashboard' />
+        if (this.state.auth === 'wrongpwd') 
+            return <Redirect to='/signup' />
         return (
             <div>
                 <h3>Sign In to FoxLearn</h3><br/>
@@ -71,7 +83,7 @@ class SignLanding extends Component {
                                             <div className="input-field">
                                                 <p id="type">
                                                     <label>
-                                                        <input className="with-gap" name="type" type="radio" defaultChecked onClick = {this.studentSelected} />
+                                                        <input className="with-gap" name="type" type="radio" defaultValue onClick = {this.studentSelected} />
                                                         <span>Student</span>
                                                     </label>
                                                     <label>

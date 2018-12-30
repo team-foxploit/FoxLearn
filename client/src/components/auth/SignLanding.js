@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import image1 from '../images/learn-photo.jpeg';
 // import image2 from '../images/learn-photo-2.jpeg';
 
@@ -6,7 +8,8 @@ class SignLanding extends Component {
     state = {
         username: '',
         password: '',
-        type: ''
+        type: '',
+        auth: 'fail'
     }
 
     handleChange = (e) => {
@@ -17,9 +20,25 @@ class SignLanding extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
+        axios.get(`/api/users`)
+            .then(res => {
+                const users = res.data;
+                users.forEach(element => {
+                    console.log(element);
+                    if( (this.state.username === element.FName) || (this.state.username === element.Email) ){
+                        this.setState({auth:'ok'});
+                        console.log('okayyyy');
+                    }
+                });
+                //this.setState({ users });
+                //console.log(this.state);
+            }
+        );
+
     }
 
     render() {
+        if (this.state.auth === 'ok') return <Redirect to='/dashboard' />  
         return (
             <div>
                 <h3>Sign In to FoxLearn</h3><br/>

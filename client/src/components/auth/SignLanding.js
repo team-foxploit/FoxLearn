@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import image1 from '../images/learn-photo.jpeg';
+// import image1 from '../images/learn-photo.jpeg';
 // import image2 from '../images/learn-photo-2.jpeg';
 
 class SignLanding extends Component {
@@ -9,7 +9,7 @@ class SignLanding extends Component {
     state = {
         username: '',
         password: '',
-        type: '',
+        type: 'student',
         auth: 'fail'
     }
 
@@ -33,30 +33,20 @@ class SignLanding extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
-        axios.get(`/api/users`)
-            .then(res => {
-                const users = res.data;
-                users.forEach(element => {
-                    // console.log(element);
-                    if( (this.state.username === element.Username) || (this.state.username === element.Email) ){
-                        // this.setState({auth:'wrongpwd'});
-                        console.log(this.state);
-                        console.log('okayyyy');
-                        axios.post(`api/users/pwd`, { type : this.state.type, username: this.state.username } )
-                        .then( res => {
-                            console.log(res.data);
-                            console.log('if statement');
-                            this.setState({auth:'ok'});
-                        });
-                    }else{
-                        // TODO : show tooltip error msgs
-                        console.log('username invalid');
-                    }
-                });
-            }
-        );
-
+          axios.post(`/api/users/signauth`, {
+            type : this.state.type,
+            username : this.state.username,
+            password : this.state.password
+          })
+          .then(res => {
+              if (res.data.length === 1) {
+                  console.log("Auth ok");
+                  this.setState(state => ({
+                      auth: 'ok'
+                  }));
+              }
+            console.log(res.data.length);
+          });
     }
 
     render() {
@@ -70,7 +60,7 @@ class SignLanding extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m6">
-                            <img src={image1} className="responsive-img" alt=""/>
+                            {/* <img src={image1} className="responsive-img" alt=""/> */}
                         </div>
                         <div className="col s12 m6">
                             <div className="card z-depth-0">
@@ -83,7 +73,7 @@ class SignLanding extends Component {
                                             <div className="input-field">
                                                 <p id="type">
                                                     <label>
-                                                        <input className="with-gap" name="type" type="radio" defaultValue onClick = {this.studentSelected} />
+                                                        <input className="with-gap" name="type" type="radio" defaultChecked onClick = {this.studentSelected} />
                                                         <span>Student</span>
                                                     </label>
                                                     <label>

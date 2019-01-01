@@ -9,7 +9,7 @@ class Sidebar extends Component {
                 <ul id="slide-out" className="sidenav sidenav-fixed">
                     <li><div className="user-view">
                         <div className="background">
-                            <img src="img/typing-writing.jpg" alt="" />
+                            {/* <img src="img/typing-writing.jpg" alt="" /> */}
                         </div>
                         <a href="#userwithID"><img className="circle" src="download.png" alt="" /></a>
                         <a href="#name"><span className="white-text name">John Doe</span></a>

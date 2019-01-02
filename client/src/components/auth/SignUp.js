@@ -48,7 +48,7 @@ class SignUp extends Component {
                 type="text"
                 className="validate white-text"
               />
-              <label for="first_name" className="teal-text text-accent-2">
+              <label htmlFor="first_name" className="teal-text text-accent-2">
                 First Name
               </label>
             </div>
@@ -59,7 +59,7 @@ class SignUp extends Component {
                 type="text"
                 className="validate white-text"
               />
-              <label for="last_name" className="teal-text text-accent-2">
+              <label htmlFor="last_name" className="teal-text text-accent-2">
                 Last Name
               </label>
             </div>
@@ -69,7 +69,7 @@ class SignUp extends Component {
             <div className="input-field col s12">
               <i className="material-icons prefix">email</i>
               <input id="email" type="email" className="validate white-text" />
-              <label for="email" className="teal-text text-accent-2">
+              <label htmlFor="email" className="teal-text text-accent-2">
                 Email
               </label>
             </div>
@@ -83,7 +83,7 @@ class SignUp extends Component {
                 type="password"
                 className="validate white-text"
               />
-              <label for="password" className="teal-text text-accent-2">
+              <label htmlFor="password" className="teal-text text-accent-2">
                 Password
               </label>
             </div>
@@ -94,7 +94,10 @@ class SignUp extends Component {
                 type="password"
                 className="validate white-text"
               />
-              <label for="confirm_password" className="teal-text text-accent-2">
+              <label
+                htmlFor="confirm_password"
+                className="teal-text text-accent-2"
+              >
                 Confirm Your Password
               </label>
             </div>

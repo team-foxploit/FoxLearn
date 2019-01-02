@@ -6,9 +6,9 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="wrapper">
-        <ul id="slide-out" className="sidenav sidenav-fixed">
+        <ul id="slide-out" className="sidenav sidenav-fixed blue-grey darken-3">
           <li>
-            <div className="user-view blue-grey darken-3">
+            <div className="user-view">
               <a href="#userwithID">
                 <img className="circle" src={userImg} alt="" />
               </a>
@@ -20,7 +20,7 @@ class Sidebar extends Component {
               </a>
             </div>
           </li>
-          <div className="blue-grey darken-3">
+          <div className="blue-grey darken-2">
             <li>
               <a href="#!">
                 <i className="material-icons cyan-text">home</i>

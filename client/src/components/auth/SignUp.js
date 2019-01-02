@@ -1,54 +1,147 @@
-import React, { Component } from 'react';
-// import image from '../images/learn-photo-2.jpeg'
+import React, { Component } from "react";
+import "./styles.css";
 
 class SignUp extends Component {
-    state = {
-        username: '',
-        password: ''
-    }
+  state = {
+    username: "",
+    password: ""
+  };
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id] : e.target.value
-        });
-    }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(this.state);
-    }
+  handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
 
-    render() {
-        return (
-        <div className="container">
-            <h3 > Sign in</h3>
-            <br/>
-                <h5>Sign in to your account where you can learn/manage queistionaire and more...</h5><br/>
-                <form onSubmit={this.handleSubmit} className="white">
-                    <div className="row">
-                        <div className="col m4 s12">
-                            <div className="row">
-                                <div className="input-field">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <input id="username" type="text" className="validate" onChange={this.handleChange} />
-                                    <label htmlFor="username">User Name</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field">
-                                <i className="small material-icons prefix">visibility</i>
-                                    <input id="password" type="password" className="validate" onChange={this.handleChange} />
-                                    <label htmlFor="password">Password</label>
-                                </div>
-                            </div>
-                            <div className="input-field">
-                                <button className="waves-effect waves-light btn-small  deep-purple darken-3">Login</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+  render() {
+    return (
+      <div className="container bg-img">
+        <div className="row">
+          <div id="block-1">
+            <h2 className="teal-text text-accent-3">Sign Up</h2>
+            <br />
+            <h6 className="teal-text text-accent-1">
+              Your account is your portal to all things FoxLearn: <br />
+              your classroom, quizes, progress and more!
+            </h6>
+            <br />
+          </div>
+        </div>
+
+        <form
+          onSubmit={this.handleSubmit}
+          className="alignCenter teal-text text-accent-1"
+          id="block-2"
+        >
+          <h4 className="teal-text text-accent-1">
+            Get statrted with FoxLearn
+          </h4>
+          <div className="row">
+            <div className="input-field col s12">
+              <i className="material-icons prefix">account_circle</i>
+              <input
+                id="first_name"
+                type="text"
+                className="validate white-text"
+              />
+              <label for="first_name" className="teal-text text-accent-2">
+                First Name
+              </label>
             </div>
-        )
-    }
+            <div className="input-field  col s12">
+              <i className="material-icons prefix">account_circle</i>
+              <input
+                id="last_name"
+                type="text"
+                className="validate white-text"
+              />
+              <label for="last_name" className="teal-text text-accent-2">
+                Last Name
+              </label>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="input-field col s12">
+              <i className="material-icons prefix">email</i>
+              <input id="email" type="email" className="validate white-text" />
+              <label for="email" className="teal-text text-accent-2">
+                Email
+              </label>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="input-field col s12">
+              <i className="material-icons prefix">lock</i>
+              <input
+                id="password"
+                type="password"
+                className="validate white-text"
+              />
+              <label for="password" className="teal-text text-accent-2">
+                Password
+              </label>
+            </div>
+            <div className="input-field col s12">
+              <i className="material-icons prefix">check_box</i>
+              <input
+                id="confirm_password"
+                type="password"
+                className="validate white-text"
+              />
+              <label for="confirm_password" className="teal-text text-accent-2">
+                Confirm Your Password
+              </label>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="input-field col s12">
+              <p>
+                <h5 className="teal-text text-accent-2">
+                  <span>I am a</span>
+                </h5>
+              </p>
+              <p className="col s6">
+                <label className="teal-text text-accent-2">
+                  <input
+                    className="with-gap"
+                    name="user-type"
+                    type="radio"
+                    checked
+                  />
+                  <span>Student</span>
+                </label>
+              </p>
+              <p className="col s6">
+                <label className="teal-text text-accent-2">
+                  <input
+                    className="with-gap"
+                    name="user-type"
+                    type="radio"
+                    checked
+                  />
+                  <span>Teacher</span>
+                </label>
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field white-text">
+              <button className="waves-effect waves-light btn-large deep-teal darken-3">
+                Sign Me Up
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default SignUp;

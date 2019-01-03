@@ -19,7 +19,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="container bg-img">
+      <div className="bg-img">
         <div className="row">
           <div id="block-1">
             <h2 className="teal-text text-accent-3">Sign Up</h2>
@@ -31,114 +31,122 @@ class SignUp extends Component {
             <br />
           </div>
         </div>
-
-        <form
-          onSubmit={this.handleSubmit}
-          className="alignCenter teal-text text-accent-1"
-          id="block-2"
-        >
-          <h4 className="teal-text text-accent-1">
-            Get statrted with FoxLearn
-          </h4>
-          <div className="row">
-            <div className="input-field col s12">
-              <i className="material-icons prefix">account_circle</i>
-              <input
-                id="first_name"
-                type="text"
-                className="validate white-text"
-              />
-              <label for="first_name" className="teal-text text-accent-2">
-                First Name
-              </label>
-            </div>
-            <div className="input-field  col s12">
-              <i className="material-icons prefix">account_circle</i>
-              <input
-                id="last_name"
-                type="text"
-                className="validate white-text"
-              />
-              <label for="last_name" className="teal-text text-accent-2">
-                Last Name
-              </label>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="input-field col s12">
-              <i className="material-icons prefix">email</i>
-              <input id="email" type="email" className="validate white-text" />
-              <label for="email" className="teal-text text-accent-2">
-                Email
-              </label>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="input-field col s12">
-              <i className="material-icons prefix">lock</i>
-              <input
-                id="password"
-                type="password"
-                className="validate white-text"
-              />
-              <label for="password" className="teal-text text-accent-2">
-                Password
-              </label>
-            </div>
-            <div className="input-field col s12">
-              <i className="material-icons prefix">check_box</i>
-              <input
-                id="confirm_password"
-                type="password"
-                className="validate white-text"
-              />
-              <label for="confirm_password" className="teal-text text-accent-2">
-                Confirm Your Password
-              </label>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="input-field col s12">
-              <p>
-                <h5 className="teal-text text-accent-2">
-                  <span>I am a</span>
-                </h5>
-              </p>
-              <p className="col s6">
-                <label className="teal-text text-accent-2">
-                  <input
-                    className="with-gap"
-                    name="user-type"
-                    type="radio"
-                    checked
-                  />
-                  <span>Student</span>
+        <div className="container">
+          <form
+            onSubmit={this.handleSubmit}
+            className="alignCenter teal-text text-accent-1"
+            id="block-2"
+          >
+            <h4 className="teal-text text-accent-1">
+              Get statrted with FoxLearn
+            </h4>
+            <div className="row">
+              <div className="input-field col s12">
+                <i className="material-icons prefix">account_circle</i>
+                <input
+                  id="first_name"
+                  type="text"
+                  className="validate white-text"
+                />
+                <label htmlFor="first_name" className="teal-text text-accent-2">
+                  First Name
                 </label>
-              </p>
-              <p className="col s6">
-                <label className="teal-text text-accent-2">
-                  <input
-                    className="with-gap"
-                    name="user-type"
-                    type="radio"
-                    checked
-                  />
-                  <span>Teacher</span>
+              </div>
+              <div className="input-field  col s12">
+                <i className="material-icons prefix">account_circle</i>
+                <input
+                  id="last_name"
+                  type="text"
+                  className="validate white-text"
+                />
+                <label htmlFor="last_name" className="teal-text text-accent-2">
+                  Last Name
                 </label>
-              </p>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="input-field white-text">
-              <button className="waves-effect waves-light btn-large deep-teal darken-3">
-                Sign Me Up
-              </button>
+
+            <div className="row">
+              <div className="input-field col s12">
+                <i className="material-icons prefix">email</i>
+                <input
+                  id="email"
+                  type="email"
+                  className="validate white-text"
+                />
+                <label htmlFor="email" className="teal-text text-accent-2">
+                  Email
+                </label>
+              </div>
             </div>
-          </div>
-        </form>
+
+            <div className="row">
+              <div className="input-field col s12">
+                <i className="material-icons prefix">lock</i>
+                <input
+                  id="password"
+                  type="password"
+                  className="validate white-text"
+                />
+                <label htmlFor="password" className="teal-text text-accent-2">
+                  Password
+                </label>
+              </div>
+              <div className="input-field col s12">
+                <i className="material-icons prefix">check_box</i>
+                <input
+                  id="confirm_password"
+                  type="password"
+                  className="validate white-text"
+                />
+                <label
+                  htmlFor="confirm_password"
+                  className="teal-text text-accent-2"
+                >
+                  Confirm Your Password
+                </label>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="input-field col s12">
+                <p>
+                  <h5 className="teal-text text-accent-2">
+                    <span>I am a</span>
+                  </h5>
+                </p>
+                <p className="col s6">
+                  <label className="teal-text text-accent-2">
+                    <input
+                      className="with-gap"
+                      name="user-type"
+                      type="radio"
+                      checked
+                    />
+                    <span>Student</span>
+                  </label>
+                </p>
+                <p className="col s6">
+                  <label className="teal-text text-accent-2">
+                    <input
+                      className="with-gap"
+                      name="user-type"
+                      type="radio"
+                      checked
+                    />
+                    <span>Teacher</span>
+                  </label>
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field white-text">
+                <button className="waves-effect waves-light btn deep-teal darken-3">
+                  Sign Me Up
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

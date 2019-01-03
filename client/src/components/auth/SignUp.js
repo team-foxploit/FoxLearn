@@ -127,12 +127,7 @@ class SignUp extends Component {
                 </p>
                 <p className="col s6">
                   <label className="teal-text text-accent-2">
-                    <input
-                      className="with-gap"
-                      name="user-type"
-                      type="radio"
-                      checked
-                    />
+                    <input className="with-gap" name="user-type" type="radio" />
                     <span>Teacher</span>
                   </label>
                 </p>

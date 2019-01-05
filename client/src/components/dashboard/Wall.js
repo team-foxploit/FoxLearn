@@ -42,14 +42,66 @@ const Wall = () => {
               </div>
             </div>
           </div>
-          <div class="card-reveal">
+          <div class="card-reveal amber lighten-2">
             <span class="card-title grey-text text-darken-4">
-              Card Title<i class="material-icons right">close</i>
+              Select a Subject<i class="material-icons right">close</i>
             </span>
-            <p>
-              Here is some more information about this product that is only
-              revealed once clicked on.
-            </p>
+            <div className="row">
+              <div className="col s12 m6">
+                <div className="card brown lighten-2">
+                  <div className="card-image brown lighten-2">
+                    <i className="material-icons md-48">event_note</i>
+                    <h6 className="white-text">Subject</h6>
+                  </div>
+                  <div className="card-action brown lighten-1">
+                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
+                      Select
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="col s12 m6">
+                <div className="card brown lighten-2">
+                  <div className="card-image brown lighten-2">
+                    <i className="material-icons md-48">event_note</i>
+                    <h6 className="white-text">Subject</h6>
+                  </div>
+                  <div className="card-action brown lighten-1">
+                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
+                      Select
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col s12 m6">
+                <div className="card brown lighten-2">
+                  <div className="card-image brown lighten-2">
+                    <i className="material-icons md-48">event_note</i>
+                    <h6 className="white-text">Subject</h6>
+                  </div>
+                  <div className="card-action brown lighten-1">
+                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
+                      Select
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="col s12 m6">
+                <div className="card brown lighten-2">
+                  <div className="card-image brown lighten-2">
+                    <i className="material-icons md-48">event_note</i>
+                    <h6 className="white-text">Subject</h6>
+                  </div>
+                  <div className="card-action brown lighten-1">
+                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
+                      Select
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

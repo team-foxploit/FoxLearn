@@ -24,6 +24,26 @@
   background-size: cover;
 }
 
-body {
-  background-color: #607d8b;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#showcase {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.bg-img-landing {
+  background: url(../images/bg-img-landing.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#login-card {
+  padding-bottom: 15px;
 }

@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
+import "./Dashboard.css";
 
 const Navbar = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="navTop">
       <nav className="nav-wrapper blue lighten-2 hoverable">
         <Link to="/" className="brand-logo">
           FoxLearn

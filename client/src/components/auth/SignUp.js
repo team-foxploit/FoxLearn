@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
+import axios from "axios";
 
 class SignUp extends Component {
   state = {
@@ -12,16 +13,33 @@ class SignUp extends Component {
       type: 'student',
       formErrors: {email: '', username:'', password: ''},
       formValidity: {email: false, username: false, password: false},
-      canSubmit: false
+      canSubmit: false,
+      users:''
   }
 
+  componentDidMount(){
+    axios.post('/api/users', { type:'usernames' } )
+    .then(function (response) {
+      console.log(response.data);
+      this.setState(
+        state => ({
+          users:response.data
+        })
+      );
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    // console.log(response);
+  }
 
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
     });
-    console.log(this.state);
-    
+    console.log(this.state);    
   };
 
   studentSelected = () => {

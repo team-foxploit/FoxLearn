@@ -11,19 +11,22 @@ const connection = require('./client/src/database/Config');
 
 
 // Route for getting all users
-app.get('/api/users', (req, res) => {
+app.post('/api/users', (req, res) => {
     let que;
+    console.log(req.body);
     // TODO: specify which database
     if (typeof(req.body.type) === 'undefined') {
         que = `SELECT * FROM student`;
-    } else {
-        que = `SELECT Email, Username FROM student`;
+    } else if (req.body.type === 'usernames') {
+        console.log('username selected');
+        que = `SELECT Email, Username FROM student`;      
     }
     let result = connection.query(que, (error, results, fields) => {
         if (error) {
             return console.error(error.message);
         }
         res.json(results);
+        console.log(results);        
     });
 } );
 

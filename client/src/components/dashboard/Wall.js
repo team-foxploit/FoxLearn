@@ -3,7 +3,7 @@ import React from "react";
 const Wall = () => {
   return (
     <div className="row">
-      <h1 />
+      <h1> </h1>
       <div className="col s12 m4">
         <div className="card">
           <div className="card-image green lighten-2">

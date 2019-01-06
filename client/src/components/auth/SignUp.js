@@ -3,15 +3,41 @@ import "./styles.css";
 
 class SignUp extends Component {
   state = {
-    username: "",
-    password: ""
-  };
+      first_name:'',
+      last_name:'',
+      email:'',
+      username: '',
+      password: '',
+      confirm_password:'',
+      type: 'student',
+      formErrors: {email: '', username:'', password: ''},
+      formValidity: {email: false, username: false, password: false},
+      canSubmit: false
+  }
+
 
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
     });
+    console.log(this.state);
+    
   };
+
+  studentSelected = () => {
+    this.setState(state => ({
+        type: 'student'
+    }));
+    console.log(this.state);    
+  }
+  
+  teacherSelected = () => {
+    this.setState(state => ({
+      type: 'teacher'
+    }));
+    console.log(this.state);
+  }
+  
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
@@ -45,8 +71,10 @@ class SignUp extends Component {
                 <i className="material-icons prefix">account_circle</i>
                 <input
                   id="first_name"
+                  name="first_name"
                   type="text"
                   className="validate white-text"
+                  onChange={this.handleChange}
                 />
                 <label htmlFor="first_name" className="teal-text text-accent-2">
                   First Name
@@ -58,10 +86,28 @@ class SignUp extends Component {
                   id="last_name"
                   type="text"
                   className="validate white-text"
+                  onChange={this.handleChange}
                 />
                 <label htmlFor="last_name" className="teal-text text-accent-2">
                   Last Name
                 </label>
+              </div>
+            </div>
+            
+            <div className="row">
+              <div className="input-field col s12">
+                <i className="material-icons prefix">account_circle</i>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  className="validate white-text"
+                  onChange={this.handleChange}
+                />
+                <label htmlFor="username" className="teal-text text-accent-2">
+                  Username
+                </label>
+                <span className="helper-text" data-error="true">Enter username</span>
               </div>
             </div>
 
@@ -70,20 +116,25 @@ class SignUp extends Component {
                 <i className="material-icons prefix">email</i>
                 <input
                   id="email"
-                  type="email"
+                  name="email"
+                  type="text"
                   className="validate white-text"
+                  onChange={this.handleChange}
                 />
                 <label htmlFor="email" className="teal-text text-accent-2">
                   Email
                 </label>
+                <span className="helper-text" data-error="true">Enter email address</span>
               </div>
             </div>
+
 
             <div className="row">
               <div className="input-field col s12">
                 <i className="material-icons prefix">lock</i>
                 <input
                   id="password"
+                  name="password"
                   type="password"
                   className="validate white-text"
                 />
@@ -95,6 +146,7 @@ class SignUp extends Component {
                 <i className="material-icons prefix">check_box</i>
                 <input
                   id="confirm_password"
+                  name="confirm_password"
                   type="password"
                   className="validate white-text"
                 />
@@ -109,18 +161,19 @@ class SignUp extends Component {
 
             <div className="row">
               <div className="input-field col s12">
-                <p>
-                  <h5 className="teal-text text-accent-2">
+                  <h4 className="teal-text text-accent-2">
                     <span>I am a</span>
-                  </h5>
-                </p>
+                  </h4>
                 <p className="col s6">
                   <label className="teal-text text-accent-2">
                     <input
-                      className="with-gap"
+                      id="student_type"
                       name="user-type"
+                      className="with-gap"
+                      value="student"
                       type="radio"
-                      checked
+                      defaultChecked
+                      onClick={this.studentSelected}
                     />
                     <span>Student</span>
                   </label>
@@ -128,10 +181,12 @@ class SignUp extends Component {
                 <p className="col s6">
                   <label className="teal-text text-accent-2">
                     <input
-                      className="with-gap"
+                      id="teacher_type"
                       name="user-type"
+                      className="with-gap"
+                      value="teacher"
                       type="radio"
-                      checked
+                      onClick={this.teacherSelected}
                     />
                     <span>Teacher</span>
                   </label>

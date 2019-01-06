@@ -12,7 +12,13 @@ const connection = require('./client/src/database/Config');
 
 // Route for getting all users
 app.get('/api/users', (req, res) => {
-    let que = `SELECT * FROM student`;
+    let que;
+    // TODO: specify which database
+    if (typeof(req.body.type) === 'undefined') {
+        que = `SELECT * FROM student`;
+    } else {
+        que = `SELECT Email, Username FROM student`;
+    }
     let result = connection.query(que, (error, results, fields) => {
         if (error) {
             return console.error(error.message);
@@ -53,7 +59,7 @@ app.get('/api/users/:id', (req, res) => {
         if (error) {
             return console.error(error.message);
         }
-        res.send(results);
+        res.json(results);
     });
 } );
 

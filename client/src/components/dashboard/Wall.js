@@ -42,62 +42,23 @@ const Wall = () => {
               </div>
             </div>
           </div>
-          <div class="card-reveal amber lighten-2">
-            <span class="card-title grey-text text-darken-4">
-              Select a Subject<i class="material-icons right">close</i>
+          <div class="card-reveal blue-grey">
+            <span class="card-title text-darken-4 white-text">
+              Select a Level<i class="material-icons right">close</i>
             </span>
             <div className="row">
-              <div className="col s12 m6">
-                <div className="card brown lighten-2">
-                  <div className="card-image brown lighten-2">
-                    <i className="material-icons md-48">event_note</i>
-                    <h6 className="white-text">Subject</h6>
-                  </div>
-                  <div className="card-action brown lighten-1">
-                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
-                      Select
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col s12 m6">
-                <div className="card brown lighten-2">
-                  <div className="card-image brown lighten-2">
-                    <i className="material-icons md-48">event_note</i>
-                    <h6 className="white-text">Subject</h6>
-                  </div>
-                  <div className="card-action brown lighten-1">
-                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
-                      Select
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col s12 m6">
-                <div className="card brown lighten-2">
-                  <div className="card-image brown lighten-2">
-                    <i className="material-icons md-48">event_note</i>
-                    <h6 className="white-text">Subject</h6>
-                  </div>
-                  <div className="card-action brown lighten-1">
-                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
-                      Select
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col s12 m6">
-                <div className="card brown lighten-2">
-                  <div className="card-image brown lighten-2">
-                    <i className="material-icons md-48">event_note</i>
-                    <h6 className="white-text">Subject</h6>
-                  </div>
-                  <div className="card-action brown lighten-1">
-                    <button className="waves-effect waves-light btn-small amber darken-1 activator">
-                      Select
-                    </button>
+              <div className="card-content yellow">
+                <div className="col s6 m6 offset-s3 offset-m3">
+                  <div class="collection">
+                    <a href="#!" class="collection-item">
+                      Easy
+                    </a>
+                    <a href="#!" class="collection-item">
+                      Medium
+                    </a>
+                    <a href="#!" class="collection-item">
+                      Hard
+                    </a>
                   </div>
                 </div>
               </div>

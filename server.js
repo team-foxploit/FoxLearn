@@ -20,19 +20,28 @@ app.post('/api/users', (req, res) => {
     } else if (req.body.type === 'usernames') {
         console.log('username selected');
         que = `SELECT Email, Username FROM student`;      
+    } else if (req.body.type === 'namecombination') {
+        console.log('namecombination selected');
+        console.log(req.body);
+        que = `SELECT FName, LName FROM student WHERE Student_ID = ${req.body.id}`;      
     }
     let result = connection.query(que, (error, results, fields) => {
         if (error) {
             return console.error(error.message);
         }
-        res.json(results);
-        // console.log(results);        
+        if (req.body.type === 'namecombination'){
+            const combination = results[0].FName[0]+results[0].LName[0];
+            // console.log(combination);
+            results = combination;
+        }
+        res.json({results});
     });
 } );
 
+// TODO : update and fix
 // Route for creating databases
-app.get('/api/createdb', (req, res) => {
-    let que = `CREATE DATABASE testDB`;
+app.get('/api/users', (req, res) => {
+    let que = `SELECT * FROM student`;
     connection.query(que, (error, results, fields) => {
         if (error) {
             return console.error(error.message);
@@ -49,11 +58,26 @@ app.post('/api/users/signauth', (req, res) => {
             return console.error(error.message);
             res.end();
         }
-        console.log(result.length);
+        // console.log(result[0].FName);
         res.json(result);
     } );    
 } );
 
+// Route for add a new user
+app.put('/api/users', (req, res) => {
+    console.log(req.body);
+    let que = `INSERT INTO STUDENT(FName, LName, Email, Username, PSWRD) VALUES("${req.body.fname}", "${req.body.lname}", "${req.body.email}", "${req.body.username}", "${req.body.password}")`;
+    connection.query(que, (error, results, fields) => {
+        if (error) {
+            return console.error(error.message);
+        }
+        if(results.affectedRows == 1){
+            res.json({status:"success"});
+        }else{
+            res.json({status:"Fail"});
+        }
+    });
+} );
 
 // Route for getting all users
 app.get('/api/users/:id', (req, res) => {

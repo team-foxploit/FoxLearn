@@ -7,11 +7,16 @@ import MainInNavabr from "../layout/MainNavbar";
 
 class SignLanding extends Component {
     
+    userDetails = {
+
+    }
+
     state = {
         username: '',
         password: '',
         type: 'student',
-        auth: 'fail'
+        auth: 'fail',
+        userDetails:''
     }
 
     handleChange = (e) => {
@@ -43,19 +48,21 @@ class SignLanding extends Component {
               if (res.data.length === 1) {
                   console.log("Auth ok");
                   this.setState(state => ({
-                      auth: 'ok'
+                      auth: 'ok',
+                      userDetails:res.data[0]
                   }));
+                //   this.userDetails = res.data[0];
               }
-            console.log(res.data.length);
+            console.log(res.data[0]);
           });
     }
 
     render() {
         if (this.state.auth === 'ok') {
-            console.log(this.state);
+            console.log(this.state.userDetails);
             return <Redirect to={{
                 pathname: '/dashboard',
-                state: { props:this.state }
+                state: { props:this.state.userDetails }
             }} />
             
         }

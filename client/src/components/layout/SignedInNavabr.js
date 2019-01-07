@@ -1,16 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
+import axios from 'axios';
 
 class Navbar extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            username:this.props.username
-        }
-        console.log(this.props);
-        
+    state = {
+        combination:''
     }
+
+    componentDidMount(){
+        console.log(this.props.details.Student_ID);
+        axios.post('/api/users', {
+            "type":"namecombination",
+            "id":this.props.details.Student_ID
+        })
+          .then(function (response) {              
+            console.log(response.data.results);
+            this.state.setState(state => ({
+                combination:response.data.results
+            }));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          console.log(this.state);
+    }
+
     render() {
         return (
           <div className="wrapper">
@@ -19,7 +34,7 @@ class Navbar extends Component {
                 FoxLearn
               </Link>
               <div className="hide-on-med-and-down">
-                <SignedInLinks className="right" />
+                <SignedInLinks className="right" id={this.props.details.Student_ID} />
               </div>
             </nav>
           </div>

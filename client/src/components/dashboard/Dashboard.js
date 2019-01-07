@@ -11,17 +11,18 @@ class Dashboard extends Component {
     username:''
   }
   componentDidMount(){
-    console.log(this.props.location.state.props);
+    console.log(this.state);
     this.setState(state =>({
       username:this.props.location.state.props.username
-    })); 
+    }));
+    console.log(this.props.location.state.props);
   }
 
   state = {};
   render() {
     return (
       <div className="dash background blue-grey">
-        <SignedInNavabr props={this.state.username}/>
+        <SignedInNavabr details = {this.props.location.state.props}/>
         <Sidebar />
         <Wall />
         <Footer />

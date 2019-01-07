@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-import Home from './components/layout/Home';
+// import Home from './components/layout/Home';
 import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import SignIn from "./components/auth/SignIn";
@@ -17,7 +16,7 @@ class App extends Component {
           <Switch>
             {/* <Route path="/" component={Home} /> */}
             <Route path="/home" component={SignLanding} />
-            {/* <Route path="/signin" component={SignIn} /> */}
+            <Route path="/test" component={SignIn} />
             <Route path="/signup" component={SignUp} />
             <Route path="/dashboard" component={Dashboard} />
           </Switch>

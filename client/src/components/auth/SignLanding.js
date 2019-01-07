@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import MainInNavabr from "../layout/MainNavbar";
 // import image1 from '../images/learn-photo.jpeg';
 // import image2 from '../images/learn-photo-2.jpeg';
 
@@ -50,12 +51,19 @@ class SignLanding extends Component {
     }
 
     render() {
-        if (this.state.auth === 'ok') 
-            return <Redirect to='/dashboard' />
+        if (this.state.auth === 'ok') {
+            console.log(this.state);
+            return <Redirect to={{
+                pathname: '/dashboard',
+                state: { props:this.state }
+            }} />
+            
+        }
         if (this.state.auth === 'wrongpwd') 
             return <Redirect to='/signup' />
         return (
             <div>
+                <MainInNavabr /> 
                 <h3>Sign In to FoxLearn</h3><br/>
                 <div className="container">
                     <div className="row">

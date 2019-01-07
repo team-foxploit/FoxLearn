@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SignedInLinks from "./SignedInLinks";
+// import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
           FoxLearn
         </Link>
         <div className="hide-on-med-and-down">
-          <SignedInLinks className="right" />
+          {/* <SignedInLinks className="right" /> */}
           <SignedOutLinks className="left" />
         </div>
       </nav>

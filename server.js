@@ -26,7 +26,7 @@ app.post('/api/users', (req, res) => {
             return console.error(error.message);
         }
         res.json(results);
-        console.log(results);        
+        // console.log(results);        
     });
 } );
 

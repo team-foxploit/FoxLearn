@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import Home from './components/layout/Home';
-import Navabr from "./components/layout/Navbar";
+// import Navbar from "./components/layout/MainNavbar";
 import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import SignIn from "./components/auth/SignIn";

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import axios from "axios";
+import Footer from "../footer/footer";
 
 class SignUp extends Component {
   state = {
@@ -220,6 +221,7 @@ class SignUp extends Component {
             </div>
           </form>
         </div>
+        <Footer />
       </div>
     );
   }

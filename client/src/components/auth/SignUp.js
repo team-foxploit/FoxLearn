@@ -22,7 +22,7 @@ class SignUp extends Component {
   }
 
   componentDidMount(){
-    axios.post('/api/users', { type:'usernames' } )
+    axios.post('/api/users/auth', { type:'usernames' } )
     .then(function (response) {
       console.log(response.data.results);
       this.setState(

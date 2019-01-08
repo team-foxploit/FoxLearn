@@ -9,74 +9,49 @@ app.use(bodyparser.json());
 // Connection from the database
 const connection = require('./client/src/database/Config');
 
+// Schema Modules
+const Users = require('./api/users/Users');
+const Auth = require('./api/users/Auth');
 
-// Route for getting all users
+// Route for getting all user details
 app.post('/api/users', (req, res) => {
     let que;
     console.log(req.body);
     // TODO: specify which database
-    if (typeof(req.body.type) === 'undefined') {
-        que = `SELECT * FROM student`;
-    } else if (req.body.type === 'usernames') {
-        console.log('username selected');
-        que = `SELECT Email, Username FROM student`;      
-    } else if (req.body.type === 'namecombination') {
-        console.log('namecombination selected');
-        console.log(req.body);
-        que = `SELECT FName, LName FROM student WHERE Student_ID = ${req.body.id}`;      
+    if (req.body.type === 'usernames') { 
+        Users.getAllUsernames(connection, req, res);    
+    } else if (req.body.type === 'allstudents') {
+        Users.getAllStudents(connection, req, res);
+    } else if (req.body.type === 'allteachers') {
+        Users.getAllTeachers(connection, req, res);
+    } else {
+        res.sendStatus(412);
     }
-    let result = connection.query(que, (error, results, fields) => {
-        if (error) {
-            return console.error(error.message);
-        }
-        if (req.body.type === 'namecombination'){
-            const combination = results[0].FName[0]+results[0].LName[0];
-            console.log(combination);
-            results = combination;
-        }
-        res.json({results});
-    });
 } );
 
 // TODO : update and fix
 // Route for creating databases
 app.get('/api/users', (req, res) => {
-    let que = `SELECT * FROM student`;
-    connection.query(que, (error, results, fields) => {
-        if (error) {
-            return console.error(error.message);
-        }
-        console.log('ccccc');        
-        res.send(results);
-    });
+    console.log(req.body);
+    if(req.body.type == 'allstudents'){
+        Users.getAllStudents(connection, req, res);
+    }else if(req.body.type == 'allteachers'){
+        Users.getAllTeachers(connection, req, res);
+    }
 } );
 
 // Route for getting user password associated with username or email
-app.post('/api/users/signauth', (req, res) => {
-    let que = `SELECT * FROM ${req.body.type} WHERE ${req.body.type}.Username = "${req.body.username}" OR ${req.body.type}.Email = "${req.body.username}"`;
-    connection.query(que, (error, result, fields) => {
-        if(error){
-            return console.error(error.message);
-            res.end();
-        }
-        res.json(result);
-    } );    
+app.post('/api/users/auth', (req, res) => {
+    if (req.body.type == 'getConfirmation') {
+        Auth.getConfirmedUser(connection, req, res);
+    } else if (req.body.type == 'signup') {
+        Auth.signUpUser(connection, req, res);
+    }
 } );
 
 // Route for add a new user
-app.put('/api/users', (req, res) => {
-    console.log(req.body);
-    let que = `INSERT INTO STUDENT(FName, LName, Email, Username, PSWRD) VALUES("${req.body.fname}", "${req.body.lname}", "${req.body.email}", "${req.body.username}", "${req.body.password}")`;
-    connection.query(que, (error, results, fields) => {
-        if (error) {
-            return console.error(error.message);
-        }
-        if(results.affectedRows == 1){
-            res.json({status:"success"});
-        }else{
-            res.json({status:"Fail"});
-        }
-    });
+app.put('/api/users/auth', (req, res) => {
+    Auth.signUpUser(connection, req, res);
 } );
 
 // Route for getting all users

@@ -9,7 +9,8 @@ class SignLanding extends Component {
     state = {
         username: '',
         password: '',
-        type: 'student',
+        type: 'getConfirmation',
+        table:'student',
         auth: 'fail',
         userDetails:''
     }
@@ -22,20 +23,21 @@ class SignLanding extends Component {
 
     studentSelected = () => {
         this.setState(state => ({
-            type: 'student'
+            table: 'student'
         }));
     }
 
     teacherSelected = () => {
         this.setState(state => ({
-            type: 'teacher'
+            table: 'teacher'
         }));
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-          axios.post(`/api/users/signauth`, {
+          axios.post(`/api/users/auth`, {
             type : this.state.type,
+            table:this.state.table,
             username : this.state.username,
             password : this.state.password
           })

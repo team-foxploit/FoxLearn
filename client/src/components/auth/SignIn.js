@@ -222,18 +222,18 @@ class SignIn extends Component {
             </div>
           </div>
         </div>
-        <div class="parallax-container valign-wrapper">
-          <div class="section no-pad-bot">
-            <div class="container right-align">
-              <div class="row center">
-                <h3 class="col s12 light left-align white-text">
+        <div className="parallax-container valign-wrapper">
+          <div className="section no-pad-bot">
+            <div className="container right-align">
+              <div className="row center">
+                <h3 className="col s12 light left-align white-text">
                   Learn together
                   <br /> Anywhere, anytime!
                 </h3>
               </div>
             </div>
           </div>
-          <div class="parallax">
+          <div className="parallax">
             <img src={img7} alt="Unsplashed background img 3" />
           </div>
         </div>

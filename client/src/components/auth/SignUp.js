@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import axios from "axios";
+import Footer from "../footer/footer";
 
 class SignUp extends Component {
   state = {
@@ -198,6 +199,7 @@ class SignUp extends Component {
                 </p>
                 <p className="col s6">
                   <label className="teal-text text-accent-2">
+<<<<<<< HEAD
                     <input
                       id="teacher_type"
                       name="user-type"
@@ -206,6 +208,9 @@ class SignUp extends Component {
                       type="radio"
                       onClick={this.teacherSelected}
                     />
+=======
+                    <input className="with-gap" name="user-type" type="radio" />
+>>>>>>> CJay
                     <span>Teacher</span>
                   </label>
                 </p>
@@ -220,6 +225,10 @@ class SignUp extends Component {
             </div>
           </form>
         </div>
+<<<<<<< HEAD
+=======
+        <Footer />
+>>>>>>> CJay
       </div>
     );
   }

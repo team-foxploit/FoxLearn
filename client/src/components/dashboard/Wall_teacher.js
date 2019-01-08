@@ -1,6 +1,6 @@
 import React from "react";
 
-const Wall = () => {
+const WallTeacher = () => {
   return (
     <div className="row">
       <p />
@@ -37,7 +37,7 @@ const Wall = () => {
               </p>
               <div className="card-action">
                 <button className="waves-effect waves-light btn amber darken-1 activator">
-                  Take a quiz
+                  Submit a quiz
                 </button>
               </div>
             </div>
@@ -74,7 +74,6 @@ const Wall = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <div className="col s12 m4">
@@ -101,4 +100,4 @@ const Wall = () => {
   );
 };
 
-export default Wall;
+export default WallTeacher;

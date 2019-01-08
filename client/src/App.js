@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import Home from './components/layout/Home';
+import Navabr from "./components/layout/Navbar";
 import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import SignIn from "./components/auth/SignIn";
@@ -15,8 +16,11 @@ class App extends Component {
           {/* <Navabr className="header" /> */}
           <Switch>
             {/* <Route path="/" component={Home} /> */}
+            {/* <Route path="/home" component={SignLanding} /> */}
+            {/* <Route path="/test" component={SignIn} /> */}
+            {/* <Route path="/" component={Dashboard} /> */}
             <Route path="/home" component={SignLanding} />
-            <Route path="/test" component={SignIn} />
+            <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
             <Route path="/dashboard" component={Dashboard} />
           </Switch>

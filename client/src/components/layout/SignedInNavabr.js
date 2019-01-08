@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
-import axios from 'axios';
 
 class Navbar extends Component {
   constructor(props){
@@ -10,27 +9,7 @@ class Navbar extends Component {
       combination:props.details
     }
     console.log(this.state);    
-  }  
-  
-
-    componentDidMount(){
-        console.log(this.props.details.Student_ID);
-        axios.post('/api/users', {
-            "type":"namecombination",
-            "id":this.props.details.Student_ID
-        })
-          .then( (response) => {
-            console.log(response.data.results);
-            console.log('in response');
-            this.setState(state => ({
-              combination:response.data.results
-            }));
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-          // console.log(this.state);
-    }
+  }
 
     render() {
         return (

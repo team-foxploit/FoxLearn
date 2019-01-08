@@ -4,27 +4,30 @@ import axios from "axios";
 import Footer from "../footer/footer";
 
 class SignUp extends Component {
-  state = {
-      first_name:'',
-      last_name:'',
-      email:'',
-      username: '',
-      password: '',
-      confirm_password:'',
-      type: 'student',
-      formErrors: {email: '', username:'', password: ''},
-      formValidity: {email: false, username: false, password: false},
-      canSubmit: false,
-      users:''
+  constructor(){
+    super();
+    this.state = {
+        first_name:'',
+        last_name:'',
+        email:'',
+        username: '',
+        password: '',
+        confirm_password:'',
+        type: 'student',
+        formErrors: {email: '', username:'', password: ''},
+        formValidity: {email: false, username: false, password: false},
+        canSubmit: false,
+        users:''
+    };   
   }
 
   componentDidMount(){
     axios.post('/api/users', { type:'usernames' } )
     .then(function (response) {
-      console.log(response.data);
+      console.log(response.data.results);
       this.setState(
         state => ({
-          users:response.data
+          users:response.data.results
         })
       );
       console.log(response);

@@ -19,7 +19,6 @@ class Dashboard extends Component {
     console.log(this.props.location.state.comb);
   }
 
-  state = {};
   render() {
     return (
       <div className="dash background blue-grey">

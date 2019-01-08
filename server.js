@@ -31,7 +31,7 @@ app.post('/api/users', (req, res) => {
         }
         if (req.body.type === 'namecombination'){
             const combination = results[0].FName[0]+results[0].LName[0];
-            // console.log(combination);
+            console.log(combination);
             results = combination;
         }
         res.json({results});
@@ -46,6 +46,7 @@ app.get('/api/users', (req, res) => {
         if (error) {
             return console.error(error.message);
         }
+        console.log('ccccc');        
         res.send(results);
     });
 } );
@@ -58,7 +59,6 @@ app.post('/api/users/signauth', (req, res) => {
             return console.error(error.message);
             res.end();
         }
-        // console.log(result[0].FName);
         res.json(result);
     } );    
 } );

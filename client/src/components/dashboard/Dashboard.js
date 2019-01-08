@@ -16,13 +16,14 @@ class Dashboard extends Component {
       username:this.props.location.state.props.username
     }));
     console.log(this.props.location.state.props);
+    console.log(this.props.location.state.comb);
   }
 
   state = {};
   render() {
     return (
       <div className="dash background blue-grey">
-        <SignedInNavabr details = {this.props.location.state.props}/>
+        <SignedInNavabr details = {this.props.location.state.comb}/>
         <Sidebar />
         <Wall />
         <Footer />

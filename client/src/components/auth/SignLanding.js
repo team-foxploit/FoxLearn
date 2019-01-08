@@ -6,10 +6,6 @@ import MainInNavabr from "../layout/MainNavbar";
 // import image2 from '../images/learn-photo-2.jpeg';
 
 class SignLanding extends Component {
-    
-    userDetails = {
-
-    }
 
     state = {
         username: '',
@@ -51,20 +47,22 @@ class SignLanding extends Component {
                       auth: 'ok',
                       userDetails:res.data[0]
                   }));
-                //   this.userDetails = res.data[0];
               }
             console.log(res.data[0]);
           });
+          console.log(this.state);
     }
 
     render() {
         if (this.state.auth === 'ok') {
-            console.log(this.state.userDetails);
+            let comb = this.state.userDetails.FName[0]+this.state.userDetails.LName[0];
             return <Redirect to={{
                 pathname: '/dashboard',
-                state: { props:this.state.userDetails }
+                state: { props:this.state.userDetails, comb:comb }
             }} />
             
+        }else{
+            console.log('authentication problem');            
         }
         if (this.state.auth === 'wrongpwd') 
             return <Redirect to='/signup' />

@@ -4,9 +4,14 @@ import SignedInLinks from "./SignedInLinks";
 import axios from 'axios';
 
 class Navbar extends Component {
-    state = {
-        combination:''
+  constructor(props){
+    super(props);
+    this.state = {
+      combination:props.details
     }
+    console.log(this.state);    
+  }  
+  
 
     componentDidMount(){
         console.log(this.props.details.Student_ID);
@@ -14,16 +19,17 @@ class Navbar extends Component {
             "type":"namecombination",
             "id":this.props.details.Student_ID
         })
-          .then(function (response) {              
+          .then( (response) => {
             console.log(response.data.results);
-            this.state.setState(state => ({
-                combination:response.data.results
+            console.log('in response');
+            this.setState(state => ({
+              combination:response.data.results
             }));
           })
           .catch(function (error) {
             console.log(error);
           });
-          console.log(this.state);
+          // console.log(this.state);
     }
 
     render() {
@@ -34,7 +40,7 @@ class Navbar extends Component {
                 FoxLearn
               </Link>
               <div className="hide-on-med-and-down">
-                <SignedInLinks className="right" id={this.props.details.Student_ID} />
+                <SignedInLinks className="right" id={this.state.combination} />
               </div>
             </nav>
           </div>

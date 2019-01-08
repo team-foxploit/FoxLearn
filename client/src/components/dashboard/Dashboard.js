@@ -24,7 +24,7 @@ class Dashboard extends Component {
     return (
       <div className="dash background blue-grey">
         <SignedInNavabr details = {this.props.location.state.comb}/>
-        <Sidebar />
+        <Sidebar details = {this.props.location.state.props}  />
         <Wall />
         <Footer />
       </div>

@@ -3,6 +3,28 @@ import "./Sidebar.css";
 import userImg from "../images/download.png";
 
 class Sidebar extends Component {
+
+  constructor(props){
+    super(props);
+    // this.setState(props);
+    // console.log(this.state);
+    this.state = {
+      name:'',
+      username:'',
+      email:''
+    }    
+  }
+
+  componentDidMount(){
+    this.setState(state => ({
+      name: this.props.details.FName + " " + this.props.details.LName,
+      username: this.props.details.Username,
+      email: this.props.details.Email
+    }));
+    console.log(this.state);
+    console.log(this.props.details);    
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -13,10 +35,10 @@ class Sidebar extends Component {
                 <img className="circle" src={userImg} alt="" />
               </a>
               <a href="#name">
-                <span className="white-text name">John Doe</span>
+                <span className="white-text name">{this.state.name}</span>
               </a>
               <a href="#email">
-                <span className="white-text email">jdandturk@gmail.com</span>
+                <span className="white-text email">{this.state.email}</span>
               </a>
             </div>
           </li>

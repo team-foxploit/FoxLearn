@@ -1,57 +1,70 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { Redirect } from "react-router-dom";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
+// import MainInNavabr from "../layout/MainNavbar";
 import Footer from "../footer/footer";
 import "./styles.css";
 
 class SignLanding extends Component {
-  state = {
-    username: "",
-    password: "",
-    type: "student",
-    auth: "fail"
-  };
+    state = {
+        username: '',
+        password: '',
+        type: 'student',
+        auth: 'fail',
+        userDetails:''
+    }
 
-  handleChange = e => {
-    this.setState({
-      [e.target.id]: e.target.value
-    });
-  };
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id] : e.target.value
+        });
+    }
 
-  studentSelected = () => {
-    this.setState(state => ({
-      type: "student"
-    }));
-  };
+    studentSelected = () => {
+        this.setState(state => ({
+            type: 'student'
+        }));
+    }
 
-  teacherSelected = () => {
-    this.setState(state => ({
-      type: "teacher"
-    }));
-  };
+    teacherSelected = () => {
+        this.setState(state => ({
+            type: 'teacher'
+        }));
+    }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    axios
-      .post(`/api/users/signauth`, {
-        type: this.state.type,
-        username: this.state.username,
-        password: this.state.password
-      })
-      .then(res => {
-        if (res.data.length === 1) {
-          console.log("Auth ok");
-          this.setState(state => ({
-            auth: "ok"
-          }));
-        }
-        console.log(res.data.length);
-      });
-  };
+    handleSubmit = (e) => {
+        e.preventDefault();
+          axios.post(`/api/users/signauth`, {
+            type : this.state.type,
+            username : this.state.username,
+            password : this.state.password
+          })
+          .then(res => {
+              if (res.data.length === 1) {
+                  console.log("Auth ok");
+                  this.setState(state => ({
+                      auth: 'ok',
+                      userDetails:res.data[0]
+                  }));
+              }
+            console.log(res.data[0]);
+          });
+          console.log(this.state);
+    }
 
   render() {
-    if (this.state.auth === "ok") return <Redirect to="/dashboard" />;
-    if (this.state.auth === "wrongpwd") return <Redirect to="/signup" />;
+    if (this.state.auth === 'ok') {
+        let comb = this.state.userDetails.FName[0]+this.state.userDetails.LName[0];
+        return <Redirect to={{
+            pathname: '/dashboard',
+            state: { props:this.state.userDetails, comb:comb }
+        }} />
+        
+    }else{
+        console.log('authentication problem');            
+    }
+    if (this.state.auth === 'wrongpwd') 
+        return <Redirect to='/signup' />
     return (
       <div className="blue bg-img-landing">
         <div className="row" id="showcase">

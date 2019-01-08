@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navabr from "./components/layout/Navbar";
+// import Home from './components/layout/Home';
+// import Navbar from "./components/layout/MainNavbar";
 import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import SignIn from "./components/auth/SignIn";
@@ -12,8 +13,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navabr className="header" />
+          {/* <Navabr className="header" /> */}
           <Switch>
+            {/* <Route path="/" component={Home} /> */}
+            {/* <Route path="/home" component={SignLanding} /> */}
+            {/* <Route path="/test" component={SignIn} /> */}
             {/* <Route path="/" component={Dashboard} /> */}
             <Route path="/home" component={SignLanding} />
             <Route path="/signin" component={SignIn} />

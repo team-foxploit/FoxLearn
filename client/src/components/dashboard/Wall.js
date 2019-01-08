@@ -74,6 +74,7 @@ const Wall = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
       <div className="col s12 m4">

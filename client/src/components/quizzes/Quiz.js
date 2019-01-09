@@ -200,8 +200,10 @@ class Quiz extends Component {
                       </h6>
                       <br />
                       <br />
-                      <a class="btn-floating btn-large pulse" href="#link">
-                        <i class="material-icons md-48">assignment_turned_in</i>
+                      <a className="btn-floating btn-large pulse" href="#link">
+                        <i className="material-icons md-48">
+                          assignment_turned_in
+                        </i>
                       </a>
                     </div>
                   </div>

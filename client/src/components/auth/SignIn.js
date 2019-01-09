@@ -109,6 +109,7 @@ class SignIn extends Component {
               <h1 className="header center teal-text text-lighten-2">
                 Become a member of our growing community!
               </h1>
+              <br />
               <div className="row center">
                 <a
                   href="http://materializecss.com/getting-started.html"
@@ -187,7 +188,7 @@ class SignIn extends Component {
             <div className="container">
               <div className="row center">
                 <h2 className="header col s12 light white-text">
-                  Your classroom
+                  Your classroom is now on clouds!
                 </h2>
               </div>
             </div>

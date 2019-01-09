@@ -129,7 +129,7 @@ class SignUp extends Component {
                 <label htmlFor="username" className="teal-text text-accent-2">
                   Username
                 </label>
-                <span className="helper-text" data-error="true">Enter username</span>
+                <span class="helper-text" data-error="right" data-success="wrong">Username should be unique</span>
               </div>
             </div>
 

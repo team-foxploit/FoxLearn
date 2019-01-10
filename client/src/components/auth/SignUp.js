@@ -4,6 +4,7 @@ import axios from "axios";
 import Footer from "../footer/footer";
 
 class SignUp extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -35,6 +36,7 @@ class SignUp extends Component {
       users: results
     }));
     console.log(this.state);
+
   }
 
   handleChange = (e) => {
@@ -139,6 +141,7 @@ class SignUp extends Component {
             <br />
           </div>
         </div>
+      
         <div className="container">
           <form
             onSubmit={this.handleSubmit}
@@ -192,8 +195,24 @@ class SignUp extends Component {
                 </label>
                 <span className="helper-text" data-error={this.state.errors.usernameError} >Username should be unique</span>
               </div>
-            </div>
 
+              <div className="row">
+                <div className="input-field col s12">
+                  <i className="material-icons prefix">account_circle</i>
+                  <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    className="validate white-text"
+                    onChange={this.handleChange}
+                  />
+                  <label htmlFor="username" className="teal-text text-accent-2">
+                    Username
+                  </label>
+                  <span className="helper-text" data-error="true">
+                    Enter username
+                  </span>
+                </div>
             <div className="row">
               <div className="input-field col s12">
                 <i className="material-icons prefix">email</i>
@@ -209,8 +228,6 @@ class SignUp extends Component {
                 </label>
                 <span className="helper-text" data-error="wrong" data-success="right">Username should be unique</span>
               </div>
-            </div>
-
 
             <div className="row">
               <div className="input-field col s12">
@@ -244,7 +261,6 @@ class SignUp extends Component {
                 </label>
                 <span className="helper-text" data-error={this.state.errors.passwordError} />
               </div>
-            </div>
 
             <div className="row">
               <div className="input-field col s12">
@@ -279,15 +295,15 @@ class SignUp extends Component {
                   </label>
                 </p>
               </div>
-            </div>
-            <div className="row">
-              <div className="input-field white-text">
-                <button className="waves-effect waves-light btn deep-teal darken-3">
-                  Sign Me Up
-                </button>
+              <div className="row">
+                <div className="input-field white-text">
+                  <button className="waves-effect waves-light btn deep-teal darken-3">
+                    Sign Me Up
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
         <Footer />
       </div>

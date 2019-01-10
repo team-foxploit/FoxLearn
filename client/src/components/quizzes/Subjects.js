@@ -17,15 +17,17 @@ class Subject extends Component {
           <div className="container grey darken-3">
             <div className="row">
               <div className="col s12 m4">
-                <div className="card horizontal">
+                <div className="card large vertical">
                   <div className="card-image">
                     <img src={imgGeo} alt="" />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content grey white-text">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information.
+                        The study of Geography focuses on understanding the
+                        physical aspects of our planet, the atmosphere and
+                        everything in between such as relationships between
+                        people and their environments.
                       </p>
                     </div>
                     <div className="card-action blue-grey">
@@ -35,15 +37,17 @@ class Subject extends Component {
                 </div>
               </div>
               <div className="col s12 m4">
-                <div className="card horizontal">
+                <div className="card large vertical">
                   <div className="card-image">
                     <img src={imgPhy} alt="" />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content grey white-text">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information.
+                        Physics is a Natural Science, and its main goal is to
+                        understand how the universe behaves through
+                        understanding matter and its motion and behaviour
+                        through time and space.
                       </p>
                     </div>
                     <div className="card-action blue-grey">
@@ -53,15 +57,16 @@ class Subject extends Component {
                 </div>
               </div>
               <div className="col s12 m4">
-                <div className="card horizontal">
+                <div className="card large vertical">
                   <div className="card-image">
                     <img src={imgChem} alt="" />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content grey white-text">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information.
+                        Chemistry is the study of matter, its properties, how
+                        and why substances combine or separate to form other
+                        substances, and how substances interact with energy.
                       </p>
                     </div>
                     <div className="card-action blue-grey">
@@ -73,15 +78,17 @@ class Subject extends Component {
             </div>
             <div className="row">
               <div className="col s12 m4">
-                <div className="card horizontal">
+                <div className="card large vertical">
                   <div className="card-image">
                     <img src={imgWeb} alt="" />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content grey white-text">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information.
+                        Web Development. Web development refers to building,
+                        creating, and an maintaining websites. It includes
+                        aspects such as web design, web publishing, web
+                        programming, and database management.
                       </p>
                     </div>
                     <div className="card-action blue-grey">
@@ -91,15 +98,17 @@ class Subject extends Component {
                 </div>
               </div>
               <div className="col s12 m4">
-                <div className="card horizontal">
+                <div className="card large vertical">
                   <div className="card-image">
                     <img src={imgIT} alt="" />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content grey white-text">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information.
+                        A working knowledge of computer software is essential in
+                        today's world. Of particular importance are the various
+                        programs used to create spreadsheets, databases and
+                        other documents.
                       </p>
                     </div>
                     <div className="card-action blue-grey">
@@ -109,15 +118,17 @@ class Subject extends Component {
                 </div>
               </div>
               <div className="col s12 m4">
-                <div className="card horizontal">
+                <div className="card large vertical">
                   <div className="card-image">
                     <img src={imgHis} alt="" />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content grey white-text">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information.
+                        Understanding the past is important on so many levels.
+                        History helps us make sense of the world we live in
+                        today. It helps us learn from past mistakes and make
+                        more informed decisions for a better future.
                       </p>
                     </div>
                     <div className="card-action blue-grey">

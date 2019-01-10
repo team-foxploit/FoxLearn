@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import React, { Component } from "react";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 // import MainInNavabr from "../layout/MainNavbar";
 import Footer from "../footer/footer";
 import "./styles.css";
@@ -15,11 +15,11 @@ class SignLanding extends Component {
         userDetails:''
     }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id] : e.target.value
-        });
-    }
+  handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
 
     studentSelected = () => {
         this.setState(state => ({
@@ -55,18 +55,21 @@ class SignLanding extends Component {
     }
 
   render() {
-    if (this.state.auth === 'ok') {
-        let comb = this.state.userDetails.FName[0]+this.state.userDetails.LName[0];
-        return <Redirect to={{
-            pathname: '/dashboard',
-            state: { props:this.state.userDetails, comb:comb }
-        }} />
-        
-    }else{
-        console.log('authentication problem');            
+    if (this.state.auth === "ok") {
+      let comb =
+        this.state.userDetails.FName[0] + this.state.userDetails.LName[0];
+      return (
+        <Redirect
+          to={{
+            pathname: "/dashboard",
+            state: { props: this.state.userDetails, comb: comb }
+          }}
+        />
+      );
+    } else {
+      console.log("authentication problem");
     }
-    if (this.state.auth === 'wrongpwd') 
-        return <Redirect to='/signup' />
+    if (this.state.auth === "wrongpwd") return <Redirect to="/signup" />;
     return (
       <div className="blue bg-img-landing">
         <div className="row" id="showcase">
@@ -75,34 +78,37 @@ class SignLanding extends Component {
               <div className="card z-depth-0">
                 <div className="card-stacked" id="login-card">
                   <div className="card-content">
-                    <p>
-                      Sign in to your account where you can learn or teach and
-                      more...
-                    </p>
+                    <p>Log In to your FoxLearn Account!</p>
                   </div>
                   <div className="card-action">
                     <form onSubmit={this.handleSubmit} className="white">
                       <div className="input-field">
                         <p id="type">
-                          <label>
-                            <input
-                              className="with-gap"
-                              name="type"
-                              type="radio"
-                              defaultChecked
-                              onClick={this.studentSelected}
-                            />
-                            <span>Student</span>
-                          </label>
-                          <label>
-                            <input
-                              className="with-gap s3 offset-s1"
-                              name="type"
-                              type="radio"
-                              onClick={this.teacherSelected}
-                            />
-                            <span>Teacher</span>
-                          </label>
+                          <div className="row">
+                            <div className="col s6 m6">
+                              <label>
+                                <input
+                                  className="with-gap"
+                                  name="type"
+                                  type="radio"
+                                  defaultChecked
+                                  onClick={this.studentSelected}
+                                />
+                                <span>Student</span>
+                              </label>
+                            </div>
+                            <div className="col s6 m6">
+                              <label>
+                                <input
+                                  className="with-gap"
+                                  name="type"
+                                  type="radio"
+                                  onClick={this.teacherSelected}
+                                />
+                                <span>Teacher</span>
+                              </label>
+                            </div>
+                          </div>
                         </p>
                       </div>
                       <div className="input-field">

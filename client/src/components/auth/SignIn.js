@@ -108,7 +108,7 @@ class SignIn extends Component {
               <br />
               <div className="row center">
                 <a
-                  href="http://materializecss.com/getting-started.html"
+                  href="/home"
                   id="download-button"
                   className="btn-large waves-effect waves-light teal lighten-1"
                 >

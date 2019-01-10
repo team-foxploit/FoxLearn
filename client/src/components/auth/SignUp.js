@@ -4,60 +4,63 @@ import axios from "axios";
 import Footer from "../footer/footer";
 
 class SignUp extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-        first_name:'',
-        last_name:'',
-        email:'',
-        username: '',
-        password: '',
-        confirm_password:'',
-        type: 'student',
-        canSubmit: false,
-        users:'',
-        errors:''
-    };   
+      first_name: '',
+      last_name: '',
+      email: '',
+      username: '',
+      password: '',
+      confirm_password: '',
+      type: 'student',
+      canSubmit: false,
+      users: '',
+      errors: ''
+    };
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     const results = await axios.post('/api/users', {
-        "type":"usernames"
-      } )
+      "type": "usernames"
+    })
       .then(function (response) {
         return response.data;
       })
       .catch(function (error) {
         console.log(error);
-    });
-    console.log({results});    
+      });
+    console.log({ results });
     this.setState(state => ({
-      users:results
+      users: results
     }));
     console.log(this.state);
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
+    }, () => {
+      console.log(this.state);
     });
-    console.log(this.state);    
   };
 
   studentSelected = () => {
     this.setState(state => ({
-        type: 'student'
-    }));
-    console.log(this.state);    
+      type: 'student'
+    }),() => {
+      console.log(this.state);
+    });
   }
-  
+
   teacherSelected = () => {
     this.setState(state => ({
       type: 'teacher'
-    }));
-    console.log(this.state);
+    }),() => {
+      console.log(this.state);
+    });
   }
-  
+
   // ######################
   validate = () => {
     let isError = false;
@@ -67,39 +70,58 @@ class SignUp extends Component {
       passwordError: ""
     };
     for (let i = 0; i < this.state.users.length; i++) {
-      if(this.state.username === this.state.users[i].Username){
+      if (this.state.username === this.state.users[i].Username) {
         errors.usernameError = "This username is taken, use another one.";
-      }else if(this.state.email === this.state.users[i].Email){
+        isError = true;
+        console.log('usrname');        
+      } else if (this.state.email === this.state.users[i].Email) {
         errors.emailError = "This email address is taken, use another one."
+        isError = true;
+        console.log('eml');        
       }
     }
-
+    
     if (this.state.username.length < 5) {
       isError = true;
       errors.usernameError = "Username needs to be atleast 5 characters long";
+      console.log('usrln');        
     }
-
-    if(this.state.password !== this.state.confirm_password){
+    
+    if (this.state.password !== this.state.confirm_password) {
       isError = true;
       errors.passwordError = "Password mismatch!";
+      console.log('pwd');        
     }
-
-    if ( (this.state.email.indexOf("@") === -1) || (this.state.email.indexOf(".") === -1) ) {
+    
+    if ((this.state.email.indexOf("@") === -1) || (this.state.email.indexOf(".") === -1)) {
       isError = true;
       errors.emailError = "Email address is not valid";
+      console.log('emlntvl');
     }
     this.setState(state => ({
-      errors:errors
-    }))
-    console.log(errors);    
-    console.log(this.state);    
+      errors: errors
+    }), () => {
+      console.log(errors);
+      console.log(this.state);
+    } );
     return isError;
   };
   // ######################
 
   handleSubmit = e => {
     e.preventDefault();
-    this.validate();
+    // this.validate();
+    if (this.validate()) {
+      // cannot submit
+      // set helper error texts
+      console.log('cant');
+      console.log(this.state);
+    } else {
+      // can submit
+      // Go to sign in
+      console.log('can');
+      console.log(this.state);
+    }
     console.log(this.state);
   };
 
@@ -154,7 +176,7 @@ class SignUp extends Component {
                 </label>
               </div>
             </div>
-            
+
             <div className="row">
               <div className="input-field col s12">
                 <i className="material-icons prefix">account_circle</i>
@@ -168,7 +190,7 @@ class SignUp extends Component {
                 <label htmlFor="username" className="teal-text text-accent-2">
                   Username
                 </label>
-                <span className="helper-text" data-success="success" />
+                <span className="helper-text" data-error={this.state.errors.usernameError} >Username should be unique</span>
               </div>
             </div>
 
@@ -185,7 +207,7 @@ class SignUp extends Component {
                 <label htmlFor="email" className="teal-text text-accent-2">
                   Email
                 </label>
-                <span className="helper-text" data-error="right" data-success="wrong" />
+                <span className="helper-text" data-error="wrong" data-success="right">Username should be unique</span>
               </div>
             </div>
 
@@ -203,7 +225,7 @@ class SignUp extends Component {
                 <label htmlFor="password" className="teal-text text-accent-2">
                   Password
                 </label>
-                <span className="helper-text" data-error="Password mismatch!" data-success="Matched!" />
+                {/* <span className="helper-text" data-error={this.state.errors.passwordError} /> */}
               </div>
               <div className="input-field col s12">
                 <i className="material-icons prefix">check_box</i>
@@ -220,15 +242,15 @@ class SignUp extends Component {
                 >
                   Confirm Your Password
                 </label>
-                <span className="helper-text" data-error="Password mismatch!" data-success="Matched!" />
+                <span className="helper-text" data-error={this.state.errors.passwordError} />
               </div>
             </div>
 
             <div className="row">
               <div className="input-field col s12">
-                  <h4 className="teal-text text-accent-2">
-                    <span>I am a</span>
-                  </h4>
+                <h4 className="teal-text text-accent-2">
+                  <span>I am a</span>
+                </h4>
                 <p className="col s6">
                   <label className="teal-text text-accent-2">
                     <input

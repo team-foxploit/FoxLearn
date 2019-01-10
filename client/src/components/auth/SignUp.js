@@ -3,6 +3,10 @@ import "./styles.css";
 import axios from "axios";
 import Footer from "../footer/footer";
 
+const emailRegex = RegExp(
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+);
+
 class SignUp extends Component {
   constructor() {
     super();
@@ -16,7 +20,11 @@ class SignUp extends Component {
       type: "student",
       canSubmit: false,
       users: "",
-      errors: ""
+      formErrors: {
+        username:"",
+        email: "",
+        password: ""
+      }
     };
   }
 
@@ -25,10 +33,10 @@ class SignUp extends Component {
       .post("/api/users", {
         type: "usernames"
       })
-      .then(function(response) {
+      .then(function (response) {
         return response.data;
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
     console.log({ results });
@@ -39,14 +47,40 @@ class SignUp extends Component {
   }
 
   handleChange = e => {
-    this.setState(
-      {
-        [e.target.id]: e.target.value
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+
+    e.preventDefault();
+    const { name, value } = e.target;
+    let formErrors = { ...this.state.formErrors };
+
+    switch (name) {
+      case "first_name":
+        formErrors.username =
+          value.length < 3 ? "minimum 3 characaters required" : "";
+        break;
+      case "email":
+        formErrors.email = emailRegex.test(value)
+          ? ""
+          : "invalid email address";
+        break;
+      case "password":
+        formErrors.password =
+          value.length < 6 ? "minimum 6 characaters required" : "";
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+
+
+    // this.setState(
+    //   {
+    //     [e.target.id]: e.target.value
+    //   },
+    //   () => {
+    //     console.log(this.state);
+    //   }
+    // );
   };
 
   studentSelected = () => {
@@ -142,6 +176,9 @@ class SignUp extends Component {
   };
 
   render() {
+    const { formErrors } = this.state.formErrors;
+    console.log(formErrors);
+    // console.log(this.state.errors);    
     return (
       <div className="bg-img">
         <div className="row">
@@ -214,12 +251,15 @@ class SignUp extends Component {
                   <label htmlFor="username" className="teal-text text-accent-2">
                     Username
                   </label>
-                  <span
+                  {this.state.formErrors.username.length > 0 && (
+                    <p>{this.state.formErrors.username}</p>
+                  )}
+                  {/* <span
                     className="helper-text"
                     data-error={this.state.errors.usernameError}
                   >
                     Username should be unique
-                  </span>
+                  </span> */}
                 </div>
               </div>
 
@@ -254,13 +294,9 @@ class SignUp extends Component {
                   <label htmlFor="email" className="teal-text text-accent-2">
                     Email
                   </label>
-                  <span
-                    className="helper-text"
-                    data-error="wrong"
-                    data-success="right"
-                  >
-                    Username should be unique
-                  </span>
+                  {/* {formErrors.length > 0 && (
+                    <span className="errorMessage">{formErrors.email}</span>
+                  )} */}
                 </div>
               </div>
 
@@ -295,10 +331,9 @@ class SignUp extends Component {
                 >
                   Confirm Your Password
                 </label>
-                <span
-                  className="helper-text"
-                  data-error={this.state.errors.passwordError}
-                />
+                {/* {formErrors.firstName.password > 0 && (
+                <span className="errorMessage">{formErrors.password}</span>
+              )} */}
               </div>
 
               <div className="row">

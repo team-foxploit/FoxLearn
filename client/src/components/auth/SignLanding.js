@@ -6,13 +6,14 @@ import Footer from "../footer/footer";
 import "./styles.css";
 
 class SignLanding extends Component {
-  state = {
-    username: "",
-    password: "",
-    type: "student",
-    auth: "fail",
-    userDetails: ""
-  };
+    state = {
+        username: '',
+        password: '',
+        type: 'getConfirmation',
+        table:'student',
+        auth: 'fail',
+        userDetails:''
+    }
 
   handleChange = e => {
     this.setState({
@@ -20,38 +21,38 @@ class SignLanding extends Component {
     });
   };
 
-  studentSelected = () => {
-    this.setState(state => ({
-      type: "student"
-    }));
-  };
+    studentSelected = () => {
+        this.setState(state => ({
+            table: 'student'
+        }));
+    }
 
-  teacherSelected = () => {
-    this.setState(state => ({
-      type: "teacher"
-    }));
-  };
+    teacherSelected = () => {
+        this.setState(state => ({
+            table: 'teacher'
+        }));
+    }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    axios
-      .post(`/api/users/signauth`, {
-        type: this.state.type,
-        username: this.state.username,
-        password: this.state.password
-      })
-      .then(res => {
-        if (res.data.length === 1) {
-          console.log("Auth ok");
-          this.setState(state => ({
-            auth: "ok",
-            userDetails: res.data[0]
-          }));
-        }
-        console.log(res.data[0]);
-      });
-    console.log(this.state);
-  };
+    handleSubmit = (e) => {
+        e.preventDefault();
+          axios.post(`/api/users/auth`, {
+            type : this.state.type,
+            table:this.state.table,
+            username : this.state.username,
+            password : this.state.password
+          })
+          .then(res => {
+              if (res.data.length === 1) {
+                  console.log("Auth ok");
+                  this.setState(state => ({
+                      auth: 'ok',
+                      userDetails:res.data[0]
+                  }));
+              }
+            console.log(res.data[0]);
+          });
+          console.log(this.state);
+    }
 
   render() {
     if (this.state.auth === "ok") {

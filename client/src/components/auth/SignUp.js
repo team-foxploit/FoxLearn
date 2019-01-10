@@ -160,7 +160,7 @@ class SignUp extends Component {
           <div className="col s12 m4 offset-m4">
             <form
               onSubmit={this.handleSubmit}
-              className="alignCenter teal-text text-accent-1"
+              className="teal-text text-accent-1"
               id="block-2"
             >
               <h4 className="teal-text text-accent-1">

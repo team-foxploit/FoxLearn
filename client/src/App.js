@@ -9,6 +9,7 @@ import SignUp from "./components/auth/SignUp";
 import Dashboard from "./components/dashboard/Dashboard";
 import Subjects from "./components/quizzes/Subjects"; //temp routes
 import Quiz from "./components/quizzes/Quiz"; //temp routes
+import CreateQuiz from "./components/quizzes/CreateQuiz";
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/subjects" component={Subjects} />
             <Route path="/quiz" component={Quiz} />
+            <Route path="/CreateQuiz" component={CreateQuiz} />
           </Switch>
           <header className="">
             <div />

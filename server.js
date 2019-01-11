@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyparser.json());
 
 // Connection from the database
-const connection = require('./client/src/database/Config');
+const connection = require('./client/src/database/config');
 
 // Schema Modules
 const Users = require('./api/users/Users');

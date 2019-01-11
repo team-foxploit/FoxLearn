@@ -1,10 +1,11 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host: "localhost",
+  // host: "localhost",
+  host: "35.187.249.84",
   user: "root",
-  password: "",
-  database: "users"
+  password: "root",
+  database: "foxlearn"
 });
 
 connection.connect(function(err) {

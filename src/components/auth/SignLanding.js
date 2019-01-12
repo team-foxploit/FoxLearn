@@ -83,7 +83,7 @@ class SignLanding extends Component {
                   <div className="card-action">
                     <form onSubmit={this.handleSubmit} className="white">
                       <div className="input-field">
-                        <p id="type">
+                        <div id="type">
                           <div className="row">
                             <div className="col s6 m6">
                               <label>
@@ -109,7 +109,7 @@ class SignLanding extends Component {
                               </label>
                             </div>
                           </div>
-                        </p>
+                      </div>
                       </div>
                       <div className="input-field">
                         <i className="material-icons prefix">account_circle</i>

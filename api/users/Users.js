@@ -1,23 +1,23 @@
 // Get all students
 module.exports.getAllStudents = function (connection, req, res) {
-    let que = `SELECT * FROM student`;
+    let que = `SELECT * FROM Student`;
     connection.query(que, (error, results, fields) => {
         if (error) {
             return console.error(error.message);
         }
-        console.log('in the all students');        
+        console.log('in the all students');
         res.send(results);
     });
 };
 
 // Get all teachers
 module.exports.getAllTeachers = function (connection, req, res) {
-    let que = `SELECT * FROM teachers`;
+    let que = `SELECT * FROM Teacher`;
     connection.query(que, (error, results, fields) => {
         if (error) {
             return console.error(error.message);
         }
-        console.log('in the all teachers');        
+        console.log('in the all teachers');
         res.send(results);
     });
 };
@@ -30,8 +30,7 @@ module.exports.getAllUsernames = function (connection, req, res) {
         if (error) {
             return console.error(error.message);
         }
-        console.log('in the all usernames');        
+        console.log('in the all usernames');
         res.send(results);
     });
 };
-

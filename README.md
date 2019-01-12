@@ -7,20 +7,17 @@ A Web Based Learning Environment created for students where they can learn and m
 # Install dependencies for server
 npm install
 
-# Install dependencies for client
-npm run client-install
-
-# Run the client & server with concurrently
+# Run the development model
 npm run dev
 
-# Run the Express server only
-npm run server
+# Run the serve model
+npm start
 
-# Run the React client only
-npm run client
+# Run the Production version
+npm run build
 
-# Server runs on http://localhost:5000 and client on http://localhost:3000
-# Api for users runs on http://localhost:5000/api/users and client on http://localhost:3000
+# The API runs on https://foxlearn-api.herokuapp.com/api/ and,
+# The client application will runs on http://localhost:3000
 ```
 
 ## App Info
@@ -32,7 +29,7 @@ Team-Foxploit
 
 ### Version
 
-1.0.0
+1.0.1
 
 ### License
 

@@ -35,7 +35,7 @@ class SignLanding extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-          axios.post(`/api/users/auth`, {
+          axios.post(`https://foxlearn-api.herokuapp.com/api/users/auth`, {
             type : this.state.type,
             table:this.state.table,
             username : this.state.username,

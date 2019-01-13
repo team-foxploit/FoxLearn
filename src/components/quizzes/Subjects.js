@@ -9,7 +9,18 @@ import imgIT from "../images/subject/it.jpg";
 import imgWeb from "../images/subject/web.jpg";
 
 class Subject extends Component {
-  state = {};
+  state = {
+      difficulty:''
+  };
+
+  componentDidMount(){
+      console.log(this.props.location.pathname.split('/')[2]);
+      this.setState({
+          difficulty:this.props.location.pathname.split('/')[2]
+      }, ()=> console.log(this.state) );
+
+  }
+
   render() {
     return (
       <div>

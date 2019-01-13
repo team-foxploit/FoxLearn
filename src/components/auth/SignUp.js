@@ -30,7 +30,7 @@ class SignUp extends Component {
 
   async componentDidMount() {
     const results = await axios
-      .post("/api/users", {
+      .post("https://foxlearn-api.herokuapp.com/api/users", {
         type: "usernames"
       })
       .then(function (response) {
@@ -39,7 +39,7 @@ class SignUp extends Component {
       .catch(function (error) {
         console.log(error);
       });
-    console.log({ results });
+    console.log(results);
     this.setState(state => ({
       users: results
     }));

@@ -8,7 +8,7 @@
     "dev": "react-scripts start",
     "start": "serve -s build",
     "test": "react-scripts test --env=jsdom",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run dev"
   },
   "repository": {
     "type": "git",

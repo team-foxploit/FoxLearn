@@ -9,10 +9,11 @@ import img5 from "../images/parallax/1.jpg";
 import img6 from "../images/parallax/2.jpg";
 import img7 from "../images/parallax/3.jpg";
 import Footer from "../footer/footer";
-import "../auth/styles.css";
+import "./styles.css";
 import "materialize-css/dist/css/materialize.min.css";
+import { Link } from 'react-router-dom';
 
-class Home extends Component {
+class SignIn extends Component {
   componentDidMount() {
     let elems = document.querySelectorAll(".slider");
     let options = {
@@ -81,21 +82,16 @@ class Home extends Component {
                   <i className="mdi-content-send brown-text" />
                 </h3>
                 <h4>
-                  "Tell me and I forget. Teach me and I remember. Involve me and
-                  I learn.""
+                  "Tell me and I forget. Teach me and I remember. Involve me and I learn."
                 </h4>
                 <p className="left-align light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam scelerisque id nunc nec volutpat. Etiam pellentesque
-                  tristique arcu, non consequat magna fermentum ac. Cras ut
-                  ultricies eros. Maecenas eros justo, ullamcorper a sapien id,
-                  viverra ultrices eros. Morbi sem neque, posuere et pretium
-                  eget, bibendum sollicitudin lacus. Aliquam eleifend
-                  sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet
-                  semper molestie. Morbi massa odio, condimentum sed ipsum ac,
-                  gravida ultrices erat. Nullam eget dignissim mauris, non
-                  tristique erat. Vestibulum ante ipsum primis in faucibus orci
-                  luctus et ultrices posuere cubilia Curae;
+                  For better or worse, with technology and mobile devices,
+                  learning is no longer confined to a desk. Sometimes, a change
+                  of scenery is good to break up the monotony. Review your study
+                  topics when you’re waiting for the bus to arrive, having lunch
+                  in the park or if you’re bored. Casually studying on-the-go is
+                  an effective way to multitask and master what you’re learning
+                  faster.
                 </p>
               </div>
             </div>
@@ -109,14 +105,15 @@ class Home extends Component {
               <h1 className="header center teal-text text-lighten-2">
                 Become a member of our growing community!
               </h1>
+              <br />
               <div className="row center">
-                <a
-                  href="http://materializecss.com/getting-started.html"
+                <Link
+                  to="/signin"
                   id="download-button"
                   className="btn-large waves-effect waves-light teal lighten-1"
                 >
                   Get Started
-                </a>
+              </Link>
               </div>
               <br />
               <br />
@@ -135,13 +132,13 @@ class Home extends Component {
                   <h2 className="center brown-text">
                     <i className="material-icons md-36">assessment</i>
                   </h2>
-                  <h5 className="center">Speeds up development</h5>
+                  <h5 className="center">Self Paced Evaluation</h5>
 
                   <p className="light">
-                    We did most of the heavy lifting for you to provide a
-                    default stylings that incorporate our custom components.
-                    Additionally, we refined animations and transitions to
-                    provide a smoother experience for developers.
+                    Don’t get discouraged if your friend picks up a subject
+                    faster than you. Everyone learns at their own speed, so
+                    figure out what study modes work best for you and stick to
+                    it.
                   </p>
                 </div>
               </div>
@@ -151,7 +148,7 @@ class Home extends Component {
                   <h2 className="center brown-text">
                     <i className="material-icons md-36">group</i>
                   </h2>
-                  <h5 className="center">User Experience Focused</h5>
+                  <h5 className="center">Community Support</h5>
 
                   <p className="light">
                     By utilizing elements and principles of Material Design, we
@@ -168,7 +165,7 @@ class Home extends Component {
                   <h2 className="center brown-text">
                     <i className="material-icons md-36">assignment_ind</i>
                   </h2>
-                  <h5 className="center">Easy to work with</h5>
+                  <h5 className="center">Learn through Quizes</h5>
 
                   <p className="light">
                     We have provided detailed documentation as well as specific
@@ -187,7 +184,7 @@ class Home extends Component {
             <div className="container">
               <div className="row center">
                 <h2 className="header col s12 light white-text">
-                  Your classroom
+                  Your classroom is now on clouds!
                 </h2>
               </div>
             </div>
@@ -243,4 +240,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default SignIn;

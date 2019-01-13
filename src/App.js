@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import Navbar from "./components/layout/MainNavbar";
 import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
-import SignIn from "./components/auth/SignIn";
+import Home from "./components/layout/Home";
 import SignUp from "./components/auth/SignUp";
 import Dashboard from "./components/dashboard/Dashboard";
 import Subjects from "./components/quizzes/Subjects"; //temp routes
@@ -15,14 +15,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          {/* <Navabr className="header" /> */}
           <Switch>
-            {/* <Route path="/" component={Home} /> */}
-            {/* <Route path="/home" component={SignLanding} /> */}
-            {/* <Route path="/test" component={SignIn} /> */}
-            {/* <Route path="/" component={Dashboard} /> */}
-            <Route path="/home" component={SignLanding} />
-            <Route path="/signin" component={SignIn} />
+            <Route exact path="/" component={Home} />
+            <Route path="/signin" component={SignLanding} />
             <Route path="/signup" component={SignUp} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/subjects" component={Subjects} />

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles.css";
+import "../layout/styles.css";
 import axios from "axios";
 import Footer from "../footer/footer";
 
@@ -178,7 +178,7 @@ class SignUp extends Component {
   render() {
     const { formErrors } = this.state.formErrors;
     console.log(formErrors);
-    // console.log(this.state.errors);    
+    // console.log(this.state.errors);
     return (
       <div className="bg-img">
         <div className="row">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Footer from "../footer/footer";
-import "../auth/styles.css";
+import "../layout/styles.css";
 import imgPhy from "../images/subject/phy.jpg";
 import imgChem from "../images/subject/chem.png";
 import imgGeo from "../images/subject/geo.png";

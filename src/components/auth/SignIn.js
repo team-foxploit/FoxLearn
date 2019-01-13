@@ -9,7 +9,7 @@ import img5 from "../images/parallax/1.jpg";
 import img6 from "../images/parallax/2.jpg";
 import img7 from "../images/parallax/3.jpg";
 import Footer from "../footer/footer";
-import "./styles.css";
+import "../layout/styles.css";
 import "materialize-css/dist/css/materialize.min.css";
 
 class SignIn extends Component {

@@ -6,23 +6,21 @@ class Sidebar extends Component {
 
   constructor(props){
     super(props);
-    // this.setState(props);
-    // console.log(this.state);
     this.state = {
       name:'',
       username:'',
       email:''
-    }    
+    }
   }
 
   componentDidMount(){
     this.setState(state => ({
-      name: this.props.details.FName + " " + this.props.details.LName,
+      name: this.props.details.First_Name + " " + this.props.details.Last_Name,
       username: this.props.details.Username,
       email: this.props.details.Email
     }));
     console.log(this.state);
-    console.log(this.props.details);    
+    console.log(this.props.details);
   }
 
   render() {

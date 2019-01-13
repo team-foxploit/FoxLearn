@@ -3,14 +3,14 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 // import MainInNavabr from "../layout/MainNavbar";
 import Footer from "../footer/footer";
-import "./styles.css";
+import "../layout/styles.css";
 
 class SignLanding extends Component {
     state = {
         username: '',
         password: '',
         type: 'getConfirmation',
-        table:'student',
+        table:'Student',
         auth: 'fail',
         userDetails:''
     }
@@ -23,15 +23,16 @@ class SignLanding extends Component {
 
     studentSelected = () => {
         this.setState(state => ({
-            table: 'student'
+            table: 'Student'
         }));
     }
 
     teacherSelected = () => {
         this.setState(state => ({
-            table: 'teacher'
+            table: 'Teacher'
         }));
     }
+
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -56,8 +57,7 @@ class SignLanding extends Component {
 
   render() {
     if (this.state.auth === "ok") {
-      let comb =
-        this.state.userDetails.FName[0] + this.state.userDetails.LName[0];
+      let comb = this.state.userDetails.First_Name[0] + this.state.userDetails.Last_Name[0];
       return (
         <Redirect
           to={{

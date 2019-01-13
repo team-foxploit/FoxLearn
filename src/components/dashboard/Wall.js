@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Wall = () => {
   return (
@@ -49,27 +50,27 @@ const Wall = () => {
             <div className="row">
               <div className="card-content">
                 <div className="col s6 m6 offset-s3 offset-m3">
-                  <a
+                  <Link
                     className="waves-effect waves-light btn-large"
                     id="button_easy"
-                    href="#link"
+                    to="/subjects/easy"
                   >
                     Easy
-                  </a>
-                  <a
+                </Link>
+                  <Link
                     className="waves-effect waves-light btn-large"
                     id="button_medium"
-                    href="#link"
+                    to="/subjects/medium"
                   >
                     Medium
-                  </a>
-                  <a
+                </Link>
+                  <Link
                     className="waves-effect waves-light btn-large"
                     id="button_hard"
-                    href="#link"
+                    to="/subjects/hard"
                   >
                     Hard
-                  </a>
+                </Link>
                 </div>
               </div>
             </div>

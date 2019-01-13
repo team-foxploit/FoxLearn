@@ -25,7 +25,6 @@ class App extends Component {
           </Switch>
           <header className="">
             <div />
-            {/* <Users /> */}
           </header>
         </div>
       </BrowserRouter>

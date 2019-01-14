@@ -43,7 +43,7 @@ class Subject extends Component {
                         people and their environments.
                       </p>
                     </div>
-                    <div className="card-action blue-grey">
+                    <div className="card-action blue-grey centText">
                       <Link to="/quiz/:id">Geography</Link>
                     </div>
                   </div>
@@ -63,7 +63,7 @@ class Subject extends Component {
                         through time and space.
                       </p>
                     </div>
-                    <div className="card-action blue-grey">
+                    <div className="card-action blue-grey centText">
                       <Link to="/quiz/:id">Physics</Link>
                     </div>
                   </div>
@@ -82,7 +82,7 @@ class Subject extends Component {
                         substances, and how substances interact with energy.
                       </p>
                     </div>
-                    <div className="card-action blue-grey">
+                    <div className="card-action blue-grey centText">
                       <Link to="/quiz/:id">Chemistry</Link>
                     </div>
                   </div>
@@ -104,7 +104,7 @@ class Subject extends Component {
                         programming, and database management.
                       </p>
                     </div>
-                    <div className="card-action blue-grey">
+                    <div className="card-action blue-grey centText">
                       <Link to="/quiz/:id">Web Developing</Link>
                     </div>
                   </div>
@@ -124,7 +124,7 @@ class Subject extends Component {
                         other documents.
                       </p>
                     </div>
-                    <div className="card-action blue-grey">
+                    <div className="card-action blue-grey centText">
                       <Link to="/quiz/:id">Information Technology</Link>
                     </div>
                   </div>
@@ -144,7 +144,7 @@ class Subject extends Component {
                         more informed decisions for a better future.
                       </p>
                     </div>
-                    <div className="card-action blue-grey">
+                    <div className="card-action blue-grey centText">
                       <Link to="/quiz/:id">History</Link>
                     </div>
                   </div>

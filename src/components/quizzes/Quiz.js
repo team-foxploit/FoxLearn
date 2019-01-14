@@ -4,22 +4,21 @@ import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
 
 class Quiz extends Component {
-    
-  constructor(props){
-      super(props);
-      console.log(this.props);
+  constructor(props) {
+    super(props);
+    console.log(this.props);
   }
 
   componentDidMount() {
     // Auto initialize all the things!
     M.AutoInit();
-    console.log('in the Quiz');
+    console.log("in the Quiz");
   }
 
   render() {
     return (
       <div>
-        <div className="container">
+        <div>
           <div className="row">
             <div className="col s12 m6 offset-m3">
               <div className="card">

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "../layout/styles.css";
 import axios from "axios";
 import Footer from "../footer/footer";
@@ -13,8 +14,9 @@ class SignUp extends Component {
       username: "",
       password: "",
       confirm_password: "",
-      type: "student",
+      type: "Student",
       canSubmit: false,
+      didSubmit: false,
       users: null,
       // errors: "",
       formErrors: {
@@ -64,7 +66,7 @@ class SignUp extends Component {
   studentSelected = () => {
     this.setState(
       {
-        type: "student"
+        type: "Student"
       },
       () => {
         console.log(this.state);
@@ -75,7 +77,7 @@ class SignUp extends Component {
   teacherSelected = () => {
     this.setState(
       state => ({
-        type: "teacher"
+        type: "Teacher"
       }),
       () => {
         console.log(this.state);
@@ -179,9 +181,34 @@ class SignUp extends Component {
   // triggered on submit
   handleSubmit = event => {
     event.preventDefault();
+    if(this.state.canSubmit){
+        const user = {
+        	table: this.state.type,
+        	First_Name : this.state.first_name,
+        	Last_Name: this.state.last_name,
+        	Username: this.state.username,
+        	Email: this.state.email,
+        	Password:this.state.password
+        }
+        console.log(user);
+        axios.put(`https://foxlearn-api.herokuapp.com/api/users/auth`, user)
+        .then(res => {
+            if(res.data.status === 'success'){
+                this.setState({
+                    didSubmit:true
+                });
+            }
+        })
+    }
   };
 
   render() {
+    if (this.state.didSubmit) {
+      return(
+          <Redirect to = "/signin" />
+      )
+    }
+
     return (
       <div className="bg-img">
         <div className="row">

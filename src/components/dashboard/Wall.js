@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Wall = ({match}) => {
-    console.log(match);
+const Wall = ({ match }) => {
+  console.log(match);
   return (
     <div className="row">
       <p />
       <div className="col s12 m4">
         <div className="card">
-          <div className="card-image green lighten-2">
+          <div className="card-image green lighten-2 centText">
             <i className="material-icons md-148">multiline_chart</i>
             <div className="card-content white">
               <h4>View your history</h4>
@@ -28,7 +28,7 @@ const Wall = ({match}) => {
       </div>
       <div className="col s12 m4">
         <div className="card">
-          <div className="card-image amber lighten-2">
+          <div className="card-image amber lighten-2 centText">
             <i className="material-icons md-148">whatshot</i>
             <div className="card-content white">
               <h4>Time for a quiz</h4>
@@ -44,7 +44,7 @@ const Wall = ({match}) => {
               </div>
             </div>
           </div>
-          <div className="card-reveal blue-grey">
+          <div className="card-reveal blue-grey centText">
             <span className="card-title text-darken-4 white-text">
               Select a Level<i className="material-icons right">close</i>
             </span>
@@ -57,31 +57,30 @@ const Wall = ({match}) => {
                     to="/subjects/easy"
                   >
                     Easy
-                </Link>
+                  </Link>
                   <Link
                     className="waves-effect waves-light btn-large"
                     id="button_medium"
                     to="/subjects/medium"
                   >
                     Medium
-                </Link>
+                  </Link>
                   <Link
                     className="waves-effect waves-light btn-large"
                     id="button_hard"
                     to="/subjects/hard"
                   >
                     Hard
-                </Link>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <div className="col s12 m4">
         <div className="card">
-          <div className="card-image pink lighten-2">
+          <div className="card-image pink lighten-2 centText">
             <i className="material-icons md-148">school</i>
             <div className="card-content white">
               <h4>What's new?</h4>

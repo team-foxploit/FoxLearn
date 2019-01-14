@@ -7,7 +7,6 @@ import Loader from 'react-loader-spinner';
 import QuizCard from './QuizCard';
 
 class Quiz extends Component {
-
   state = {
       subject:'',
       question:'',
@@ -48,7 +47,6 @@ class Quiz extends Component {
         }
     );
   }
-
 
   render() {
       if (this.state.fetchDone) {

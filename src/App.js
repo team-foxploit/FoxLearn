@@ -13,15 +13,15 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/signin" component={SignLanding} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/his" component={History} />
-            <Route path="/createquiz" component={CreateQuiz} />
-            <Route path="/histeach" component={HisTeach} />
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/signin" component={SignLanding} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/his" component={History} />
+          <Route path="/createquiz" component={CreateQuiz} />
+          <Route path="/histeach" component={HisTeach} />
+        </Switch>
       </BrowserRouter>
     );
   }

@@ -7,3 +7,9 @@
     padding-left: 0;
   }
 }
+
+.cent {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}

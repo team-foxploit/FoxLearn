@@ -22,7 +22,7 @@ class Quiz extends Component {
           <div className="row">
             <div className="col s12 m6 offset-m3">
               <div className="card">
-                <div className="card-content blue-grey white-text">
+                <div className="card-content indigo white-text">
                   <h2>Subject</h2>
                 </div>
 

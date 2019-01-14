@@ -3,17 +3,16 @@ import "./Sidebar.css";
 import userImg from "../images/download.png";
 
 class Sidebar extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      name:'',
-      username:'',
-      email:''
-    }
+      name: "",
+      username: "",
+      email: ""
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState(state => ({
       name: this.props.details.First_Name + " " + this.props.details.Last_Name,
       username: this.props.details.Username,
@@ -80,8 +79,10 @@ class Sidebar extends Component {
               </a>
             </li>
             <li>
-              <div className="waves-effect waves-light btn btn-medium cyan">
-                <i className="material-icons left">logout</i>Logout
+              <div className="centText">
+                <div className="waves-effect waves-light btn btn-medium cyan">
+                  <i className="material-icons left">logout</i>Logout
+                </div>
               </div>
             </li>
           </div>

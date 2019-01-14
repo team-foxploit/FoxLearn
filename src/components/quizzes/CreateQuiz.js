@@ -5,7 +5,38 @@ import Footer from "../footer/footer";
 import "./styles.css";
 
 class CreateQuiz extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      subject: "",
+      difficulty: "",
+      question: "",
+      ans1: "",
+      ans2: "",
+      ans3: "",
+      ans4: "",
+      correctAns: ""
+    };
+    this.state = { value: "default" };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // triggered everytime value changes in our textboxes
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+    console.log(name, value);
+  }
+
+  // triggered on submit
+  handleSubmit = event => {
+    //alert(this.state.subject + "\n" + this.state.difficulty);
+    event.preventDefault();
+  };
+
   componentDidMount() {
     // Auto initialize all the things!
     M.AutoInit();
@@ -22,11 +53,16 @@ class CreateQuiz extends Component {
             <form
               className="col s12 m6 offset-m3 light-blue-text"
               name="action"
+              onSubmit={this.handleSubmit}
             >
               <h6 className="left-align light-blue-text">Subject</h6>
               <div className="input-field col s12">
-                <select>
-                  <option selected value="" disabled>
+                <select
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  name="subject"
+                >
+                  <option value="default" disabled>
                     Choose a Subject
                   </option>
                   <option value="geo">Geography</option>
@@ -39,8 +75,12 @@ class CreateQuiz extends Component {
               </div>
               <h6 className="left-align light-blue-text">Difficulty Level</h6>
               <div className="input-field col s12">
-                <select>
-                  <option selected value="" disabled>
+                <select
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  name="difficulty"
+                >
+                  <option value="default" disabled>
                     Choose difficulty level
                   </option>
                   <option value="easy">Easy</option>
@@ -51,36 +91,70 @@ class CreateQuiz extends Component {
               <h6 className="left-align light-blue-text">Question</h6>
               <div className="input-field col s12">
                 <i className="material-icons prefix">question_answer</i>
-                <input id="question" type="text" className="validate" />
+                <input
+                  id="question"
+                  type="text"
+                  className="validate"
+                  name="question"
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="question">Enter your question</label>
               </div>
               <h6 className="left-align light-blue-text">Answers</h6>
               <div className="input-field col s12">
                 <i className="material-icons prefix">looks_one</i>
-                <input id="ans1" type="text" className="validate" />
+                <input
+                  id="ans1"
+                  name="1"
+                  type="text"
+                  className="validate"
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="ans1">Option 1</label>
               </div>
               <div className="input-field col s12">
                 <i className="material-icons prefix">looks_two</i>
-                <input id="ans2" type="text" className="validate" />
+                <input
+                  id="ans2"
+                  name="2"
+                  type="text"
+                  className="validate"
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="ans2">Option 2</label>
               </div>
               <div className="input-field col s12">
                 <i className="material-icons prefix">looks_3</i>
-                <input id="ans3" type="text" className="validate" />
+                <input
+                  id="ans3"
+                  name="3"
+                  type="text"
+                  className="validate"
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="ans3">Option 3</label>
               </div>
               <div className="input-field col s12">
                 <i className="material-icons prefix">looks_4</i>
-                <input id="ans4" type="text" className="validate" />
+                <input
+                  id="ans4"
+                  name="4"
+                  type="text"
+                  className="validate"
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="ans4">Option 4</label>
               </div>
               <h6 className="left-align light-blue-text">
                 Select correct option
               </h6>
               <div className="input-field col s12">
-                <select>
-                  <option selected value="" disabled>
+                <select
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  name="correctAns"
+                >
+                  <option value="default" disabled>
                     Correct Answer
                   </option>
                   <option value="1">Option 1</option>

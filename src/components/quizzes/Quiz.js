@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
-import Footer from "../footer/footer";
 import "./styles.css";
 
 class Quiz extends Component {
-  state = {};
+    
+  constructor(props){
+      super(props);
+      console.log(this.props);
+  }
+
   componentDidMount() {
     // Auto initialize all the things!
     M.AutoInit();
+    console.log('in the Quiz');
   }
+
   render() {
     return (
       <div>
@@ -247,7 +253,6 @@ class Quiz extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

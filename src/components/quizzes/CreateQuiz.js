@@ -35,20 +35,21 @@ class CreateQuiz extends Component {
   handleSubmit = event => {
     //alert(this.state.subject + "\n" + this.state.difficulty);
     event.preventDefault();
-    // for (var i = 0; i < array.length; i++) {
-    //     array[i]
-    // }
-    var data = {
+    const QUEST = {
       subject: this.state.subject,
       difficulty: this.state.difficulty,
-      question: this.state.question,
+      question: this.state.question
+    };
+
+    const ANS = {
       ans1: this.state.ans1,
       ans2: this.state.ans2,
       ans3: this.state.ans3,
       ans4: this.state.ans4,
       correctAns: this.state.correctAns
     };
-    console.log(data);
+    console.log(QUEST);
+    console.log(ANS);
   };
 
   componentDidMount() {
@@ -79,12 +80,12 @@ class CreateQuiz extends Component {
                   <option value="default" disabled>
                     Choose a Subject
                   </option>
-                  <option value="Geography">Geography</option>
-                  <option value="History">History</option>
-                  <option value="Physics">Physics</option>
-                  <option value="Chemistry">Chemistry</option>
-                  <option value="Web Developing">Web Developing</option>
-                  <option value="Information Technology">Information Technology</option>
+                  <option value="3001">Geography</option>
+                  <option value="3006">History</option>
+                  <option value="3003">Physics</option>
+                  <option value="3002">Chemistry</option>
+                  <option value="3004">Web Developing</option>
+                  <option value="3005">Information Technology</option>
                 </select>
               </div>
               <h6 className="left-align light-blue-text">Difficulty Level</h6>

@@ -20,7 +20,7 @@ class Dashboard_teacher extends Component {
         <Sidebar details={JSON.parse(sessionStorage.getItem('Teacher'))}/>
         <Router>
           <Switch>
-            <Route path="/dashboard" component={Wall} />
+            <Route exact path="/dashboard" component={Wall} />
             <Route path="/dashboard/createquiz" component={CreateQuiz} />
             <Route path="/dashboard/histeach" component={HisTeach} />
             {/*<Route path="/dashboard/result" component={Result} />*/}

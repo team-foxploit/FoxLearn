@@ -46,7 +46,7 @@ class SignLanding extends Component {
         if (res.data.length === 1) {
           console.log("Auth ok");
           sessionStorage.setItem('isLoggedIn','true');
-          sessionStorage.setItem('type',this.state.table);
+          sessionStorage.setItem('type', this.state.table);
           sessionStorage.setItem(this.state.table, JSON.stringify(res.data[0]));
           this.setState({
             auth: "ok",
@@ -59,16 +59,8 @@ class SignLanding extends Component {
 
   render() {
     if (this.state.auth === "ok") {
-      let comb =
-        this.state.userDetails.First_Name[0] +
-        this.state.userDetails.Last_Name[0];
       return (
-        <Redirect
-          to={{
-            pathname: "/dashboard",
-            state: { props: this.state.userDetails, comb: comb }
-          }}
-        />
+        <Redirect to="/dashboard" />
       );
     } else {
       console.log("authentication problem");

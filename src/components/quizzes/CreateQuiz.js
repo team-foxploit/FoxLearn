@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
-import Footer from "../footer/footer";
 import "./styles.css";
 
 class CreateQuiz extends Component {
@@ -27,8 +26,9 @@ class CreateQuiz extends Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value
+    }, () => {
+      console.log(this.state);
     });
-    console.log(name, value);
   }
 
   // triggered on submit
@@ -188,7 +188,6 @@ class CreateQuiz extends Component {
             </form>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

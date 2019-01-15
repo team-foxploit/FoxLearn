@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "./Sidebar.css";
 import userImg from "../images/download.png";
 
@@ -28,55 +29,55 @@ class Sidebar extends Component {
         <ul id="slide-out" className="sidenav sidenav-fixed blue-grey darken-3">
           <li>
             <div className="user-view">
-              <a href="#userwithID">
+              <Link>
                 <img className="circle" src={userImg} alt="" />
-              </a>
-              <a href="#name">
+              </Link>
+              <Link to='/userdetails'>
                 <span className="white-text name">{this.state.name}</span>
               </a>
-              <a href="#email">
+              <Link to='/userdetails'>
                 <span className="white-text email">{this.state.email}</span>
-              </a>
+              </Link>
             </div>
           </li>
           <div className="blue-grey darken-2">
             <li>
-              <a href="#!">
+              <Link to='/dashboard'>
                 <i className="material-icons cyan-text">home</i>
                 <span className="white-text">Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#!">
+              <Link to='/mycourses'>
                 <i className="material-icons cyan-text">school</i>
                 <span className="white-text">My Courses</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#!">
+              <Link to='/myranking'>
                 <i className="material-icons cyan-text">star_rate</i>
                 <span className="white-text">My Ranking</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#!">
+              <Link to='/myhistory'>
                 <i className="material-icons cyan-text">schedule</i>
                 <span className="white-text">My History</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#!">
+              <Link to='/leaderboard'>
                 <i className="material-icons cyan-text">timeline</i>
                 <span className="white-text">Leaderboard</span>
-              </a>
+              </Link>
             </li>
             <li>
               <div className="divider" />
             </li>
             <li>
-              <a href="foxlearn@foxploit.com" className="subheader center">
+              <Link to="foxlearn@foxploit.com" className="subheader center">
                 <span className="white-text">@FoxLearn</span>
-              </a>
+              </Link>
             </li>
             <li>
               <div className="centText">

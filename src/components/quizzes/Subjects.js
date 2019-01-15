@@ -13,8 +13,13 @@ class Subject extends Component {
     difficulty: ""
   };
 
+  constructor(props){
+      super(props);
+      console.log(props);
+  }
+
   componentDidMount() {
-    console.log(this.props.match.params.difficulty);
+    console.log(this.props);
     this.setState(
       {
         difficulty: this.props.location.pathname.split("/")[2]

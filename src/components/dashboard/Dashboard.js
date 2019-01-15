@@ -11,7 +11,11 @@ import Subjects from "../quizzes/Subjects"; //temp routes
 import Quiz from "../quizzes/Quiz"; //temp routes
 
 class Dashboard extends Component {
+    componentWillMount(){
+        console.log(this.state);
+    }
   componentDidMount() {
+      sessionStorage.setItem(this.props.location.state.props.Std_ID, JSON.stringify(this.props.location.state.props));
     console.log(this.props.location.state.props);
     console.log(this.props.location.state.comb);
   }

@@ -1,0 +1,387 @@
+--------------physics---------------------------------------------
+6. Venturi relation is one of applications of
+	1.equation of continuity
+	2.Bernoulli's equation
+	3.light equation
+	4.speed equation
+correct answer - 2
+
+7.Angular displacement is defined by units
+	1.revolution
+	2.radian
+	3.steradian
+	4.both a and b
+correct answer - 4
+
+8.As body rolls down, its gravitational energy changes to
+	1.rotational kinetic energy
+	2.rotational potential energy
+	3.linear kinetic energy
+	4.linear potential energy
+correct answer - 1
+
+9.Light can travel in
+	1.air only
+	2.vacuum only
+	3.both air and vacuum
+	4.none of the mediums
+correct answer - 3
+
+10. Electromagnetic wave with lowest frequency is
+	1.radio waves
+	2.infrared
+	3.ultraviolet
+	4.gamma rays
+correct answer - 1
+
+--------------chemistry---------------------------------------------
+
+
+6.Enthalpy changes which cannot be found by calorimeter can be found by help of
+	1.Newton's Law
+	2.Hess's Law
+	3.Krebs's Law
+	4.Ohm's Law
+correct answer - 2	
+
+7. Complete transfer of one or more electrons between atoms constitutes in forming
+	1.ionic bond
+	2.covalent bond
+	3.co-ordinate covalent bond
+	4.dative bond
+correct answer - 2
+
+8.In chemical equation, symbol 'aq' represents
+	1.aqueous
+	2.large amount of water
+	3.concentrated
+	4.both A and B
+correct answer - 4 
+
+9. Real gases do not react as expected
+	1.ideal gas
+	2.noble gas
+	3.non-ideal gas
+	4.inert gas
+correct answer - 1
+
+10. A substance which neutralizes a base is called
+	1.acid
+	2.alkali
+	3.alkaloid
+	4.halogen
+correct answer - 1
+
+
+
+--------------Geography---------------------------------------------
+6.Land developed area for factories and for other industrial business is known as
+	1.diseconomies of scale
+	2.industrial estate
+	3.external economics of scale
+	4.industrial agglomeration
+correct answer - 2
+
+7. Finite resources are known as
+	1.non-renewable resources
+	2.formal sector
+	3.informal sector
+	4.renewable energy
+correct answer - 1
+
+8.Areas having high population density and infrastructure of built environment are known as
+	1.patterns
+	2.direction
+	3.rural areas
+	4.urban areas
+correct answer - 4
+
+9. Addition of harmful substances into environment is known as
+	1.pollutant
+	2.pollution
+	3.mining
+	4.quarrying
+correct answer - 2
+
+10. 'Smog'' is an example of
+	1.sustained pollution
+	2.air pollution
+	3.incidental pollution
+	4.water pollution
+correct answer - 2
+
+---------------------------maths-------------------------------------------------------
+1. Value of ‘x’ in 6x - 4 = 3x + 8 should be
+
+	1.3
+	2.6
+	2.5
+	4.4
+
+Answer- 4
+
+2.Value of ‘x’ in v(x - 1) = 4 should be
+
+	1.23
+	2.17
+	3.19
+	4.20
+
+Answer- 2
+
+3.If x <0 then | x | is equal to
+
+	1.x
+	2.0
+	3.1
+	4.-x
+
+Answer-4
+
+4.Solution of x + 3 < 9 is
+
+	1.x > 4
+	2.x < 6
+	3.x < 5
+	4.x = 6
+
+Answer-2
+
+5.Solution of 4x - 2 > 6 is
+
+	1.x > 2
+	2.x < 6
+	3.x = 4
+	4.x > 4
+
+Answer-1
+
+6. If capacity ‘c’ of a lift is at most 1500 pounds, then
+
+	1.c < 1500
+	2.c > 1500
+	3.c = 1500
+	4.c = 1500
+
+Answer-4
+
+7.Value of ‘x’ in 3x/2 - (x - 2)/3 = 25/6 should be
+
+	1.4
+	2.3
+	3.-3
+	4.1
+
+Answer-2
+
+8.1 + tan²x equals to
+
+	1.cosec²x
+	2.sec²x
+	3.sin²x
+	4.cos²x
+
+Answer-2
+
+9.If length is 2 cm and radius is 3.5 cm, value of ? should be
+
+	1.  0.36 radians
+        2.  0.57 radians
+	3.  1.46 radians
+	4.  2.74 radians
+
+Answer-2
+
+10.Cosx equals to
+
+	1.1/cosecx
+	2.1/secx
+	3.1/tanx
+	4.1/cotx
+
+Answer-2
+
+
+
+--------------------------------ICT----------------------------------------
+1.Medium which sends signal from source to destination is known as
+
+	1.transmitter
+	2.transmission channel
+	3.receiver
+	4.hardware
+
+Answer-2
+
+2. Educational institutions, libraries, hospitals and industries store concerned information by
+
+	1.operating system
+	2.word processing
+	3.data management
+	4.informing system
+
+Answer-3
+
+3. A compact disc (CD) can store computer's data over
+
+	1.420 megabytes
+	2.380 megabytes
+	3.680 megabytes
+	4.560 megabytes
+
+Answer-3
+
+4.A small storage device that can be used to transport files from one computer to another is called
+
+	1.flash drive
+	2.floppy disk
+	3.hard disk
+	4.compact disc
+
+Answer-1
+
+5.Temporary memory of computer is
+
+	1.ROM
+	2.secondary memory
+	3.both A and B
+	4.RAM
+
+Answer-4
+
+6.1 GB is equal to
+
+	1.1250 megabytes
+	2.1296 megabytes
+	3.1150 megabytes
+	4.1024 megabytes
+
+Answer-4
+
+7.Most important piece of hardware is
+
+	1.RAM
+	2.ROM
+	3.CPU
+	4.Motherboard
+
+Answer-3
+
+8. To send sound waves to far off areas, they are converted to
+
+	1.radio waves
+	2.frequency
+	3.microwaves
+	4.electromagnetic waves
+
+Answer-4
+
+9.In radio, coils are connected to
+
+	1.inductors
+	2.resistor
+	3.fixed capacitor
+	4.variable capacitor
+
+Answer-4
+
+10. If a CD is made of soft elastic material, it is called
+
+	1.flash drive
+	2.floppy disk
+	3.hard disk
+	4.audio cassette
+
+Answer-2
+
+--------------------------------biology-------------------------------------------
+1.Which of following is correct order for a simple food chain?
+
+   1.Grasshopper, sparrow, grass, hawk
+   2.Grass, grasshopper, sparrow, hawk
+   3.Hawk, sparrow, grass, grasshopper
+   4.Grass, hawk, grasshopper, sparrow
+
+Answer-2
+
+
+2.Burning of petroleum produces
+
+     1.Nitrogen dioxide
+     2.Ammonium dioxide
+     3.Sulphur dioxide
+     4.Carbon dioxide
+
+Answer-3
+
+3.Process in which inorganic nutrients are enriched with water is called
+
+       1.industrialization
+       2.pollution
+       3.eutrophication
+       4.contamination
+
+Answer-3
+
+4.Considering Earth's ecosystem, consumers are classified as
+
+        1.autotrophs
+        2.heterotrophs
+        3.tertiary autotrophs
+        4.secondary autotrophs
+
+Answer-2
+
+5. Hydrocarbons (alkanes and alkenes), oxides of nitrogen (NO, NO2) and Sulfur (SO, SO2, SO3) and fluorine (F2) are released by the
+
+        1.fertilizer industries
+        2.thermal industries
+        3.textile industries
+        4.steel industries
+
+Answer-1 
+
+6.Minerals are used as nutrients by
+
+       1.Decomposer
+       2.Producer
+       3.Consumer
+       4.Autotrophs
+
+Answer-2
+
+7.Main component of many biomolecules is
+
+       1.Carbon
+       2.Sulphur
+       3.Potassium
+       4.Nitrogen
+
+Answer-4
+
+8.Harmful effects of UV rays are visible in Australia and
+
+       1.England
+       2.Japan
+       3.China
+       4.New Zealand
+
+Answer-4
+
+9. Ecology is study of relationship of organism and their
+
+        1.Climate
+        2.Weather
+        3.Plants
+        4.Environment
+
+Answer-4
+
+10.Combination of atmospheric nitrogen with hydrogen under high temperature and pressure is classified as
+
+         1.atmospheric oxygen fixation
+         2.atmospheric nitrogen fixation
+         3.industrial nitrogen fixation
+         4.biological nitrogen fixation
+
+Answer-3

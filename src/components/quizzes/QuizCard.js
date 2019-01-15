@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
@@ -311,11 +312,11 @@ class QuizCard extends Component {
                       </h6>
                       <br />
                       <br />
-                      <a className="btn-floating btn-large pulse" onClick={this.handleSubmit}>
+                      <Link to='/dashboard/result' className="btn-floating btn-large pulse" onClick={this.handleSubmit}>
                         <i className="material-icons md-48">
                           assignment_turned_in
                         </i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

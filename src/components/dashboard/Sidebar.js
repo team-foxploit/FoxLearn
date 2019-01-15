@@ -29,12 +29,12 @@ class Sidebar extends Component {
         <ul id="slide-out" className="sidenav sidenav-fixed blue-grey darken-3">
           <li>
             <div className="user-view">
-              <Link>
+              <Link to='/userdetails'>
                 <img className="circle" src={userImg} alt="" />
               </Link>
               <Link to='/userdetails'>
                 <span className="white-text name">{this.state.name}</span>
-              </a>
+              </Link>
               <Link to='/userdetails'>
                 <span className="white-text email">{this.state.email}</span>
               </Link>

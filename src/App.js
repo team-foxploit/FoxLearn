@@ -6,8 +6,7 @@ import Home from "./components/layout/Home";
 import SignUp from "./components/auth/SignUp";
 import Dashboard from "./components/dashboard/Dashboard";
 import History from "./components/dashboard/History";
-import CreateQuiz from "./components/quizzes/CreateQuiz";
-import HisTeach from "./components/dashboard/History_teacher";
+import HandleDashboard from "./components/dashboard/HandleDashboard";
 import DashTeach from "./components/dashboard/dashboard_teacher"; //temp routes
 import Ranking from "./components/dashboard/Ranking";
 
@@ -37,12 +36,12 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route path="/signin" component={SignLanding} />
           <Route path="/signup" component={SignUp} />
-          <ProtectedRoute path="/dashboard" component={Dashboard} />
+          <ProtectedRoute path="/dashboard" component={HandleDashboard} />
           <ProtectedRoute path="/myhistory" component={History} />
-          <ProtectedRoute path="/createquiz" component={CreateQuiz} />
           <ProtectedRoute path="/myranking" component={Ranking} />
-          <ProtectedRoute path="/histeach" component={HisTeach} />
-          <ProtectedRoute path="/dashteach" component={DashTeach} />
+          {/*// <ProtectedRoute path="/createquiz" component={CreateQuiz} />
+      // <ProtectedRoute path="/histeach" component={HisTeach} />*/}
+          <Route path="/dashteach" component={DashTeach} />
         </Switch>
       </BrowserRouter>
     );

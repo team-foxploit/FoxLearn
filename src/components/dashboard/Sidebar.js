@@ -14,11 +14,12 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-    this.setState(state => ({
+      console.log(this.props.props);
+      this.setState(state => ({
       name: this.props.details.First_Name + " " + this.props.details.Last_Name,
       username: this.props.details.Username,
       email: this.props.details.Email
-    }));
+  }));
     console.log(this.state);
     console.log(this.props.details);
   }

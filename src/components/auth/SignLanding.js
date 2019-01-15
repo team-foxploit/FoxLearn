@@ -46,6 +46,7 @@ class SignLanding extends Component {
         if (res.data.length === 1) {
           console.log("Auth ok");
           sessionStorage.setItem('isLoggedIn','true');
+          sessionStorage.setItem('type',this.state.table);
           sessionStorage.setItem(this.state.table, JSON.stringify(res.data[0]));
           this.setState({
             auth: "ok",

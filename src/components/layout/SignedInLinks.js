@@ -17,7 +17,7 @@ class SignedInLinks extends Component {
         return(
             <ul className="right">
                 <li><NavLink to='/'>Discover</NavLink></li>
-                <li><NavLink to='/' onClick={this.handleLogOut} >Log out</NavLink></li>
+                <li><NavLink to='/signIn' onClick={this.handleLogOut} >Log out</NavLink></li>
                 <li><NavLink to='/' className='btn btn-floating green lighten-1'>{this.props.id}</NavLink></li>
             </ul>
         );

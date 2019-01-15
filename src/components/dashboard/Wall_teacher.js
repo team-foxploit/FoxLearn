@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WallTeacher = () => {
   return (
@@ -34,9 +35,9 @@ const WallTeacher = () => {
                 how students perform in the quizes.
               </p>
               <div className="card-action">
-                <button className="waves-effect waves-light btn purple darken-1 activator">
+                <Link to='/dashboard/createquiz' className="waves-effect waves-light btn purple darken-1 activator">
                   Submit a quiz
-                </button>
+              </Link>
               </div>
             </div>
           </div>

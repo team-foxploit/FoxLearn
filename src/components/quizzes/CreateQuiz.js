@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
-import Footer from "../footer/footer";
 import "./styles.css";
 
 class CreateQuiz extends Component {
@@ -27,14 +26,18 @@ class CreateQuiz extends Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value
+    }, () => {
+      console.log(this.state);
     });
-    console.log(name, value);
   }
 
   // triggered on submit
   handleSubmit = event => {
     //alert(this.state.subject + "\n" + this.state.difficulty);
     event.preventDefault();
+    // for (var i = 0; i < array.length; i++) {
+    //     array[i]
+    // }
     var data = {
       subject: this.state.subject,
       difficulty: this.state.difficulty,
@@ -76,12 +79,12 @@ class CreateQuiz extends Component {
                   <option value="default" disabled>
                     Choose a Subject
                   </option>
-                  <option value="geo">Geography</option>
-                  <option value="his">History</option>
-                  <option value="phy">Physics</option>
-                  <option value="chem">Chemistry</option>
-                  <option value="web">Web Developing</option>
-                  <option value="it">Information Technology</option>
+                  <option value="Geography">Geography</option>
+                  <option value="History">History</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Chemistry">Chemistry</option>
+                  <option value="Web Developing">Web Developing</option>
+                  <option value="Information Technology">Information Technology</option>
                 </select>
               </div>
               <h6 className="left-align light-blue-text">Difficulty Level</h6>
@@ -184,7 +187,6 @@ class CreateQuiz extends Component {
             </form>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

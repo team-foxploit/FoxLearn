@@ -181,37 +181,36 @@ class SignUp extends Component {
   // triggered on submit
   handleSubmit = event => {
     event.preventDefault();
-    if(this.state.canSubmit){
-        const user = {
-        	table: this.state.type,
-        	First_Name : this.state.first_name,
-        	Last_Name: this.state.last_name,
-        	Username: this.state.username,
-        	Email: this.state.email,
-        	Password:this.state.password
-        }
-        console.log(user);
-        axios.put(`https://foxlearn-api.herokuapp.com/api/users/auth`, user)
+    if (this.state.canSubmit) {
+      const user = {
+        table: this.state.type,
+        First_Name: this.state.first_name,
+        Last_Name: this.state.last_name,
+        Username: this.state.username,
+        Email: this.state.email,
+        Password: this.state.password
+      };
+      console.log(user);
+      axios
+        .put(`https://foxlearn-api.herokuapp.com/api/users/auth`, user)
         .then(res => {
-            if(res.data.status === 'success'){
-                this.setState({
-                    didSubmit:true
-                });
-            }
-        })
+          if (res.data.status === "success") {
+            this.setState({
+              didSubmit: true
+            });
+          }
+        });
     }
   };
 
   render() {
     if (this.state.didSubmit) {
-      return(
-          <Redirect to = "/signin" />
-      )
+      return <Redirect to="/signin" />;
     }
 
     return (
       <div className="bg-img">
-        <div className="row">
+        <div className="row centText">
           <div id="block-1">
             <h2 className="teal-text text-accent-3">Sign Up</h2>
             <br />
@@ -223,7 +222,7 @@ class SignUp extends Component {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row centText">
           <div className="col s12 m4 offset-m4">
             <form
               onSubmit={this.handleSubmit}

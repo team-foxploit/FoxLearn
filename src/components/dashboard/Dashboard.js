@@ -25,7 +25,7 @@ class Dashboard extends Component {
           <Switch>
             <Route path="/dashboard" component={Wall} />
             <Route path="/subjects/:difficulty" component={Subjects} />
-            <Route path="/quiz/:q_id" component={Quiz} />
+            <Route path="/quiz/:sub_id" component={Quiz} />
           </Switch>
         </Router>
         <Footer />

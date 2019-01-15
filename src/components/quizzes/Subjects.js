@@ -44,7 +44,7 @@ class Subject extends Component {
                       </p>
                     </div>
                     <div className="card-action blue-grey centText">
-                      <Link to="/quiz/:id">Geography</Link>
+                      <Link to="/quiz/3001">Geography</Link>
                     </div>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ class Subject extends Component {
                       </p>
                     </div>
                     <div className="card-action blue-grey centText">
-                      <Link to="/quiz/:id">Physics</Link>
+                      <Link to="/quiz/3003">Physics</Link>
                     </div>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ class Subject extends Component {
                       </p>
                     </div>
                     <div className="card-action blue-grey centText">
-                      <Link to="/quiz/:id">Chemistry</Link>
+                      <Link to="/quiz/3002">Chemistry</Link>
                     </div>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ class Subject extends Component {
                       </p>
                     </div>
                     <div className="card-action blue-grey centText">
-                      <Link to="/quiz/:id">Web Developing</Link>
+                      <Link to="/quiz/3004">Web Developing</Link>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ class Subject extends Component {
                       </p>
                     </div>
                     <div className="card-action blue-grey centText">
-                      <Link to="/quiz/:id">Information Technology</Link>
+                      <Link to="/quiz/3005">Information Technology</Link>
                     </div>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ class Subject extends Component {
                       </p>
                     </div>
                     <div className="card-action blue-grey centText">
-                      <Link to="/quiz/:id">History</Link>
+                      <Link to="/quiz/3006">History</Link>
                     </div>
                   </div>
                 </div>

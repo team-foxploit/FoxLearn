@@ -17,13 +17,14 @@ class Quiz extends Component {
   constructor(props){
       super(props);
       console.log(this.props);
+      console.log(this.props.match.params.sub_id);
   }
 
   componentDidMount() {
     // Auto initialize all the things!
     console.log('in the Quiz');
     axios.post(`https://foxlearn-api.herokuapp.com/api/quiz`, {
-    	"Subject":"Chemistry",
+    	"Subject":`${this.props.match.params.sub_id}`,
     	"Difficulty":"easy"
     } )
     .then( res => {

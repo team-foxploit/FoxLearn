@@ -10,7 +10,7 @@ class History_teacher extends Component {
     return (
       <div>
         <div className="container grey lighten-3">
-          <h3 className="blue-grey-text center-align">Students' Performance</h3>
+          <h3 className="blue-grey-text center-align">Students Performance</h3>
           <hr />
           <div className="row">
             <div className="col s12 m6">

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
@@ -14,9 +16,10 @@ class CreateQuiz extends Component {
       ans2: "",
       ans3: "",
       ans4: "",
-      correctAns: ""
+      correctAns: "",
+      didSubmit:"false"
     };
-    this.state = { value: "default" };
+    // this.state = { value: "default" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -50,6 +53,22 @@ class CreateQuiz extends Component {
     };
     console.log(QUEST);
     console.log(ANS);
+    const quiz = {
+        QUEST,
+        ANS,
+        Tch_ID:JSON.parse(sessionStorage.getItem('Teacher')).Tch_ID
+    }
+    console.log(quiz);
+    console.log(this.state);
+    axios
+      .put(`https://foxlearn-api.herokuapp.com/api/quiz/create`, quiz)
+      .then(res => {
+        if (res.data.status === "success") {
+          this.setState({
+            didSubmit: true
+          });
+        }
+    });
   };
 
   componentDidMount() {
@@ -57,6 +76,9 @@ class CreateQuiz extends Component {
     M.AutoInit();
   }
   render() {
+    if (this.state.didSubmit === 'true') {
+      return(<Redirect to='/dashboard' />)
+    }
     return (
       <div>
         <div className="container grey lighten-3">

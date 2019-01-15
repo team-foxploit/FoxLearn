@@ -35,17 +35,6 @@ class CreateQuiz extends Component {
   handleSubmit = event => {
     //alert(this.state.subject + "\n" + this.state.difficulty);
     event.preventDefault();
-    var data = {
-      subject: this.state.subject,
-      difficulty: this.state.difficulty,
-      question: this.state.question,
-      ans1: this.state.ans1,
-      ans2: this.state.ans2,
-      ans3: this.state.ans3,
-      ans4: this.state.ans4,
-      correctAns: this.state.correctAns
-    };
-    console.log(data);
   };
 
   componentDidMount() {
@@ -116,7 +105,7 @@ class CreateQuiz extends Component {
                 <i className="material-icons prefix">looks_one</i>
                 <input
                   id="ans1"
-                  name="ans1"
+                  name="1"
                   type="text"
                   className="validate"
                   onChange={this.handleChange}
@@ -127,7 +116,7 @@ class CreateQuiz extends Component {
                 <i className="material-icons prefix">looks_two</i>
                 <input
                   id="ans2"
-                  name="ans2"
+                  name="2"
                   type="text"
                   className="validate"
                   onChange={this.handleChange}
@@ -138,7 +127,7 @@ class CreateQuiz extends Component {
                 <i className="material-icons prefix">looks_3</i>
                 <input
                   id="ans3"
-                  name="ans3"
+                  name="3"
                   type="text"
                   className="validate"
                   onChange={this.handleChange}
@@ -149,7 +138,7 @@ class CreateQuiz extends Component {
                 <i className="material-icons prefix">looks_4</i>
                 <input
                   id="ans4"
-                  name="ans4"
+                  name="4"
                   type="text"
                   className="validate"
                   onChange={this.handleChange}

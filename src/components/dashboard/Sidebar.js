@@ -23,6 +23,11 @@ class Sidebar extends Component {
     console.log(this.props.details);
   }
 
+  handleLogOut = () => {
+      sessionStorage.setItem('isLoggedIn','false');
+      sessionStorage.clear();
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -81,9 +86,9 @@ class Sidebar extends Component {
             </li>
             <li>
               <div className="centText">
-                <div className="waves-effect waves-light btn btn-medium cyan">
+                <Link to='/signin' className="waves-effect waves-light btn btn-medium cyan" onClick={this.handleLogOut}>
                   <i className="material-icons left">logout</i>Logout
-                </div>
+                </Link>
               </div>
             </li>
           </div>

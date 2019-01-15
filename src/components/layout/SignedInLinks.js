@@ -10,6 +10,7 @@ class SignedInLinks extends Component {
 
     handleLogOut = () => {
         sessionStorage.setItem('isLoggedIn','false');
+        sessionStorage.clear();
     }
 
     render(){

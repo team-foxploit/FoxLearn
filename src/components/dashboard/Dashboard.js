@@ -12,20 +12,14 @@ import Quiz from "../quizzes/Quiz"; //temp routes
 import Result from "../quizzes/Result";
 
 class Dashboard extends Component {
-    componentWillMount(){
-        console.log(this.state);
-    }
-  componentDidMount() {
-      sessionStorage.setItem(this.props.location.state.props.Std_ID, JSON.stringify(this.props.location.state.props));
-    console.log(this.props.location.state.props);
-    console.log(this.props.location.state.comb);
-  }
 
   render() {
+      const userDetails = JSON.parse(sessionStorage.getItem('Student'));
+      console.log(userDetails);
     return (
       <div className="dash background" id="dashboardBackground">
-        <SignedInNavabr details={this.props.location.state.comb} />
-        <Sidebar details={this.props.location.state.props} />
+        <SignedInNavabr details={userDetails.First_Name[0]+userDetails.Last_Name[0]} />
+        <Sidebar details={userDetails} />
         <Router>
           <Switch>
             <Route path="/dashboard" component={Wall} />

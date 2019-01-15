@@ -4,10 +4,8 @@ import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import Home from "./components/layout/Home";
 import SignUp from "./components/auth/SignUp";
-import Dashboard from "./components/dashboard/Dashboard";
 import History from "./components/dashboard/History";
 import HandleDashboard from "./components/dashboard/HandleDashboard";
-import DashTeach from "./components/dashboard/dashboard_teacher"; //temp routes
 import Ranking from "./components/dashboard/Ranking";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
@@ -39,9 +37,6 @@ class App extends Component {
           <ProtectedRoute path="/dashboard" component={HandleDashboard} />
           <ProtectedRoute path="/myhistory" component={History} />
           <ProtectedRoute path="/myranking" component={Ranking} />
-          {/*// <ProtectedRoute path="/createquiz" component={CreateQuiz} />
-      // <ProtectedRoute path="/histeach" component={HisTeach} />*/}
-          <Route path="/dashteach" component={DashTeach} />
         </Switch>
       </BrowserRouter>
     );

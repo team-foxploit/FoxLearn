@@ -6,14 +6,14 @@ import Footer from "../footer/footer";
 import "../layout/styles.css";
 
 class SignLanding extends Component {
-    state = {
-        username: '',
-        password: '',
-        type: 'getConfirmation',
-        table:'Student',
-        auth: 'fail',
-        userDetails:''
-    }
+  state = {
+    username: "",
+    password: "",
+    type: "getConfirmation",
+    table: "Student",
+    auth: "fail",
+    userDetails: ""
+  };
 
   handleChange = e => {
     this.setState({
@@ -21,43 +21,45 @@ class SignLanding extends Component {
     });
   };
 
-    studentSelected = () => {
-        this.setState(state => ({
-            table: 'Student'
-        }));
-    }
+  studentSelected = () => {
+    this.setState(state => ({
+      table: "Student"
+    }));
+  };
 
-    teacherSelected = () => {
-        this.setState(state => ({
-            table: 'Teacher'
-        }));
-    }
+  teacherSelected = () => {
+    this.setState(state => ({
+      table: "Teacher"
+    }));
+  };
 
-
-    handleSubmit = (e) => {
-        e.preventDefault();
-          axios.post(`https://foxlearn-api.herokuapp.com/api/users/auth`, {
-            type : this.state.type,
-            table:this.state.table,
-            username : this.state.username,
-            password : this.state.password
-          })
-          .then(res => {
-              if (res.data.length === 1) {
-                  console.log("Auth ok");
-                  this.setState(state => ({
-                      auth: 'ok',
-                      userDetails:res.data[0]
-                  }));
-              }
-            console.log(res.data[0]);
-          });
-          console.log(this.state);
-    }
+  handleSubmit = e => {
+    e.preventDefault();
+    axios
+      .post(`https://foxlearn-api.herokuapp.com/api/users/auth`, {
+        type: this.state.type,
+        table: this.state.table,
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(res => {
+        if (res.data.length === 1) {
+          console.log("Auth ok");
+          this.setState(state => ({
+            auth: "ok",
+            userDetails: res.data[0]
+          }));
+        }
+        console.log(res.data[0]);
+      });
+    console.log(this.state);
+  };
 
   render() {
     if (this.state.auth === "ok") {
-      let comb = this.state.userDetails.First_Name[0] + this.state.userDetails.Last_Name[0];
+      let comb =
+        this.state.userDetails.First_Name[0] +
+        this.state.userDetails.Last_Name[0];
       return (
         <Redirect
           to={{
@@ -84,8 +86,8 @@ class SignLanding extends Component {
                     <form onSubmit={this.handleSubmit} className="white">
                       <div className="input-field">
                         <div id="type">
-                          <div className="row">
-                            <div className="col s6 m6">
+                          <div className="row center-align">
+                            <div className="col s6 m6 ">
                               <label>
                                 <input
                                   className="with-gap"
@@ -109,9 +111,9 @@ class SignLanding extends Component {
                               </label>
                             </div>
                           </div>
+                        </div>
                       </div>
-                      </div>
-                      <div className="input-field">
+                      <div className="input-field center-align">
                         <i className="material-icons prefix">account_circle</i>
                         <input
                           id="username"
@@ -123,7 +125,7 @@ class SignLanding extends Component {
                           Username
                         </label>
                       </div>
-                      <div className="input-field">
+                      <div className="input-field center-align">
                         <i className="material-icons prefix">lock</i>
                         <input
                           id="password"
@@ -135,7 +137,7 @@ class SignLanding extends Component {
                           Password
                         </label>
                       </div>
-                      <div>
+                      <div className="center-align">
                         <input
                           className="btn center"
                           type="submit"

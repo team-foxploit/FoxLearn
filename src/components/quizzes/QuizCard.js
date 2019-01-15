@@ -6,11 +6,31 @@ import "./styles.css";
 class QuizCard extends Component{
 
     state = {
-        subject:'',
-        question:'',
-        answers:{},
-        crct_id:'',
-        fetchDone:false
+        Q1:{
+            question:'',
+            crct_id:'',
+            answers:''
+        },
+        Q2:{
+            question:'',
+            crct_id:'',
+            answers:''
+        },
+        Q3:{
+            question:'',
+            crct_id:'',
+            answers:''
+        },
+        Q4:{
+            question:'',
+            crct_id:'',
+            answers:''
+        },
+        Q5:{
+            question:'',
+            crct_id:'',
+            answers:''
+        }
     }
 
 
@@ -19,10 +39,33 @@ class QuizCard extends Component{
       M.AutoInit();
       console.log(this.props.content);
       this.setState({
-          subject:this.props.content.subject,
-          question:this.props.content.question,
-          answers:this.props.content.answers,
-          crct_id:this.props.content.crct_id
+          Q1:{
+              question:this.props.content.Q1[0].Question,
+              crct_id:this.props.content.Q1[0].Crct_Ans_Id,
+              answers:[this.props.content.Q1[0].Answer, this.props.content.Q1[1].Answer, this.props.content.Q1[2].Answer, this.props.content.Q1[3].Answer]
+          },
+          Q2:{
+              question:this.props.content.Q2[0].Question,
+              crct_id:this.props.content.Q2[0].Crct_Ans_Id,
+              answers:[this.props.content.Q2[0].Answer, this.props.content.Q2[1].Answer, this.props.content.Q2[2].Answer, this.props.content.Q2[3].Answer]
+          },
+          Q3:{
+              question:this.props.content.Q3[0].Question,
+              crct_id:this.props.content.Q3[0].Crct_Ans_Id,
+              answers:[this.props.content.Q3[0].Answer, this.props.content.Q3[1].Answer, this.props.content.Q3[2].Answer, this.props.content.Q3[3].Answer]
+          },
+          Q4:{
+              question:this.props.content.Q4[0].Question,
+              crct_id:this.props.content.Q4[0].Crct_Ans_Id,
+              answers:[this.props.content.Q4[0].Answer, this.props.content.Q4[1].Answer, this.props.content.Q4[2].Answer, this.props.content.Q4[3].Answer]
+          },
+          Q5:{
+              question:this.props.content.Q5[0].Question,
+              crct_id:this.props.content.Q5[0].Crct_Ans_Id,
+              answers:[this.props.content.Q5[0].Answer, this.props.content.Q5[1].Answer, this.props.content.Q5[2].Answer, this.props.content.Q5[3].Answer]
+          }
+      }, () => {
+          console.log(this.state);
       });
     }
 
@@ -35,37 +78,37 @@ class QuizCard extends Component{
                         <div className="col s12 m6 offset-m3">
                             <div className="card">
                                 <div className="card-content blue-grey white-text">
-                                    <h2>{this.state.subject}</h2>
+                                    <h2>Subject</h2>
                                 </div>
                                 <div className="card-content blue-grey lighten-5">
                                     {/* Q1 */}
                                     <div id="q1">
-                                        <h5 className="left-align">{this.state.question}</h5>
+                                        <h5 className="left-align">{this.state.Q1.question}</h5>
                                         <div className="row">
                                             <div className="col s12 m6 offset-m3">
                                                 <form action="#" className="left-align">
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>{this.state.answers[0]}</span>
+                                                            <span>{this.state.Q1.answers[0]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>{this.state.answers[1]}</span>
+                                                            <span>{this.state.Q1.answers[1]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>{this.state.answers[2]}</span>
+                                                            <span>{this.state.Q1.answers[2]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>{this.state.answers[3]}</span>
+                                                            <span>{this.state.Q1.answers[3]}</span>
                                                         </label>
                                                     </p>
                                                 </form>
@@ -74,32 +117,32 @@ class QuizCard extends Component{
                                     </div>
                                     {/* Q2 */}
                                     <div id="q2">
-                                        <h5 className="left-align">Question 2</h5>
+                                        <h5 className="left-align">{this.state.Q2.question}</h5>
                                         <div className="row">
                                             <div className="col s12 m6 offset-m3">
                                                 <form action="#" className="left-align">
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer1</span>
+                                                            <span>{this.state.Q2.answers[0]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer2</span>
+                                                            <span>{this.state.Q2.answers[1]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer3</span>
+                                                            <span>{this.state.Q2.answers[2]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer4</span>
+                                                            <span>{this.state.Q2.answers[3]}</span>
                                                         </label>
                                                     </p>
                                                 </form>
@@ -108,32 +151,32 @@ class QuizCard extends Component{
                                     </div>
                                     {/* Q3 */}
                                     <div id="q3">
-                                        <h5 className="left-align">Question 3</h5>
+                                        <h5 className="left-align">{this.state.Q3.question}</h5>
                                         <div className="row">
                                             <div className="col s12 m6 offset-m3">
                                                 <form action="#" className="left-align">
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer1</span>
+                                                            <span>{this.state.Q3.answers[0]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer2</span>
+                                                            <span>{this.state.Q3.answers[1]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer3</span>
+                                                            <span>{this.state.Q3.answers[2]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer4</span>
+                                                            <span>{this.state.Q3.answers[3]}</span>
                                                         </label>
                                                     </p>
                                                 </form>
@@ -142,32 +185,32 @@ class QuizCard extends Component{
                                     </div>
                                     {/* Q4 */}
                                     <div id="q4">
-                                        <h5 className="left-align">Question 4</h5>
+                                        <h5 className="left-align">{this.state.Q4.question}</h5>
                                         <div className="row">
                                             <div className="col s12 m6 offset-m3">
                                                 <form action="#" className="left-align">
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer1</span>
+                                                            <span>{this.state.Q4.answers[0]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer2</span>
+                                                            <span>{this.state.Q4.answers[1]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer3</span>
+                                                            <span>{this.state.Q4.answers[2]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer4</span>
+                                                            <span>{this.state.Q4.answers[3]}</span>
                                                         </label>
                                                     </p>
                                                 </form>
@@ -176,32 +219,32 @@ class QuizCard extends Component{
                                     </div>
                                     {/* Q5 */}
                                     <div id="q5">
-                                        <h5 className="left-align">Question 5</h5>
+                                        <h5 className="left-align">{this.state.Q5.question}</h5>
                                         <div className="row">
                                             <div className="col s12 m6 offset-m3">
                                                 <form action="#" className="left-align">
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer1</span>
+                                                            <span>{this.state.Q5.answers[0]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer2</span>
+                                                            <span>{this.state.Q5.answers[1]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer3</span>
+                                                            <span>{this.state.Q5.answers[2]}</span>
                                                         </label>
                                                     </p>
                                                     <p>
                                                         <label>
                                                             <input name="ans" type="radio" />
-                                                            <span>Answer4</span>
+                                                            <span>{this.state.Q5.answers[3]}</span>
                                                         </label>
                                                     </p>
                                                 </form>
@@ -224,7 +267,6 @@ class QuizCard extends Component{
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="card-tabs">
                                     <ul className="tabs tabs-fixed-width">
                                         <li className="tab">

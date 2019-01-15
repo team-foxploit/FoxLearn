@@ -16,7 +16,8 @@ class Quiz extends Component {
 
   constructor(props){
       super(props);
-      const userDetails = JSON.parse(sessionStorage.getItem('1001'));
+      console.log(props);
+      const userDetails = JSON.parse(sessionStorage.getItem('Student'));
       console.log(userDetails.First_Name);
       console.log(this.props);
       console.log(this.props.match.params.sub_id);

@@ -5,10 +5,11 @@ import "./App.css";
 import Home from "./components/layout/Home";
 import SignUp from "./components/auth/SignUp";
 import Dashboard from "./components/dashboard/Dashboard";
-import History from "./components/dashboard/History"; //temp routes
-import CreateQuiz from "./components/quizzes/CreateQuiz"; //temp routes
-import HisTeach from "./components/dashboard/History_teacher"; //temp routes
+import History from "./components/dashboard/History";
+import CreateQuiz from "./components/quizzes/CreateQuiz";
+import HisTeach from "./components/dashboard/History_teacher";
 import DashTeach from "./components/dashboard/dashboard_teacher"; //temp routes
+import Ranking from "./components/dashboard/Ranking";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
     <Route  {...rest} render = {
@@ -37,8 +38,9 @@ class App extends Component {
           <Route path="/signin" component={SignLanding} />
           <Route path="/signup" component={SignUp} />
           <ProtectedRoute path="/dashboard" component={Dashboard} />
-          <ProtectedRoute path="/his" component={History} />
+          <ProtectedRoute path="/myhistory" component={History} />
           <ProtectedRoute path="/createquiz" component={CreateQuiz} />
+          <ProtectedRoute path="/myranking" component={Ranking} />
           <ProtectedRoute path="/histeach" component={HisTeach} />
           <ProtectedRoute path="/dashteach" component={DashTeach} />
         </Switch>

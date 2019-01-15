@@ -14,6 +14,7 @@ import Result from "../quizzes/Result";
 class Dashboard extends Component {
 
   render() {
+      console.log(sessionStorage.getItem(1));
       const userDetails = JSON.parse(sessionStorage.getItem('Student'));
       console.log(userDetails);
     return (

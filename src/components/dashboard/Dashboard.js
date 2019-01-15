@@ -9,9 +9,14 @@ import Wall from "./Wall";
 import SignedInNavabr from "../layout/SignedInNavabr";
 import Subjects from "../quizzes/Subjects"; //temp routes
 import Quiz from "../quizzes/Quiz"; //temp routes
+import Result from "../quizzes/Result";
 
 class Dashboard extends Component {
+    componentWillMount(){
+        console.log(this.state);
+    }
   componentDidMount() {
+      sessionStorage.setItem(this.props.location.state.props.Std_ID, JSON.stringify(this.props.location.state.props));
     console.log(this.props.location.state.props);
     console.log(this.props.location.state.comb);
   }
@@ -26,6 +31,7 @@ class Dashboard extends Component {
             <Route path="/dashboard" component={Wall} />
             <Route path="/subjects/:difficulty" component={Subjects} />
             <Route path="/quiz/:sub_id" component={Quiz} />
+            <Route path="/dashboard/result" component={Result} />
           </Switch>
         </Router>
         <Footer />

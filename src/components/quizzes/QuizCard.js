@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
@@ -29,7 +30,12 @@ class QuizCard extends Component {
       question: "",
       crct_id: "",
       answers: ""
-    }
+    },
+    q1ans:'',
+    q2ans:'',
+    q3ans:'',
+    q4ans:'',
+    q5ans:''
   };
 
   componentDidMount(props) {
@@ -95,8 +101,29 @@ class QuizCard extends Component {
     );
   }
 
+  handleChange = (e) => {
+    console.log(this.props);
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    }, () => {
+        console.log(this.state);
+    });
+  }
+
+  handleSubmit = (e) => {
+      e.preventDefault();
+      const status = Object.keys(this.state.q1ans).length && Object.keys(this.state.q2ans).length && Object.keys(this.state.q3ans).length && Object.keys(this.state.q4ans).length && Object.keys(this.state.q5ans).length ;
+      console.log(status);
+      if (status === 1) {
+          // check answers
+          localStorage.setItem(status, JSON.stringify(this.state));
+      }
+      const cachedHits = localStorage.getItem(1);
+      console.log(cachedHits);
+  }
+
   render() {
-    console.log(this.state);
     return (
       <div>
         <div>
@@ -115,25 +142,25 @@ class QuizCard extends Component {
                         <form action="#" className="left-align">
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q1ans" value="0" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q1.answers[0]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q1ans" value="1" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q1.answers[1]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q1ans" value="2" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q1.answers[2]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q1ans" value="3" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q1.answers[3]}</span>
                             </label>
                           </p>
@@ -149,25 +176,25 @@ class QuizCard extends Component {
                         <form action="#" className="left-align">
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q2ans" value="0" type="radio" />
                               <span>{this.state.Q2.answers[0]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q2ans" value="1" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q2.answers[1]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q2ans" value="2" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q2.answers[2]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q2ans" value="3" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q2.answers[3]}</span>
                             </label>
                           </p>
@@ -183,25 +210,25 @@ class QuizCard extends Component {
                         <form action="#" className="left-align">
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q3ans" value="0" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q3.answers[0]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q3ans" value="1" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q3.answers[1]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q3ans" value="2" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q3.answers[2]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q3ans" value="3" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q3.answers[3]}</span>
                             </label>
                           </p>
@@ -217,25 +244,25 @@ class QuizCard extends Component {
                         <form action="#" className="left-align">
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q4ans" value="0" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q4.answers[0]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q4ans" value="1" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q4.answers[1]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q4ans" value="2" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q4.answers[2]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q4ans" value="3" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q4.answers[3]}</span>
                             </label>
                           </p>
@@ -251,25 +278,25 @@ class QuizCard extends Component {
                         <form action="#" className="left-align">
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q5ans" value="0" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q5.answers[0]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q5ans" value="1" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q5.answers[1]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q5ans" value="2" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q5.answers[2]}</span>
                             </label>
                           </p>
                           <p>
                             <label>
-                              <input name="ans" type="radio" />
+                              <input name="q5ans" value="3" type="radio" onClick={this.handleChange} />
                               <span>{this.state.Q5.answers[3]}</span>
                             </label>
                           </p>
@@ -285,11 +312,11 @@ class QuizCard extends Component {
                       </h6>
                       <br />
                       <br />
-                      <a className="btn-floating btn-large pulse" href="#link">
+                      <Link to='/dashboard/result' className="btn-floating btn-large pulse" onClick={this.handleSubmit}>
                         <i className="material-icons md-48">
                           assignment_turned_in
                         </i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

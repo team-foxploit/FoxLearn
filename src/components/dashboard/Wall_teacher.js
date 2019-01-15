@@ -11,7 +11,7 @@ const WallTeacher = () => {
             <div className="card-content white">
               <h4>Student Performance</h4>
               <p>
-                Have a glance at your students' past performance and their
+                Have a glance at your students past performance and their
                 progress.
               </p>
               <div className="card-action">

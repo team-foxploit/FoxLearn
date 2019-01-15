@@ -45,12 +45,14 @@ class SignLanding extends Component {
       .then(res => {
         if (res.data.length === 1) {
           console.log("Auth ok");
-          this.setState(state => ({
+          sessionStorage.setItem('isLoggedIn','true');
+          sessionStorage.setItem('type',this.state.table);
+          sessionStorage.setItem(this.state.table, JSON.stringify(res.data[0]));
+          this.setState({
             auth: "ok",
             userDetails: res.data[0]
-          }));
+          });
         }
-        console.log(res.data[0]);
       });
     console.log(this.state);
   };

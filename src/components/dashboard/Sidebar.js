@@ -14,13 +14,19 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-    this.setState(state => ({
+      console.log(this.props.props);
+      this.setState(state => ({
       name: this.props.details.First_Name + " " + this.props.details.Last_Name,
       username: this.props.details.Username,
       email: this.props.details.Email
-    }));
+  }));
     console.log(this.state);
     console.log(this.props.details);
+  }
+
+  handleLogOut = () => {
+      sessionStorage.setItem('isLoggedIn','false');
+      sessionStorage.clear();
   }
 
   render() {
@@ -81,9 +87,9 @@ class Sidebar extends Component {
             </li>
             <li>
               <div className="centText">
-                <div className="waves-effect waves-light btn btn-medium cyan">
+                <Link to='/signin' className="waves-effect waves-light btn btn-medium cyan" onClick={this.handleLogOut}>
                   <i className="material-icons left">logout</i>Logout
-                </div>
+                </Link>
               </div>
             </li>
           </div>

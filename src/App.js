@@ -1,15 +1,26 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import Home from "./components/layout/Home";
 import SignUp from "./components/auth/SignUp";
-import Dashboard from "./components/dashboard/Dashboard";
-import History from "./components/dashboard/History"; //temp routes
-import CreateQuiz from "./components/quizzes/CreateQuiz"; //temp routes
-import HisTeach from "./components/dashboard/History_teacher"; //temp routes
-import DashTeach from "./components/dashboard/Dashboard_teacher"; //temp routes
-import Result from "./components/quizzes/Result"; //temp routes
+import History from "./components/dashboard/History";
+import HandleDashboard from "./components/dashboard/HandleDashboard";
+import Ranking from "./components/dashboard/Ranking";
+
+const ProtectedRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props => {
+      const loggedInStatus = sessionStorage.getItem("isLoggedIn");
+      if (loggedInStatus === "true") {
+        return <Component {...props} />;
+      } else {
+        return <Redirect to="/signin" />;
+      }
+    }}
+  />
+);
 
 class App extends Component {
   render() {
@@ -19,12 +30,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/signin" component={SignLanding} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/his" component={History} />
-          <Route path="/createquiz" component={CreateQuiz} />
-          <Route path="/histeach" component={HisTeach} />
-          <Route path="/dashteach" component={DashTeach} />
-          <Route path="/result" component={Result} />
+          <ProtectedRoute path="/dashboard" component={HandleDashboard} />
+          <ProtectedRoute path="/myhistory" component={History} />
+          <ProtectedRoute path="/myranking" component={Ranking} />
         </Switch>
       </BrowserRouter>
     );

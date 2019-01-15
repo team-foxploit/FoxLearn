@@ -8,6 +8,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import History from "./components/dashboard/History"; //temp routes
 import CreateQuiz from "./components/quizzes/CreateQuiz"; //temp routes
 import HisTeach from "./components/dashboard/History_teacher"; //temp routes
+import DashTeach from "./components/dashboard/Dashboard_teacher"; //temp routes
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/his" component={History} />
           <Route path="/createquiz" component={CreateQuiz} />
           <Route path="/histeach" component={HisTeach} />
+          <Route path="/dashteach" component={DashTeach} />
         </Switch>
       </BrowserRouter>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom';
-import axios from 'axios';
+import { Redirect } from "react-router-dom";
+import axios from "axios";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
@@ -17,9 +17,9 @@ class CreateQuiz extends Component {
       ans3: "",
       ans4: "",
       correctAns: "",
-      didSubmit:"false"
+      didSubmit: "false"
     };
-    // this.state = { value: "default" };
+    this.state = { value: "default" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,11 +27,14 @@ class CreateQuiz extends Component {
   // triggered everytime value changes in our textboxes
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    }, () => {
-      console.log(this.state);
-    });
+    this.setState(
+      {
+        [name]: value
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   // triggered on submit
@@ -54,10 +57,10 @@ class CreateQuiz extends Component {
     console.log(QUEST);
     console.log(ANS);
     const quiz = {
-        QUEST,
-        ANS,
-        Tch_ID:JSON.parse(sessionStorage.getItem('Teacher')).Tch_ID
-    }
+      QUEST,
+      ANS,
+      Tch_ID: JSON.parse(sessionStorage.getItem("Teacher")).Tch_ID
+    };
     console.log(quiz);
     console.log(this.state);
     axios
@@ -68,7 +71,7 @@ class CreateQuiz extends Component {
             didSubmit: true
           });
         }
-    });
+      });
   };
 
   componentDidMount() {
@@ -76,8 +79,8 @@ class CreateQuiz extends Component {
     M.AutoInit();
   }
   render() {
-    if (this.state.didSubmit === 'true') {
-      return(<Redirect to='/dashboard' />)
+    if (this.state.didSubmit === "true") {
+      return <Redirect to="/dashboard" />;
     }
     return (
       <div>

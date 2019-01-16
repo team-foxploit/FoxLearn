@@ -9,7 +9,7 @@ class History_teacher extends Component {
   render() {
     return (
       <div>
-        <div className="container grey lighten-3">
+        <div className="grey lighten-3">
           <h3 className="blue-grey-text center-align">Students Performance</h3>
           <hr />
           <div className="row">

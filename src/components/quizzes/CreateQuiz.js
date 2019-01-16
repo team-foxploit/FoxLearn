@@ -42,7 +42,7 @@ class CreateQuiz extends Component {
     //alert(this.state.subject + "\n" + this.state.difficulty);
     event.preventDefault();
     const QUEST = {
-      subject: this.state.subject,
+      subject: parseInt(this.state.subject, 10),
       difficulty: this.state.difficulty,
       question: this.state.question
     };
@@ -52,7 +52,7 @@ class CreateQuiz extends Component {
       ans2: this.state.ans2,
       ans3: this.state.ans3,
       ans4: this.state.ans4,
-      correctAns: this.state.correctAns
+      correctAns: parseInt(this.state.correctAns, 10)
     };
     console.log(QUEST);
     console.log(ANS);
@@ -66,12 +66,27 @@ class CreateQuiz extends Component {
     axios
       .put(`https://foxlearn-api.herokuapp.com/api/quiz/create`, quiz)
       .then(res => {
+        console.log(res);
         if (res.data.status === "success") {
-          this.setState({
-            didSubmit: true
-          });
+          this.setState(
+            {
+              didSubmit: "true"
+            },
+            () => {}
+          );
         }
       });
+    var existing = localStorage.getItem("submittedQuests");
+    // existing = existing ? JSON.parse(existing) : {};
+    console.log(existing);
+    existing = {
+      existing,
+      quiz
+    };
+    console.log(existing);
+    console.log(JSON.parse(sessionStorage.getItem("Teacher")).Tch_ID);
+    localStorage.setItem("submittedQuests", JSON.stringify(existing));
+    console.log("2");
   };
 
   componentDidMount() {

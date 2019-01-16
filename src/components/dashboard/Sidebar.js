@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./Sidebar.css";
 import userImg from "../images/download.png";
 
@@ -29,6 +29,12 @@ class Sidebar extends Component {
       sessionStorage.clear();
   }
 
+  RedirectToDashboard = () => {
+      return (
+          <Redirect to="/dashboard" />
+      );
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -48,7 +54,7 @@ class Sidebar extends Component {
           </li>
           <div className="blue-grey darken-2">
             <li>
-              <Link to='/dashboard'>
+              <Link to="#" onClick={this.RedirectToDashboard}>
                 <i className="material-icons cyan-text">home</i>
                 <span className="white-text">Home</span>
               </Link>

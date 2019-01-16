@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // Import Materialize
 import M from "materialize-css";
+import MainNavbar from './MainNavbar';
 import img1 from "../images/slider/1.jpg";
 import img2 from "../images/slider/2.jpg";
 import img3 from "../images/slider/3.jpg";
@@ -34,6 +35,7 @@ class SignIn extends Component {
   render() {
     return (
       <div>
+          <MainNavbar />
         <div className="slider">
           <ul className="slides">
             <li>
@@ -198,23 +200,18 @@ class SignIn extends Component {
           <div className="section">
             <div className="row">
               <div className="col s12 center">
-                <h3>
-                  <i className="mdi-content-send brown-text" />
-                </h3>
-                <h4>Contact Us</h4>
-                <p className="left-align light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam scelerisque id nunc nec volutpat. Etiam pellentesque
-                  tristique arcu, non consequat magna fermentum ac. Cras ut
-                  ultricies eros. Maecenas eros justo, ullamcorper a sapien id,
-                  viverra ultrices eros. Morbi sem neque, posuere et pretium
-                  eget, bibendum sollicitudin lacus. Aliquam eleifend
-                  sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet
-                  semper molestie. Morbi massa odio, condimentum sed ipsum ac,
-                  gravida ultrices erat. Nullam eget dignissim mauris, non
-                  tristique erat. Vestibulum ante ipsum primis in faucibus orci
-                  luctus et ultrices posuere cubilia Curae;
-                </p>
+                <h4>Don't Have an Account yet?</h4>
+                <br/>
+                <br/>
+                <div className="row center">
+                  <a
+                    href="/signup"
+                    id="down-button"
+                    className="btn-large waves-effect waves-light teal lighten-1"
+                  >
+                    Sign Up
+                  </a>
+                </div>
               </div>
             </div>
           </div>

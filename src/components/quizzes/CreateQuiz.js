@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom';
-import axios from 'axios';
+import { Redirect } from "react-router-dom";
+import axios from "axios";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
@@ -17,9 +17,9 @@ class CreateQuiz extends Component {
       ans3: "",
       ans4: "",
       correctAns: "",
-      didSubmit:"false"
+      didSubmit: "false"
     };
-    // this.state = { value: "default" };
+    this.state = { value: "default" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,11 +27,14 @@ class CreateQuiz extends Component {
   // triggered everytime value changes in our textboxes
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    }, () => {
-      console.log(this.state);
-    });
+    this.setState(
+      {
+        [name]: value
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   // triggered on submit
@@ -54,33 +57,36 @@ class CreateQuiz extends Component {
     console.log(QUEST);
     console.log(ANS);
     const quiz = {
-        QUEST,
-        ANS,
-        Tch_ID:JSON.parse(sessionStorage.getItem('Teacher')).Tch_ID
-    }
+      QUEST,
+      ANS,
+      Tch_ID: JSON.parse(sessionStorage.getItem("Teacher")).Tch_ID
+    };
     console.log(quiz);
     console.log(this.state);
-    axios.put(`https://foxlearn-api.herokuapp.com/api/quiz/create`, quiz)
+    axios
+      .put(`https://foxlearn-api.herokuapp.com/api/quiz/create`, quiz)
       .then(res => {
-          console.log(res);
+        console.log(res);
         if (res.data.status === "success") {
-          this.setState({
-            didSubmit: 'true'
-        }, () => {
-        });
+          this.setState(
+            {
+              didSubmit: "true"
+            },
+            () => {}
+          );
         }
-    });
-    var existing = localStorage.getItem('submittedQuests');
+      });
+    var existing = localStorage.getItem("submittedQuests");
     // existing = existing ? JSON.parse(existing) : {};
     console.log(existing);
     existing = {
-        existing,
-        quiz
-    }
+      existing,
+      quiz
+    };
     console.log(existing);
-    console.log(JSON.parse(sessionStorage.getItem('Teacher')).Tch_ID);
-    localStorage.setItem('submittedQuests', JSON.stringify(existing));
-    console.log('2');
+    console.log(JSON.parse(sessionStorage.getItem("Teacher")).Tch_ID);
+    localStorage.setItem("submittedQuests", JSON.stringify(existing));
+    console.log("2");
   };
 
   componentDidMount() {
@@ -88,8 +94,8 @@ class CreateQuiz extends Component {
     M.AutoInit();
   }
   render() {
-    if (this.state.didSubmit === 'true') {
-      return(<Redirect to='/dashboard' />)
+    if (this.state.didSubmit === "true") {
+      return <Redirect to="/dashboard" />;
     }
     return (
       <div>
@@ -114,12 +120,12 @@ class CreateQuiz extends Component {
                   <option value="default" disabled>
                     Choose a Subject
                   </option>
-                  <option value='3001'>Geography</option>
-                  <option value='3006'>History</option>
-                  <option value='3003'>Physics</option>
-                  <option value='3002'>Chemistry</option>
-                  <option value='3004'>Web Developing</option>
-                  <option value='3005'>Information Technology</option>
+                  <option value="3001">Geography</option>
+                  <option value="3006">History</option>
+                  <option value="3003">Physics</option>
+                  <option value="3002">Chemistry</option>
+                  <option value="3004">Web Developing</option>
+                  <option value="3005">Information Technology</option>
                 </select>
               </div>
               <h6 className="left-align light-blue-text">Difficulty Level</h6>
@@ -206,10 +212,10 @@ class CreateQuiz extends Component {
                   <option value="default" disabled>
                     Correct Answer
                   </option>
-                  <option value='1'>Option 1</option>
-                  <option value='2'>Option 2</option>
-                  <option value='3'>Option 3</option>
-                  <option value='4'>Option 4</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                  <option value="4">Option 4</option>
                 </select>
               </div>
               <button

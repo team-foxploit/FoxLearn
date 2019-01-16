@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 
-const Navbar = () => {
+const MainNavbar = () => {
   return (
     <div className="wrapper">
       <nav className="nav-wrapper blue lighten-2 hoverable">
@@ -19,4 +19,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MainNavbar;

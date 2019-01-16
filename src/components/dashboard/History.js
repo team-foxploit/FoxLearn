@@ -9,11 +9,12 @@ class History extends Component {
   render() {
     return (
       <div>
-        <div className="container" >
-          <h2 className="center-align blue lighten-2 white-text">Your Performance</h2>
+        <div className="container">
+          <h2 className="center-align blue lighten-2 white-text">
+            Your Performance
+          </h2>
           <div className="row">
             <div className="col s12 m12">
-
               <div className="card-panel teal">
                 <h4 className="white-text">Current Rank</h4>
                 <hr />
@@ -27,41 +28,41 @@ class History extends Component {
                 <hr />
                 <span className="white-text">
                   <Chart
-                    width={'100%'}
-                    height={'300px'}
+                    width={"100%"}
+                    height={"300px"}
                     chartType="ScatterChart"
                     loader={<div>Loading Chart</div>}
                     data={[
-                      ['Attempt', 'Marks'],
-                      [1, 2.5],
+                      ["Attempt", "Marks"],
+                      [1, 4.5],
                       [2, 5.5],
                       [3, 10],
                       [4, 5],
-                      [5, 3.5],
+                      [5, 8.5]
                     ]}
                     options={{
-                      title: 'Marks for last 5 attempts',
-                      hAxis: { title: 'Attempt', minValue: 0, maxValue: 5 },
-                      vAxis: { title: 'Mark', minValue: 0, maxValue: 10 },
-                      legend: 'none',
+                      title: "Marks for last 5 attempts",
+                      hAxis: { title: "Attempt", minValue: 0, maxValue: 5 },
+                      vAxis: { title: "Mark", minValue: 0, maxValue: 10 },
+                      legend: "none",
                       backgroundColor: "#e3f2fd",
                       is3D: true,
                       animation: {
                         startup: true,
-                        easing: 'linear',
-                        duration: 2500,
+                        easing: "linear",
+                        duration: 2500
                       },
-                      enableInteractivity: false,
+                      enableInteractivity: false
                     }}
                     chartEvents={[
                       {
-                        eventName: 'animationfinish',
+                        eventName: "animationfinish",
                         callback: () => {
-                          console.log('Animation Finished')
-                        },
-                      },
+                          console.log("Animation Finished");
+                        }
+                      }
                     ]}
-                    rootProps={{ 'data-testid': '1' }}
+                    rootProps={{ "data-testid": "1" }}
                   />
                 </span>
               </div>
@@ -71,41 +72,41 @@ class History extends Component {
                 <hr />
                 <span className="white-text">
                   <Chart
-                    width={'100%'}
-                    height={'300px'}
+                    width={"100%"}
+                    height={"300px"}
                     chartType="ScatterChart"
                     loader={<div>Loading Chart</div>}
                     data={[
-                      ['Attempt', 'Marks'],
+                      ["Attempt", "Marks"],
                       [1, 2.5],
                       [2, 5.5],
-                      [3, 10],
+                      [3, 5],
                       [4, 5],
-                      [5, 3.5],
+                      [5, 3.5]
                     ]}
                     options={{
-                      title: 'Marks for last 5 attempts',
-                      hAxis: { title: 'Attempt', minValue: 0, maxValue: 5 },
-                      vAxis: { title: 'Mark', minValue: 0, maxValue: 10 },
-                      legend: 'none',
+                      title: "Marks for last 5 attempts",
+                      hAxis: { title: "Attempt", minValue: 0, maxValue: 5 },
+                      vAxis: { title: "Mark", minValue: 0, maxValue: 10 },
+                      legend: "none",
                       backgroundColor: "#e3f2fd",
                       is3D: true,
                       animation: {
                         startup: true,
-                        easing: 'linear',
-                        duration: 2500,
+                        easing: "linear",
+                        duration: 2500
                       },
-                      enableInteractivity: false,
+                      enableInteractivity: false
                     }}
                     chartEvents={[
                       {
-                        eventName: 'animationfinish',
+                        eventName: "animationfinish",
                         callback: () => {
-                          console.log('Animation Finished')
-                        },
-                      },
+                          console.log("Animation Finished");
+                        }
+                      }
                     ]}
-                    rootProps={{ 'data-testid': '1' }}
+                    rootProps={{ "data-testid": "1" }}
                   />
                 </span>
               </div>
@@ -115,41 +116,41 @@ class History extends Component {
                 <hr />
                 <span className="white-text">
                   <Chart
-                    width={'100%'}
-                    height={'300px'}
+                    width={"100%"}
+                    height={"300px"}
                     chartType="ScatterChart"
                     loader={<div>Loading Chart</div>}
                     data={[
-                      ['Attempt', 'Marks'],
+                      ["Attempt", "Marks"],
                       [1, 2.5],
                       [2, 5.5],
-                      [3, 10],
+                      [3, 3],
                       [4, 5],
-                      [5, 3.5],
+                      [5, 3.5]
                     ]}
                     options={{
-                      title: 'Marks for last 5 attempts',
-                      hAxis: { title: 'Attempt', minValue: 0, maxValue: 5 },
-                      vAxis: { title: 'Mark', minValue: 0, maxValue: 10 },
-                      legend: 'none',
+                      title: "Marks for last 5 attempts",
+                      hAxis: { title: "Attempt", minValue: 0, maxValue: 5 },
+                      vAxis: { title: "Mark", minValue: 0, maxValue: 10 },
+                      legend: "none",
                       backgroundColor: "#e3f2fd",
                       is3D: true,
                       animation: {
                         startup: true,
-                        easing: 'linear',
-                        duration: 2500,
+                        easing: "linear",
+                        duration: 2500
                       },
-                      enableInteractivity: false,
+                      enableInteractivity: false
                     }}
                     chartEvents={[
                       {
-                        eventName: 'animationfinish',
+                        eventName: "animationfinish",
                         callback: () => {
-                          console.log('Animation Finished')
-                        },
-                      },
+                          console.log("Animation Finished");
+                        }
+                      }
                     ]}
-                    rootProps={{ 'data-testid': '1' }}
+                    rootProps={{ "data-testid": "1" }}
                   />
                 </span>
               </div>
@@ -159,53 +160,49 @@ class History extends Component {
                 <hr />
                 <span className="white-text">
                   <Chart
-                    width={'100%'}
-                    height={'300px'}
+                    width={"100%"}
+                    height={"300px"}
                     chartType="ScatterChart"
                     loader={<div>Loading Chart</div>}
                     data={[
-                      ['Attempt', 'Marks'],
+                      ["Attempt", "Marks"],
                       [1, 2.5],
                       [2, 5.5],
-                      [3, 10],
+                      [3, 1],
                       [4, 5],
-                      [5, 3.5],
+                      [5, 3.5]
                     ]}
                     options={{
-                      title: 'Marks for last 5 attempts',
-                      hAxis: { title: 'Attempt', minValue: 0, maxValue: 5 },
-                      vAxis: { title: 'Mark', minValue: 0, maxValue: 10 },
-                      legend: 'none',
+                      title: "Marks for last 5 attempts",
+                      hAxis: { title: "Attempt", minValue: 0, maxValue: 5 },
+                      vAxis: { title: "Mark", minValue: 0, maxValue: 10 },
+                      legend: "none",
                       backgroundColor: "#e3f2fd",
                       is3D: true,
                       animation: {
                         startup: true,
-                        easing: 'linear',
-                        duration: 2500,
+                        easing: "linear",
+                        duration: 2500
                       },
-                      enableInteractivity: false,
+                      enableInteractivity: false
                     }}
                     chartEvents={[
                       {
-                        eventName: 'animationfinish',
+                        eventName: "animationfinish",
                         callback: () => {
-                          console.log('Animation Finished')
-                        },
-                      },
+                          console.log("Animation Finished");
+                        }
+                      }
                     ]}
-                    rootProps={{ 'data-testid': '1' }}
+                    rootProps={{ "data-testid": "1" }}
                   />
                 </span>
               </div>
-
-
             </div>
           </div>
         </div>
         <Footer />
       </div>
-
-
     );
   }
 }

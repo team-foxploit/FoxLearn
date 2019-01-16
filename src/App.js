@@ -4,7 +4,7 @@ import SignLanding from "./components/auth/SignLanding";
 import "./App.css";
 import Home from "./components/layout/Home";
 import SignUp from "./components/auth/SignUp";
-import History from "./components/dashboard/History";
+//import History from "./components/dashboard/History";
 import HandleDashboard from "./components/dashboard/HandleDashboard";
 import Ranking from "./components/dashboard/Ranking";
 

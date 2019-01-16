@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "../layout/MainNavbar";
 // Import Materialize
 import M from "materialize-css";
 import img1 from "../images/slider/1.jpg";
@@ -33,6 +34,7 @@ class SignIn extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <div className="slider">
           <ul className="slides">
             <li>
@@ -81,7 +83,8 @@ class SignIn extends Component {
                   <i className="mdi-content-send brown-text" />
                 </h3>
                 <h4>
-                  "Tell me and I forget. Teach me and I remember. Involve me and I learn."
+                  "Tell me and I forget. Teach me and I remember. Involve me and
+                  I learn."
                 </h4>
                 <p className="left-align light">
                   For better or worse, with technology and mobile devices,

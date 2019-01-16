@@ -31,7 +31,6 @@ class App extends Component {
           <Route path="/signin" component={SignLanding} />
           <Route path="/signup" component={SignUp} />
           <ProtectedRoute path="/dashboard" component={HandleDashboard} />
-          <ProtectedRoute path="/myhistory" component={History} />
           <ProtectedRoute path="/myranking" component={Ranking} />
         </Switch>
       </BrowserRouter>

@@ -6,6 +6,7 @@ import "./Sidebar.css";
 import "../quizzes/styles.css";
 import Footer from "../footer/footer";
 import Wall from "./Wall";
+import History from './History';
 import SignedInNavabr from "../layout/SignedInNavabr";
 import Subjects from "../quizzes/Subjects"; //temp routes
 import Quiz from "../quizzes/Quiz"; //temp routes
@@ -25,6 +26,7 @@ class Dashboard extends Component {
           <Switch>
             <Route path="/dashboard" component={Wall} />
             <Route path="/subjects/:difficulty" component={Subjects} />
+            <Route path="/myhistory" component={History} />
             <Route path="/quiz/:sub_id" component={Quiz} />
             <Route path="/dashboard/result" component={Result} />
           </Switch>

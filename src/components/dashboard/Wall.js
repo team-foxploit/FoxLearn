@@ -18,9 +18,9 @@ const Wall = ({ match }) => {
                 use effectively.
               </p>
               <div className="card-action">
-                <button className="waves-effect waves-light btn green darken-1">
+                <Link to='/myhistory' className="waves-effect waves-light btn green darken-1">
                   My Progress
-                </button>
+              </Link>
               </div>
             </div>
           </div>

@@ -16,9 +16,9 @@ const WallTeacher = () => {
                 progress.
               </p>
               <div className="card-action">
-                <button className="waves-effect waves-light btn teal darken-1">
+                <Link to='/dashboard/histeach' className="waves-effect waves-light btn teal darken-1">
                   See History
-                </button>
+              </Link>
               </div>
             </div>
           </div>

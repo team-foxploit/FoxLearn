@@ -39,7 +39,7 @@ class CreateQuiz extends Component {
     //alert(this.state.subject + "\n" + this.state.difficulty);
     event.preventDefault();
     const QUEST = {
-      subject: this.state.subject,
+      subject: parseInt(this.state.subject, 10),
       difficulty: this.state.difficulty,
       question: this.state.question
     };
@@ -49,7 +49,7 @@ class CreateQuiz extends Component {
       ans2: this.state.ans2,
       ans3: this.state.ans3,
       ans4: this.state.ans4,
-      correctAns: this.state.correctAns
+      correctAns: parseInt(this.state.correctAns, 10)
     };
     console.log(QUEST);
     console.log(ANS);
@@ -60,15 +60,27 @@ class CreateQuiz extends Component {
     }
     console.log(quiz);
     console.log(this.state);
-    axios
-      .put(`https://foxlearn-api.herokuapp.com/api/quiz/create`, quiz)
+    axios.put(`https://foxlearn-api.herokuapp.com/api/quiz/create`, quiz)
       .then(res => {
+          console.log(res);
         if (res.data.status === "success") {
           this.setState({
-            didSubmit: true
-          });
+            didSubmit: 'true'
+        }, () => {
+        });
         }
     });
+    var existing = localStorage.getItem('submittedQuests');
+    // existing = existing ? JSON.parse(existing) : {};
+    console.log(existing);
+    existing = {
+        existing,
+        quiz
+    }
+    console.log(existing);
+    console.log(JSON.parse(sessionStorage.getItem('Teacher')).Tch_ID);
+    localStorage.setItem('submittedQuests', JSON.stringify(existing));
+    console.log('2');
   };
 
   componentDidMount() {
@@ -102,12 +114,12 @@ class CreateQuiz extends Component {
                   <option value="default" disabled>
                     Choose a Subject
                   </option>
-                  <option value="3001">Geography</option>
-                  <option value="3006">History</option>
-                  <option value="3003">Physics</option>
-                  <option value="3002">Chemistry</option>
-                  <option value="3004">Web Developing</option>
-                  <option value="3005">Information Technology</option>
+                  <option value='3001'>Geography</option>
+                  <option value='3006'>History</option>
+                  <option value='3003'>Physics</option>
+                  <option value='3002'>Chemistry</option>
+                  <option value='3004'>Web Developing</option>
+                  <option value='3005'>Information Technology</option>
                 </select>
               </div>
               <h6 className="left-align light-blue-text">Difficulty Level</h6>
@@ -194,10 +206,10 @@ class CreateQuiz extends Component {
                   <option value="default" disabled>
                     Correct Answer
                   </option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                  <option value="4">Option 4</option>
+                  <option value='1'>Option 1</option>
+                  <option value='2'>Option 2</option>
+                  <option value='3'>Option 3</option>
+                  <option value='4'>Option 4</option>
                 </select>
               </div>
               <button

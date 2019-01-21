@@ -54,7 +54,7 @@ class Sidebar extends Component {
           </li>
           <div className="blue-grey darken-2">
             <li>
-              <Link to="#" onClick={this.RedirectToDashboard}>
+              <Link to="/dashboard" onClick={this.RedirectToDashboard}>
                 <i className="material-icons cyan-text">home</i>
                 <span className="white-text">Home</span>
               </Link>

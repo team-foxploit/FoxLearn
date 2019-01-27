@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../layout/MainNavbar";
 // Import Materialize
 import M from "materialize-css";
+import MainNavbar from './MainNavbar';
 import img1 from "../images/slider/1.jpg";
 import img2 from "../images/slider/2.jpg";
 import img3 from "../images/slider/3.jpg";
@@ -35,7 +36,7 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <MainNavbar />
         <div className="slider">
           <ul className="slides">
             <li>
@@ -198,20 +199,17 @@ class SignIn extends Component {
           <div className="section">
             <div className="row">
               <div className="col s12 center">
-                <h3>
-                  <i className="mdi-content-send brown-text" />
-                </h3>
-                <h4>Don't have an Account yet?</h4>
+                <h4>Don't Have an Account yet?</h4>
                 <br />
                 <br />
                 <div className="row center">
-                  <Link
-                    to="/signup"
-                    id="signup-button"
+                  <a
+                    href="/signup"
+                    id="down-button"
                     className="btn-large waves-effect waves-light teal lighten-1"
                   >
                     Sign Up
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

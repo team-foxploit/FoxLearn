@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-//import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import { Chart } from "react-google-charts";
-import Footer from "../footer/footer";
 
 class History extends Component {
   state = {};

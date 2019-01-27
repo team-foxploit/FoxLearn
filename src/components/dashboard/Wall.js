@@ -5,7 +5,7 @@ const Wall = ({ match }) => {
   console.log(match);
   return (
     <div className="row">
-      <p />
+      <p></p>
       <div className="col s12 m4">
         <div className="card">
           <div className="card-image green lighten-2 centText">

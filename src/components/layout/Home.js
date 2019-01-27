@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../layout/MainNavbar";
-// Import Materialize
 import M from "materialize-css";
 import MainNavbar from './MainNavbar';
 import img1 from "../images/slider/1.jpg";

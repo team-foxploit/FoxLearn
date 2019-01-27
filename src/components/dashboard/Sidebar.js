@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import userImg from "../images/download.png";
 
@@ -14,20 +14,20 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-      console.log(this.props.props);
-      this.setState(state => ({
+    console.log(this.props.props);
+    this.setState(state => ({
       name: this.props.details.First_Name + " " + this.props.details.Last_Name,
       username: this.props.details.Username,
       email: this.props.details.Email
-  }));
+    }));
     console.log(this.state);
     console.log(this.props.details);
   }
 
   handleLogOut = () => {
-      sessionStorage.setItem('isLoggedIn','false');
-      sessionStorage.clear();
-  }
+    sessionStorage.setItem("isLoggedIn", "false");
+    sessionStorage.clear();
+  };
 
   render() {
     return (
@@ -35,44 +35,44 @@ class Sidebar extends Component {
         <ul id="slide-out" className="sidenav sidenav-fixed blue-grey darken-3">
           <li>
             <div className="user-view">
-              <Link to='/userdetails'>
+              <Link to="/userdetails">
                 <img className="circle" src={userImg} alt="" />
               </Link>
-              <Link to='/userdetails'>
+              <Link to="/userdetails">
                 <span className="white-text name">{this.state.name}</span>
               </Link>
-              <Link to='/userdetails'>
+              <Link to="/userdetails">
                 <span className="white-text email">{this.state.email}</span>
               </Link>
             </div>
           </li>
           <div className="blue-grey darken-2">
             <li>
-              <Link to='/dashboard'>
+              <Link to="/dashboard">
                 <i className="material-icons cyan-text">home</i>
                 <span className="white-text">Home</span>
               </Link>
             </li>
             <li>
-              <Link to='/mycourses'>
+              <Link to="/dashboard">
                 <i className="material-icons cyan-text">school</i>
                 <span className="white-text">My Courses</span>
               </Link>
             </li>
             <li>
-              <Link to='/myranking'>
+              <Link to="/myranking">
                 <i className="material-icons cyan-text">star_rate</i>
                 <span className="white-text">My Ranking</span>
               </Link>
             </li>
             <li>
-              <Link to='/myhistory'>
+              <Link to="/myhistory">
                 <i className="material-icons cyan-text">schedule</i>
                 <span className="white-text">My History</span>
               </Link>
             </li>
             <li>
-              <Link to='/leaderboard'>
+              <Link to="/leaderboard">
                 <i className="material-icons cyan-text">timeline</i>
                 <span className="white-text">Leaderboard</span>
               </Link>
@@ -87,7 +87,11 @@ class Sidebar extends Component {
             </li>
             <li>
               <div className="centText">
-                <Link to='/signin' className="waves-effect waves-light btn btn-medium cyan" onClick={this.handleLogOut}>
+                <Link
+                  to="/signin"
+                  className="waves-effect waves-light btn btn-medium cyan"
+                  onClick={this.handleLogOut}
+                >
                   <i className="material-icons left">logout</i>Logout
                 </Link>
               </div>

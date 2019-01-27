@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "../layout/MainNavbar";
 // Import Materialize
 import M from "materialize-css";
 import img1 from "../images/slider/1.jpg";
@@ -11,7 +12,7 @@ import img7 from "../images/parallax/3.jpg";
 import Footer from "../footer/footer";
 import "./styles.css";
 import "materialize-css/dist/css/materialize.min.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class SignIn extends Component {
   componentDidMount() {
@@ -34,6 +35,7 @@ class SignIn extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <div className="slider">
           <ul className="slides">
             <li>
@@ -82,7 +84,8 @@ class SignIn extends Component {
                   <i className="mdi-content-send brown-text" />
                 </h3>
                 <h4>
-                  "Tell me and I forget. Teach me and I remember. Involve me and I learn."
+                  "Tell me and I forget. Teach me and I remember. Involve me and
+                  I learn."
                 </h4>
                 <p className="left-align light">
                   For better or worse, with technology and mobile devices,
@@ -113,7 +116,7 @@ class SignIn extends Component {
                   className="btn-large waves-effect waves-light teal lighten-1"
                 >
                   Get Started
-              </Link>
+                </Link>
               </div>
               <br />
               <br />
@@ -123,7 +126,6 @@ class SignIn extends Component {
             <img src={img5} alt="Unsplashed background img 1" />
           </div>
         </div>
-
         <div className="container">
           <div className="section">
             <div className="row">
@@ -178,7 +180,6 @@ class SignIn extends Component {
             </div>
           </div>
         </div>
-
         <div className="parallax-container valign-wrapper">
           <div className="section no-pad-bot">
             <div className="container">
@@ -193,7 +194,6 @@ class SignIn extends Component {
             <img src={img6} alt="Unsplashed background img 2" />
           </div>
         </div>
-
         <div className="container">
           <div className="section">
             <div className="row">
@@ -201,20 +201,18 @@ class SignIn extends Component {
                 <h3>
                   <i className="mdi-content-send brown-text" />
                 </h3>
-                <h4>Contact Us</h4>
-                <p className="left-align light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam scelerisque id nunc nec volutpat. Etiam pellentesque
-                  tristique arcu, non consequat magna fermentum ac. Cras ut
-                  ultricies eros. Maecenas eros justo, ullamcorper a sapien id,
-                  viverra ultrices eros. Morbi sem neque, posuere et pretium
-                  eget, bibendum sollicitudin lacus. Aliquam eleifend
-                  sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet
-                  semper molestie. Morbi massa odio, condimentum sed ipsum ac,
-                  gravida ultrices erat. Nullam eget dignissim mauris, non
-                  tristique erat. Vestibulum ante ipsum primis in faucibus orci
-                  luctus et ultrices posuere cubilia Curae;
-                </p>
+                <h4>Don't have an Account yet?</h4>
+                <br />
+                <br />
+                <div className="row center">
+                  <Link
+                    to="/signup"
+                    id="signup-button"
+                    className="btn-large waves-effect waves-light teal lighten-1"
+                  >
+                    Sign Up
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -12,7 +12,7 @@ const MainNavbar = () => {
         </Link>
         <div className="hide-on-med-and-down">
           {/* <SignedInLinks className="right" /> */}
-          <SignedOutLinks className="left" />
+          <SignedOutLinks className="left-align" />
         </div>
       </nav>
     </div>

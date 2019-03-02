@@ -1,7 +1,7 @@
 {
   "name": "foxlearn",
   "version": "1.0.1",
-  "homepage": "https://github.com/team-foxploit/FoxLearn",
+  "homepage": "/",
   "description": "A Web Based Learning Environment created for students",
   "scripts": {
     "build": "react-scripts build",

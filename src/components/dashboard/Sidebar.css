@@ -1,0 +1,15 @@
+.dash {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+  .dash {
+    padding-left: 0;
+  }
+}
+
+.cent {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}

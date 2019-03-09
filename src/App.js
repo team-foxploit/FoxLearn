@@ -7,19 +7,6 @@ import style from "./App.module.css";
 // import HandleDashboard from "./components/dashboard/HandleDashboard";
 // import Ranking from "./components/dashboard/Ranking";
 
-// const ProtectedRoute = ({ component: Component, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={props => {
-//       const loggedInStatus = sessionStorage.getItem("isLoggedIn");
-//       if (loggedInStatus === "true") {
-//         return <Component {...props} />;
-//       } else {
-//         return <Redirect to="/signin" />;
-//       }
-//     }}
-//   />
-// );
 
 class App extends Component {
   render() {

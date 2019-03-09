@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 // import SignLanding from "./components/auth/SignLanding";
-import style from "./App.css";
+import style from "./App.module.css";
 // import Home from "./components/layout/Home";
 // import SignUp from "./components/auth/SignUp";
 // import HandleDashboard from "./components/dashboard/HandleDashboard";

@@ -1,4 +1,5 @@
 import React from "react";
+import MediaLinks from './MediaLinks';
 
 const Footer = () => {
   return (
@@ -12,31 +13,16 @@ const Footer = () => {
             </p>
           </div>
           <div className="col l4 offset-l2 s12">
-            <h5 className="white-text">Keep in touch</h5>
-            <ul>
-              <li>
-                <a className="grey-text text-lighten-3" href="https://www.facebook.com/foxploit">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a className="grey-text text-lighten-3" href="https://twitter.com/@foxploit">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a className="grey-text text-lighten-3" href="https://www.linkedin.com/in/team-foxploit-49110b174/">
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
+            <MediaLinks />
           </div>
         </div>
       </div>
-      <div className="footer-copyright">
+      <div className="footer-copyright center">
         <div className="container">
           © 2018 FoxLearn
-          <a className="grey-text text-lighten-4 right" href="#!">
+        </div>
+        <div>
+          <a className="grey-text text-lighten-4 right" href="https://foxploit.com/blog">
             Our blog
           </a>
         </div>

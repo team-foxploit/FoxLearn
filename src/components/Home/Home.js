@@ -13,6 +13,7 @@ import img5 from "../../assets/images/parallax/1.jpg";
 import img6 from "../../assets/images/parallax/2.jpg";
 import img7 from "../../assets/images/parallax/3.jpg";
 import Carousel from '../Carousel/Carousel';
+import Parallax from '../Parallax/Parallax';
 import style from './Home.module.css';
 // import Navbar from '../../containers/Navbar/Navbar';
 // TODO : replace a with Link
@@ -41,7 +42,7 @@ const Home = (props) => {
         <div>
             <Navbar/>
                 <Carousel />
-                <div className="container">
+                <section className="container">
                   <div className="section">
                     <div className="row">
                       <div className="col s12 center">
@@ -64,33 +65,21 @@ const Home = (props) => {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div id="index-banner" className="parallax-container">
-                  <div className="section no-pad-bot">
-                    <div className="container">
-                      <br />
-                      <br />
-                      <h1 className="header center teal-text text-lighten-2">
-                        Become a member of our growing community!
-                      </h1>
-                      <br />
-                      <div className="row center">
-                        <a
-                          href="/signin"
-                          id="download-button"
-                          className="btn-large waves-effect waves-light teal lighten-1"
-                        >
-                          Get Started
-                        </a>
-                      </div>
-                      <br />
-                      <br />
-                    </div>
-                  </div>
-                  <div className="parallax">
-                    <img src={img5} alt="Unsplashed background img 1" />
-                  </div>
-                </div>
+                </section>
+                <Parallax 
+                  title="Become a member of our growing community!"
+                  img={img5}
+                  altText="Getting started image"
+                  titleColor=" brown-text text-darken-2"
+                >
+                  <a
+                    href="/signin"
+                    id="download-button"
+                    className="btn-large waves-effect waves-light lime accent-1 lighten-1"
+                  >
+                    Get Started
+                  </a>
+                </Parallax>
                 <div className="container">
                   <div className="section">
                     <div className="row">
@@ -145,20 +134,12 @@ const Home = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="parallax-container valign-wrapper">
-                  <div className="section no-pad-bot">
-                    <div className="container">
-                      <div className="row center">
-                        <h2 className="header col s12 light white-text">
-                          Your classroom is now on clouds!
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="parallax">
-                    <img src={img6} alt="Unsplashed background img 2" />
-                  </div>
-                </div>
+                <Parallax 
+                  title="Your classroom is now on clouds!"
+                  img={img6}
+                  altText="Getting started image"
+                  titleColor=" light-blue-text text-lighten-2"
+                />
                 <div className="container">
                   <div className="section">
                     <div className="row">
@@ -179,21 +160,13 @@ const Home = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="parallax-container valign-wrapper">
-                  <div className="section no-pad-bot">
-                    <div className="container right-align">
-                      <div className="row center">
-                        <h3 className="col s12 light left-align white-text">
-                          Learn together
-                          <br /> Anywhere, anytime!
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="parallax">
-                    <img src={img7} alt="Unsplashed background img 3" />
-                  </div>
-                </div>
+                <Parallax 
+                  title="Learn Together, Anywhere, Anytime!"
+                  img={img7}
+                  altText="Getting started image"
+                  titleColor=" light-blue-text text-lighten-2 left-align"
+                  parallaxClass="valign-wrapper"
+                />
             <Footer />
         </div>
 

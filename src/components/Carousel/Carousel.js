@@ -39,7 +39,7 @@ const Carousel = (props) => {
                 <CarouselItem
                     img={img2}
                     altText="Image-2"
-                    title="A Groundbreaking Learning Experience"
+                    title="An Enhanced Learning Experience"
                     subtitile="Hands-on learning, interactive content, measurable progress."
                     titleClass="left-align black-text"
                     subTitleClass="blue-text text-lighten-3"

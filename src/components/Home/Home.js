@@ -13,6 +13,7 @@ import img5 from "../../assets/images/parallax/1.jpg";
 import img6 from "../../assets/images/parallax/2.jpg";
 import img7 from "../../assets/images/parallax/3.jpg";
 import Carousel from '../Carousel/Carousel';
+import Card from '../Card/Card';
 import Parallax from '../Parallax/Parallax';
 import style from './Home.module.css';
 // import Navbar from '../../containers/Navbar/Navbar';
@@ -80,60 +81,49 @@ const Home = (props) => {
                     Get Started
                   </a>
                 </Parallax>
-                <div className="container">
+                <section className="container">
                   <div className="section">
                     <div className="row">
                       <div className="col s12 m4">
-                        <div className="icon-block">
-                          <h2 className="center brown-text">
-                            <i className="material-icons md-36">assessment</i>
-                          </h2>
-                          <h5 className="center">Self Paced Evaluation</h5>
-
-                          <p className="light">
-                            Don’t get discouraged if your friend picks up a subject
+                        <Card
+                          style={style}
+                          icon="assessment"
+                          title="Self Paced Evaluation!"
+                          description="Don’t get discouraged if your friend picks up a subject
                             faster than you. Everyone learns at their own speed, so
                             figure out what study modes work best for you and stick to
-                            it.
-                          </p>
-                        </div>
+                            it."
+                          color="amber darken-3"
+                        />
                       </div>
-
                       <div className="col s12 m4">
-                        <div className="icon-block">
-                          <h2 className="center brown-text">
-                            <i className="material-icons md-36">group</i>
-                          </h2>
-                          <h5 className="center">Community Support</h5>
-
-                          <p className="light">
-                            By utilizing elements and principles of Material Design, we
-                            were able to create a framework that incorporates components
-                            and animations that provide more feedback to users.
-                            Additionally, a single underlying responsive system across
-                            all platforms allow for a more unified user experience.
-                          </p>
-                        </div>
+                        <Card
+                          style={style}
+                          icon="group"
+                          title="Community Support!"
+                          description="By utilizing elements and principles of Material Design, we
+                              were able to create a framework that incorporates components
+                              and animations that provide more feedback to users.
+                              Additionally, a single underlying responsive system across
+                              all platforms allow for a more unified user experience."
+                          color="light-blue darken-3"
+                        />
                       </div>
-
                       <div className="col s12 m4">
-                        <div className="icon-block">
-                          <h2 className="center brown-text">
-                            <i className="material-icons md-36">assignment_ind</i>
-                          </h2>
-                          <h5 className="center">Learn through Quizes</h5>
-
-                          <p className="light">
-                            We have provided detailed documentation as well as specific
-                            code examples to help new users get started. We are also
-                            always open to feedback and can answer any questions a user
-                            may have about Materialize.
-                          </p>
-                        </div>
+                        <Card
+                          style={style}
+                          icon="assignment_ind"
+                          title="Learn through Quizes..."
+                          description="We have provided detailed documentation as well as specific
+                              code examples to help new users get started. We are also
+                              always open to feedback and can answer any questions a user
+                              may have about Materialize."
+                          color="pink accent-1"
+                        />
                       </div>
                     </div>
                   </div>
-                </div>
+                </section>
                 <Parallax 
                   title="Your classroom is now on clouds!"
                   img={img6}

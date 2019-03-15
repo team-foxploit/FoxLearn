@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Aux from '../../hoc/Auxiliary';
+import style from './CarouselItem.module.css';
 
 const CarouselItem = (props) => {
     let titleClasses = ["caption"];
@@ -8,15 +9,13 @@ const CarouselItem = (props) => {
     titleClasses = titleClasses.join(' ');
     let subTitleClasses = ["light"];
     subTitleClasses.push(props.subTitleClass);
-    subTitleClasses = subTitleClasses.join(' ');
-    console.log(titleClasses);
-    console.log(subTitleClasses);
+    subTitleClasses = subTitleClasses.join(' ');    
     return (
         <Aux>
             <li>
               <img src={props.img} alt={props.altText} />
               <div className={titleClasses}>
-                <h2>{props.title}</h2>
+                <h2 className={style.title}>{props.title}</h2>
                 <h5 className={subTitleClasses}>{props.subtitile}</h5>
               </div>
             </li>

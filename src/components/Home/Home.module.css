@@ -1,0 +1,9 @@
+.quote {
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 1px 1px 1px #abc;
+}
+
+.description {
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 20px;
+}

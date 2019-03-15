@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import style from "./App.module.css";
 import Layout from './components/Layout/Layout';
+import Home from './components/Home/Home';
+// import Dashboard from './containers/Dashboard/Dashboard';
+import 'materialize-css';
+
 // import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 // import SignLanding from "./components/auth/SignLanding";
 // import Home from "./components/layout/Home";
@@ -14,7 +18,7 @@ class App extends Component {
     return (
         <div className={style.App}>
             <Layout>
-                <p>Hello</p>
+                <Home />
             </Layout>
         </div>
     );

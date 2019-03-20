@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 // import Footer from "../footer/footer";
 // import "../layout/styles.css";
 
-class SignLanding extends Component {
+class SignIn extends Component {
   state = {
     username: "",
     password: "",
@@ -173,4 +173,4 @@ class SignLanding extends Component {
   }
 }
 
-export default SignLanding;
+export default SignIn;

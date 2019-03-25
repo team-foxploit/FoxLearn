@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
   var classes = ["card-image lighten-2 centText"];
@@ -15,9 +16,9 @@ const Card = (props) => {
           </p>
           <div className="card-action">
             {props.button ?
-              <a href={props.link} className="waves-effect waves-light btn green darken-1">
+              <Link to={props.link} className="waves-effect waves-light btn green darken-1">
                 {props.button}
-              </a> : null
+              </Link> : null
             }
           </div>
         </div>

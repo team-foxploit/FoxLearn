@@ -1,5 +1,6 @@
 import React from 'react';
 import Aux from '../../hoc/Auxiliary';
+import { Link } from 'react-router-dom';
 
 const CardButtons = (props) => {
     const subjects = ["easy", "medium", "hard"];
@@ -28,25 +29,18 @@ const CardButtons = (props) => {
                 a_id = a_id.join('');
                 classes = classes.join(' ');
                 return (
-                    <a
+                    <Link
                         className={classes}
                         id={a_id}
                         href={link}
                         key={index}
                     >
                         {subject}
-                    </a>
+                    </Link>
                 )
             })}
         </Aux>
     )
 }
 
-// <a
-// className="waves-effect yellow waves-light btn-large"
-// id="button_medium"
-// href="/subjects/medium"
-// >
-// {props.difficulty}
-// </a>
 export default CardButtons;

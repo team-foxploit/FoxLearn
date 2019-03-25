@@ -3,6 +3,7 @@ import lifecycle from 'react-pure-lifecycle';
 import M from 'materialize-css';
 import "materialize-css/dist/css/materialize.min.css";
 import style from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import SideNav from './SideNav';
 import NavLinks from './NavLinks';
@@ -24,10 +25,10 @@ const Navbar = () => {
   return (
     <div className="wrapper">
       {/*<nav className="nav-wrapper orange lighten-2 hoverable">
-        <a href="/" className="brand-logo left">
+        <Link href="/" className="brand-logo left">
           <Logo />
-        </a>
-        <a href="#" data-target="mobile-demo" className="sidenav-trigger" onClick={handleSidebar}><i className="material-icons">menu</i></a>
+        </Link>
+        <Link href="#" data-target="mobile-demo" className="sidenav-trigger" onClick={handleSidebar}><i className="material-icons">menu</i></Link>
         <div className="hide-on-med-and-down">
           {/* <SignedInLinks className="right" />
           <div className={style.align}>
@@ -39,9 +40,9 @@ const Navbar = () => {
     </nav>*/}
         <nav>
            <div className="nav-wrapper blue lighten-2 hoverable">
-             <a href="#!" className="left"><Logo /></a>
-             <a href="#!" className="brand-logo">FoxLearn</a>
-             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+             <Link to="/" className="left"><Logo /></Link>
+             <Link to="/" className="brand-logo">FoxLearn</Link>
+             <Link to="/" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
              <ul className="right hide-on-med-and-down">
                <NavLinks style={style}/>
              </ul>

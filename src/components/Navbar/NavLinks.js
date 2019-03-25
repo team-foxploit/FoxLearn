@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Aux from '../../hoc/Auxiliary';
 import propTypes from 'prop-types';
 
 const NavLinks = (props) => {
     return (
         <Aux>
-            <li><a className={props.style.signLinks} href='/signup'>Sign Up</a></li>
-            <li><a className={props.style.signLinks} href='/signin'>Log In</a></li>
-            <li><a className={props.style.signLinks} href='/about'>About</a></li>
-            <li><a className={props.style.signLinks} href='/contact'>Contact</a></li>
+            <li><Link className={props.style.signLinks} to='/signup'>Sign Up</Link></li>
+            <li><Link className={props.style.signLinks} to='/signin'>Log In</Link></li>
+            <li><Link className={props.style.signLinks} to='/about'>About</Link></li>
+            <li><Link className={props.style.signLinks} to='/contact'>Contact</Link></li>
         </Aux>
     )
 }

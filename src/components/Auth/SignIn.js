@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Aux from '../../hoc/Auxiliary';
+import { Link } from 'react-router-dom';
 // import axios from "axios";
 // import MainInNavabr from "../layout/MainNavbar";
 // import Footer from "../footer/footer";
@@ -146,7 +148,9 @@ class SignIn extends Component {
                         <label htmlFor="password" className="">
                           Password
                         </label>
-                        {(this.state.isAuthenticated === "NO" ) ? <span className="red-text text-darken-1" data-error="wrong">Wrong Password</span> : null}
+                        {(this.state.isAuthenticated === "NO" ) ? <Aux><div className="red-text center text-darken-1">Wrong Password</div><Link to="/auth" className="center">
+                        Forgot Password?
+                      </Link></Aux> : null}
                       </div>
                       <div className="center-align">
                         <input
@@ -158,9 +162,6 @@ class SignIn extends Component {
                         <br />
                         <br />
                       </div>
-                      <a href="#!" className="left">
-                        Forgot Password?
-                      </a>
                     </form>
                   </div>
                 </div>

@@ -3,12 +3,12 @@ import lifecycle from 'react-pure-lifecycle';
 // import propTypes from 'prop-types';
 import M from 'materialize-css';
 import "materialize-css/dist/css/materialize.min.css";
-import Aux from '../../hoc/Auxiliary';
+import Aux from '../../../hoc/Auxiliary';
 import CarouselItem from './CarouselItem';
-import img1 from "../../assets/images/slider/1.jpg";
-import img2 from "../../assets/images/slider/2.jpg";
-import img3 from "../../assets/images/slider/3.jpg";
-import img4 from "../../assets/images/slider/4.jpg";
+import img1 from "../../../assets/images/slider/1.jpg";
+import img2 from "../../../assets/images/slider/2.jpg";
+import img3 from "../../../assets/images/slider/3.jpg";
+import img4 from "../../../assets/images/slider/4.jpg";
 
 const methods = {
     componentDidMount() {

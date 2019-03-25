@@ -1,10 +1,10 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import lifecycle from 'react-pure-lifecycle';
 import M from 'materialize-css';
 import "materialize-css/dist/css/materialize.min.css";
 import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import Footer from '../UI/Footer/Footer';
 // import img1 from "../../assets/images/slider/1.jpg";
 // import img2 from "../../assets/images/slider/2.jpg";
 // import img3 from "../../assets/images/slider/3.jpg";
@@ -12,12 +12,12 @@ import Footer from '../Footer/Footer';
 import img5 from "../../assets/images/parallax/1.jpg";
 import img6 from "../../assets/images/parallax/2.jpg";
 import img7 from "../../assets/images/parallax/3.jpg";
-import Carousel from '../Carousel/Carousel';
-import Card from '../Card/Card';
-import Parallax from '../Parallax/Parallax';
+import Carousel from '../UI/Carousel/Carousel';
+import Card from '../UI/Card/Card';
+import Parallax from '../UI/Parallax/Parallax';
 import style from './Home.module.css';
 // import Navbar from '../../containers/Navbar/Navbar';
-// TODO : replace a with Link
+// TODO : replace Link with Link
 
 const methods = {
     componentDidMount() {
@@ -56,7 +56,7 @@ const Home = (props) => {
                         </h4>
                         <p className={style.description}>
                           For better or worse, with technology and mobile devices,
-                          learning is no longer confined to a desk. Sometimes, a change
+                          learning is no longer confined to Link desk. Sometimes, Link change
                           of scenery is good to break up the monotony. Review your study
                           topics when you’re waiting for the bus to arrive, having lunch
                           in the park or if you’re bored. Casually studying on-the-go is
@@ -68,18 +68,18 @@ const Home = (props) => {
                   </div>
                 </section>
                 <Parallax 
-                  title="Become a member of our growing community!"
+                  title="Become Link member of our growing community!"
                   img={img5}
                   altText="Getting started image"
                   titleColor=" brown-text text-darken-2"
                 >
-                  <a
-                    href="/signin"
+                  <Link
+                    to="/signin"
                     id="download-button"
                     className="btn-large waves-effect waves-light lime accent-1 lighten-1"
                   >
                     Get Started
-                  </a>
+                  </Link>
                 </Parallax>
                 <section className="container">
                   <div className="section">
@@ -89,7 +89,7 @@ const Home = (props) => {
                           style={style}
                           icon="assessment"
                           title="Self Paced Evaluation!"
-                          description="Don’t get discouraged if your friend picks up a subject
+                          description="Don’t get discouraged if your friend picks up Link subject
                             faster than you. Everyone learns at their own speed, so
                             figure out what study modes work best for you and stick to
                             it."
@@ -102,10 +102,10 @@ const Home = (props) => {
                           icon="group"
                           title="Community Support!"
                           description="By utilizing elements and principles of Material Design, we
-                              were able to create a framework that incorporates components
+                              were able to create Link framework that incorporates components
                               and animations that provide more feedback to users.
-                              Additionally, a single underlying responsive system across
-                              all platforms allow for a more unified user experience."
+                              Additionally, Link single underlying responsive system across
+                              all platforms allow for Link more unified user experience."
                           color="light-blue darken-3"
                         />
                       </div>
@@ -116,7 +116,7 @@ const Home = (props) => {
                           title="Learn through Quizes..."
                           description="We have provided detailed documentation as well as specific
                               code examples to help new users get started. We are also
-                              always open to feedback and can answer any questions a user
+                              always open to feedback and can answer any questions Link user
                               may have about Materialize."
                           color="pink accent-1"
                         />
@@ -138,13 +138,13 @@ const Home = (props) => {
                         <br />
                         <br />
                         <div className="row center">
-                          <a
-                            href="/signup"
+                          <Link
+                            to="/signup"
                             id="down-button"
                             className="btn-large waves-effect waves-light teal lighten-1"
                           >
                             Sign Up
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

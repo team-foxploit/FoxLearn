@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import Aux from '../../hoc/Auxiliary';
+import Aux from '../../../hoc/Auxiliary';
 import './LinkItem.module.css';
 
 const ListItem = (props) => {

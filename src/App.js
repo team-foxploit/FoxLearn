@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import style from "./App.module.css";
 import Layout from './components/Layout/Layout';
+import { BrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
+import SignIn from './components/Auth/SignIn';
 // import Dashboard from './containers/Dashboard/Dashboard';
 import 'materialize-css';
 
@@ -17,9 +19,12 @@ class App extends Component {
   render() {
     return (
         <div className={style.App}>
+          <BrowserRouter>
             <Layout>
+                {/* <SignIn /> */}
                 <Home />
             </Layout>
+          </BrowserRouter>
         </div>
     );
   }

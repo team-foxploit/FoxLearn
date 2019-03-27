@@ -132,7 +132,11 @@ Input.propTypes = {
     placeholder: propTypes.string,
     label: propTypes.string,
     error: propTypes.string,
-    hint: propTypes.string
+    hint: propTypes.string,
+    valid: propTypes.bool,
+    touched: propTypes.bool,
+    options: propTypes.array,
+    changedHandler: propTypes.func
 }
 
 export default lifecycle(methods)(Input);

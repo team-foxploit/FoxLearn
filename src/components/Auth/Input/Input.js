@@ -11,7 +11,6 @@ const methods = {
 }
 
 const Input = (props) => {
-    console.log(props);    
     let inputElement = null;
     switch (props.type) {
         case 'text':
@@ -23,6 +22,24 @@ const Input = (props) => {
                     className="validate"
                     onChange={props.changedHandler}
                 />
+                {(!props.valid && props.touched) ? 
+                    <span
+                        className="red-text left helper-text"
+                    >
+                    {props.error}
+                    </span>
+                    :
+                    null
+                }
+                {props.touched ?
+                    null
+                    :
+                    <span
+                        className="blue-text left helper-text"
+                    >
+                    {props.hint}
+                    </span>
+                }
                 <label htmlFor={props.id}>
                     {props.label}
                 </label>
@@ -40,13 +57,15 @@ const Input = (props) => {
                 <label htmlFor={props.id}>
                     {props.label}
                 </label>
-                <span
-                    className="helper-text"
-                    data-error={props.error}
-                    data-success={props.hint}
-                >
-                    {props.hint}
-                </span>
+                {(!props.valid && props.touched) ? 
+                    <span
+                        className="red-text left helper-text"
+                    >
+                    {props.error}
+                    </span>
+                    :
+                    null
+                }
             </Aux>;
             break;
         case 'select':
@@ -85,13 +104,15 @@ const Input = (props) => {
                 <label htmlFor={props.id}>
                     {props.label}
                 </label>
-                <span
-                    className="helper-text"
-                    data-error={props.error}
-                    data-success={props.hint}
-                >
-                    {props.hint}
-                </span>
+                {(!props.valid && props.touched) ? 
+                    <span
+                        className="red-text left helper-text"
+                    >
+                    {props.error}
+                    </span>
+                    :
+                    null
+                }
             </Aux>;
             break;    
         default:

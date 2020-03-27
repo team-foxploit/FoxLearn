@@ -3,8 +3,9 @@ import style from "./App.module.css";
 import Layout from './components/Layout/Layout';
 import { BrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
-import SignIn from './components/Auth/SignIn';
-// import Dashboard from './containers/Dashboard/Dashboard';
+// import SignIn from './components/Auth/SignIn';
+import SignUp from './components/Auth/SignUp';
+import Dashboard from './containers/Dashboard/Dashboard';
 import 'materialize-css';
 
 // import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
@@ -22,7 +23,9 @@ class App extends Component {
           <BrowserRouter>
             <Layout>
                 {/* <SignIn /> */}
-                <Home />
+                {/* <SignUp /> */}
+                <Dashboard />
+                {/* <Home /> */}
             </Layout>
           </BrowserRouter>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import style from './Wall.module.css';
-import Card from '../Card/Card';
-import CardReveal from '../Card/CardReveal';
+import Card from '../UI/Card/Card';
+import CardReveal from '../UI/Card/CardReveal';
 
 // import { Link } from "react-router-dom";
 // TODO : Insert Link rather than a components
